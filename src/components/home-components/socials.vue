@@ -15,8 +15,8 @@ import { DiscordIcon, TelegramIcon, VkIcon, YouTubeIcon } from 'vue3-simple-icon
 .socials {
   background: var(--color-white);
   padding: 16px;
-  color: var(--color-black);
   border-radius: 8px;
+  color: var(--color-black);
   display: flex;
   justify-content: space-between;
   align-items: center;
