@@ -21,6 +21,7 @@ defineProps({
   color: var(--color-black);
   border-radius: 8px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 32px;
