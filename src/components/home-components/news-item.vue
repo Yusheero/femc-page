@@ -7,6 +7,7 @@ defineProps({
 <template>
   <div class="servers-item">{{ newsData?.title }}</div>
   <div class="servers-item">{{ newsData?.text }}</div>
+  <div class="servers-item">{{ newsData?.date }}</div>
 </template>
 
 <style scoped lang="scss">
