@@ -1,13 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="news">
-    <p>News</p>
+  <div class="server">
+    <p>Server</p>
   </div>
 </template>
 
 <style scoped>
-.news {
+.server {
   background: var(--color-secondary-bg);
   border: 2px solid var(--color-border);
   border-radius: 1rem;
@@ -17,3 +17,4 @@
   align-items: center;
 }
 </style>
+

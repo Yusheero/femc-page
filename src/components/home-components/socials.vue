@@ -1,41 +1,90 @@
-<script setup lang="ts">
-import { DiscordIcon, TelegramIcon, VkIcon, YouTubeIcon } from 'vue3-simple-icons';
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="socials">
-    <a class="socials__item" href=""><DiscordIcon size="36px" style="fill: var(--color-discord)"/></a>
-    <a class="socials__item" href="https://t.me/fareasternmc"><TelegramIcon size="36px" style="fill: var(--color-telegram)"/></a>
-    <a class="socials__item" href="https://vk.com/fareasternmc"><VkIcon size="36px" style="fill: var(--color-vk)"/></a>
-    <a class="socials__item" href="https://www.youtube.com/@fareastern_mc"><YouTubeIcon size="36px" style="fill: var(--color-youtube)"/></a>
+    <div class="socials__header">
+      <p class="socials__title">Подпишитесь на</p>
+      <p class="socials__subtitle">Наши социальные сети</p>
+    </div>
+    <div class="socials__buttons">
+      <a class="item" href="#">
+        <div class="item__image"><img class="item__icon" src="@/assets/icons/tg-icon.svg"></div>
+        <div class="item__text">FEMC - Telegram</div>
+      </a>
+      <a class="item" href="#">
+        <div class="item__image"><img class="item__icon" src="@/assets/icons/yt-icon.svg"></div>
+        <div class="item__text">FEMC - Youtube</div>
+      </a>
+      <a class="item" href="#">
+        <div class="item__image"><img class="item__icon" src="@/assets/icons/vk-icon.svg"></div>
+        <div class="item__text">FEMC - VK Group</div>
+      </a>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .socials {
-  background: var(--color-white);
-  padding: 16px;
-  border-radius: 8px;
-  color: var(--color-black);
+  background: var(--color-secondary-bg);
+  border: 2px solid var(--color-border);
+  border-radius: 1rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  gap: 16px;
-  font-size: 32px;
-  font-weight: 700;
+  gap: 2rem;
+  padding: 0.8rem;
 
-  &__item {
-    background: var(--color-black);
-    height: 100%;
-    width: 25%;
+  &__header {
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    gap: 0.125rem;
+  }
 
-    &:hover {
-      background: var(--color-grey);
-    }
+  &__buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.item {
+  width: 100%;
+  padding: 0.375rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-ip-bg);
+  color: var(--color-text-secondary);
+  border-radius: 0.5rem;
+  text-decoration: none;
+
+  &__image {
+    border-radius: 0.25rem;
+    background: var(--color-icon-bg);
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
   }
 }
 </style>

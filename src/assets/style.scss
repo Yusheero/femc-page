@@ -1,15 +1,14 @@
 /** Импорт шрифтов */
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 :root {
-  --color-black: #141414;
-  --color-white: #d7d7d7;
-  --color-grey: #999;
-  --color-telegram: #11abdd;
-  --color-discord: #5869eb;
-  --color-youtube: #f40000;
-  --color-vk: #0082c8;
+  --color-primary-bg: #050505;
+  --color-secondary-bg: #101010;
+  --color-ip-bg: #191919;
+  --color-icon-bg: #282828;
+  --color-border: #232323;
+  --color-text-primary: #E6E6E6;
+  --color-text-secondary: #CCCCCC;
 }
 
 *, *:before, *:after{
@@ -26,6 +25,7 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: none;
+  font-family: "Nunito Sans", serif;
 }
 
 footer, header, nav, section, main{
@@ -63,4 +63,9 @@ input{
 h1{
   font-size: 32px;
   font-weight: 700;
+}
+
+p {
+  font-size: 1.25rem;
+  font-weight: 400;
 }
