@@ -77,6 +77,10 @@
   border-radius: 0.5rem;
   text-decoration: none;
 
+  &:hover {
+    background: var(--color-icon-bg);
+  }
+
   &__image {
     border-radius: 0.25rem;
     background: var(--color-icon-bg);
