@@ -23,7 +23,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  background-image: url('@/assets/images/background-image.jpg');
+  background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/background-image.jpg');
 
   &__header {
     display: flex;
@@ -65,8 +65,9 @@
   }
 
   &__description {
+    color: var(--color-text-secondary);
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 300;
   }
 }
 </style>

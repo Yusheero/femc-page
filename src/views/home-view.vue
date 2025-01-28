@@ -10,10 +10,10 @@ import Server from '@/components/home-components/server.vue';
     <Logo class="home__logo" />
     <News class="home__news" />
     <Socials class="home__socials" />
-    <Server class="home__server-celedia" />
-    <Server class="home__server-celedia-new" />
-    <Server class="home__server-pawhera" />
-    <Server class="home__server-eventus" />
+    <Server class="home__server-celestia" :text="'Celestia'" :backgroundClass="'celestia'" />
+    <Server class="home__server-celestia-new" :text="'Celestia New'" :backgroundClass="'celestia'" />
+    <Server class="home__server-pawhera" :text="'Pawhera'" :backgroundClass="'celestia'" />
+    <Server class="home__server-eventus" :text="'Eventus'" :backgroundClass="'celestia'" />
   </div>
 </template>
 
@@ -25,10 +25,10 @@ import Server from '@/components/home-components/server.vue';
   grid-template-columns: 3fr 2fr 4fr 3fr;
   grid-template-rows: 2fr 1fr 1fr 2fr;
   grid-template-areas:
-    "logo socials server-celedia server-pawhera"
-    "news news server-celedia server-pawhera"
-    "news news server-celedia-new server-pawhera"
-    "news news server-celedia-new server-eventus";
+    "logo socials server-celestia server-pawhera"
+    "news news server-celestia server-pawhera"
+    "news news server-celestia-new server-pawhera"
+    "news news server-celestia-new server-eventus";
   gap: 1.5rem;
   padding: 1.5rem;
   background: var(--color-primary-bg);
@@ -46,12 +46,12 @@ import Server from '@/components/home-components/server.vue';
     grid-area: socials;
   }
 
-  &__server-celedia {
-    grid-area: server-celedia;
+  &__server-celestia {
+    grid-area: server-celestia;
   }
 
-  &__server-celedia-new {
-    grid-area: server-celedia-new;
+  &__server-celestia-new {
+    grid-area: server-celestia-new;
   }
 
   &__server-pawhera {
