@@ -1,1 +1,3 @@
-export interface serverPreviewData {}
+export interface ServerPreviewDataInterface {
+  server: Object
+}

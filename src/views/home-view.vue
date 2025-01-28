@@ -3,6 +3,7 @@ import News from '@/components/home-components/news.vue';
 import Socials from '@/components/home-components/socials.vue';
 import Logo from '@/components/home-components/logo.vue';
 import Server from '@/components/home-components/server.vue';
+import { serverPreviewData } from '../data/server-preview-data';
 </script>
 
 <template>
@@ -10,10 +11,10 @@ import Server from '@/components/home-components/server.vue';
     <Logo class="home__logo" />
     <News class="home__news" />
     <Socials class="home__socials" />
-    <Server class="home__server-celestia" :text="'Celestia'" :backgroundClass="'celestia'" />
-    <Server class="home__server-celestia-new" :text="'Celestia New'" :backgroundClass="'celestia'" />
-    <Server class="home__server-pawhera" :text="'Pawhera'" :backgroundClass="'celestia'" />
-    <Server class="home__server-eventus" :text="'Eventus'" :backgroundClass="'celestia'" />
+    <Server class="home__server-celestia" :text="serverPreviewData.celedia.text" :backgroundClass="'celestia'" :logoClass="'logo__celestia'" />
+    <Server class="home__server-celestia-new" :text="serverPreviewData.celediaOld.text" :backgroundClass="'celestia-old'" :logoClass="'logo__celestia-old'" />
+    <Server class="home__server-pawhera" :text="serverPreviewData.pawhera.text" :backgroundClass="'pawhera'" :logoClass="'logo__pawhera'" />
+    <Server class="home__server-eventus" :text="serverPreviewData.eventus.text" :backgroundClass="'eventus'" :logoClass="'logo__eventus'" />
   </div>
 </template>
 
