@@ -2,7 +2,7 @@
 
 <template>
   <div class="news-view">
-    News Page
+    News Page For Sure
   </div>
 </template>
 
