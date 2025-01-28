@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import News from '@/components/home-components/news.vue';
+import NewsPreview from '@/components/home-components/news-preview.vue';
 import Socials from '@/components/home-components/socials.vue';
 import Logo from '@/components/home-components/logo.vue';
 import Server from '@/components/home-components/server.vue';
@@ -7,19 +7,36 @@ import { serverPreviewData } from '../data/server-preview-data';
 </script>
 
 <template>
-  <div class="home">
-    <Logo class="home__logo" />
-    <News class="home__news" />
-    <Socials class="home__socials" />
-    <Server class="home__server-celestia" :text="serverPreviewData.celedia.text" :backgroundClass="'celestia'" :logoClass="'logo__celestia'" />
-    <Server class="home__server-celestia-new" :text="serverPreviewData.celediaOld.text" :backgroundClass="'celestia-old'" :logoClass="'logo__celestia-old'" />
-    <Server class="home__server-pawhera" :text="serverPreviewData.pawhera.text" :backgroundClass="'pawhera'" :logoClass="'logo__pawhera'" />
-    <Server class="home__server-eventus" :text="serverPreviewData.eventus.text" :backgroundClass="'eventus'" :logoClass="'logo__eventus'" />
+  <div class="home-view">
+    <Logo class="home-view__logo" />
+    <NewsPreview class="home-view__news" />
+    <Socials class="home-view__socials" />
+    <Server class="home-view__server-celestia"
+      :text="serverPreviewData.celedia.text"
+      :backgroundClass="'celestia'"
+      :logoClass="'logo__celestia'"
+      :routerPath="'/celestia'"
+    />
+    <Server class="home-view__server-celestia-new" 
+      :text="serverPreviewData.celediaOld.text" 
+      :backgroundClass="'celestia-old'" 
+      :logoClass="'logo__celestia-old'" 
+    />
+    <Server class="home-view__server-pawhera" 
+      :text="serverPreviewData.pawhera.text" 
+      :backgroundClass="'pawhera'" 
+      :logoClass="'logo__pawhera'" 
+    />
+    <Server class="home-view__server-eventus" 
+      :text="serverPreviewData.eventus.text" 
+      :backgroundClass="'eventus'" 
+      :logoClass="'logo__eventus'" 
+    />
   </div>
 </template>
 
 <style scoped lang="scss">
-.home {
+.home-view {
   width: 100%;
   height: 100%;
   display: grid;

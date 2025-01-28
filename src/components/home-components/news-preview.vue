@@ -1,21 +1,21 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="news">
-    <div class="news__header">
-      <div class="news__text">Сервер:</div>
-      <div class="news__server-logo"></div>
+  <div class="news-preview">
+    <div class="news-preview__header">
+      <div class="news-preview__text">Сервер:</div>
+      <div class="news-preview__server-logo"></div>
     </div>
-    <div class="news__content">
-      <div class="news__title">Новость дня!</div>
-      <div class="news__subtitle">Сегодня на сервере прошел конкурс построек! Призовой фонд составил 10 пачек кириешек!</div>
-      <div class="news__description">Ну тут короче идет то, что нахуй никто читать не будет, потому что кому интересно что-то касательно как-го то конкурса, в котором ты даже не участвовал? Я лично таким бы не интересовался, но думаю, если кто-то и поинтересуется, то ему либо заняться нечем, либо он страдает тяжелой формой аутизма, всем кисам пис! </div>
+    <div class="news-preview__content">
+      <div class="news-preview__title">Новость дня!</div>
+      <div class="news-preview__subtitle">Сегодня на сервере прошел конкурс построек! Призовой фонд составил 10 пачек кириешек!</div>
+      <div class="news-preview__description">Ну тут короче идет то, что нахуй никто читать не будет, потому что кому интересно что-то касательно как-го то конкурса, в котором ты даже не участвовал? Я лично таким бы не интересовался, но думаю, если кто-то и поинтересуется, то ему либо заняться нечем, либо он страдает тяжелой формой аутизма, всем кисам пис! </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.news {
+.news-preview {
   padding: 1.5rem;
   border: 2px solid var(--color-border);
   border-radius: 1rem;
@@ -30,7 +30,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 0.25rem;
+    gap: 0.5rem;
   }
 
   &__text {

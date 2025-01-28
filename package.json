@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "keen-slider": "^6.8.6",
     "lucide-vue-next": "^0.473.0",
     "pinia": "^2.3.0",
     "vue": "^3.5.13",

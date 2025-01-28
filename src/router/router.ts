@@ -1,11 +1,12 @@
 import { createMemoryHistory, createRouter } from 'vue-router';
-
-import HomeView from '../views/home-view.vue';
-import CelediaView from '../views/celedia-view.vue';
+import CelestiaView from '@/views/celestia-view.vue';
+import NewsItem from '@/components/news-item.vue';
+import HomeView from '@/views/home-view.vue';
 
 const routes = [
   { path: '/', component: HomeView },
-  { path: '/celedia', component: CelediaView },
+  { path: '/celestia', component: CelestiaView },
+  { path: '/news/:id', component: NewsItem},
 ]
 
 const router = createRouter({

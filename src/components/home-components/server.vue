@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ArrowRight } from 'lucide-vue-next';
+import { useRouter } from 'vue-router';
 
-defineProps({
+const router = useRouter();
+
+const props = defineProps({
   backgroundClass: String,
   logoClass: String,
   text: String,
@@ -9,7 +12,7 @@ defineProps({
 })
 
 const toRouterPath = () => {
-  
+  router.push({ path: props.routerPath })
 }
 </script>
 
@@ -56,8 +59,8 @@ const toRouterPath = () => {
     border-radius: 50%;
     background: var(--color-ip-bg);
     opacity: 0.8;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
 
     &:hover {
       background: var(--color-icon-bg);

@@ -7,15 +7,15 @@
       <p class="socials__subtitle">Наши социальные сети</p>
     </div>
     <div class="socials__buttons">
-      <a class="item" href="#">
+      <a class="item" href="https://t.me/fareasternmc">
         <div class="item__image"><img class="item__icon" src="@/assets/icons/tg-icon.svg"></div>
         <div class="item__text">FEMC - Telegram</div>
       </a>
-      <a class="item" href="#">
+      <a class="item" href="https://www.youtube.com/@fareastern_mc">
         <div class="item__image"><img class="item__icon" src="@/assets/icons/yt-icon.svg"></div>
         <div class="item__text">FEMC - Youtube</div>
       </a>
-      <a class="item" href="#">
+      <a class="item" href="https://vk.com/fareasternmc">
         <div class="item__image"><img class="item__icon" src="@/assets/icons/vk-icon.svg"></div>
         <div class="item__text">FEMC - VK Group</div>
       </a>
