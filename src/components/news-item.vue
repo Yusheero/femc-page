@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-
-const newsId = computed(() => 'id')
+// const newsId = computed(() => 'id')
 // const newsItem = computed(() => {
 //   return 
 // })
