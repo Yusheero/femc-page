@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from 'vue-router';
+import { createMemoryHistory, createRouter } from 'vue-router';
 import CelestiaView from '@/views/celestia-view.vue';
 import NewsItem from '@/components/news-item.vue';
 import HomeView from '@/views/home-view.vue';
@@ -15,7 +15,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createMemoryHistory(),
   routes,
 })
 
