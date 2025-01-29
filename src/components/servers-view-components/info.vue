@@ -8,6 +8,7 @@ defineProps({
   text: Object,
   logoClass: String
 })
+
 const toRouterPath = () => {
   router.push({ path: '/' })
 }

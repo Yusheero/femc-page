@@ -1,14 +1,10 @@
-<script setup lang="ts">
-import { Clipboard } from 'lucide-vue-next';
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="logo">
     <div class="logo__image"></div>
     <div class="logo__info">
-      <p class="logo__title">Играйте, веселитесь, знакомьтесь, делитесь!</p>
       <div class="logo__ip ip">
-        <Clipboard color="#CCCCCC" :size="32" />
         <p class="ip__numbers">95.154.67.65</p>
       </div>
     </div>
@@ -25,7 +21,7 @@ import { Clipboard } from 'lucide-vue-next';
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 2rem;
+  gap: 2.8rem;
 
   &__image {
     width: 18.75rem;
@@ -44,14 +40,9 @@ import { Clipboard } from 'lucide-vue-next';
     gap: 0.75rem;
   }
 
-  &__title {
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
-  }
-
   &__ip {
     width: 100%;
-    padding: 8px 12px;
+    padding: 1rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,7 +54,8 @@ import { Clipboard } from 'lucide-vue-next';
 
 .ip {
   &__numbers {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 800;
     width: 100%;
     text-align: center;
   }

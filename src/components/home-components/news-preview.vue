@@ -37,7 +37,10 @@ onUnmounted(() => {
   <div class="news-preview">
     <div ref="sliderRef" class="keen-slider">
       <div class="keen-slider__slide" v-for="(slide, index) in NewsData.data" :key="index">
-        <div class="news-preview__content">
+        <div :class="['news-preview__content news__news ' + slide.imageClass]">
+          <div class="news-preview__tags tags">
+            <div v-for="tag in slide.tags" class="tags__item">{{ tag }}</div>
+          </div>
           <div class="news-preview__title">{{ slide.title }}</div>
           <div class="news-preview__description">{{ slide.text }}</div>
         </div>
@@ -50,33 +53,13 @@ onUnmounted(() => {
 <style scoped lang="scss">
 .news-preview {
   position: relative;
-  padding: 1.5rem;
   border: 2px solid var(--color-border);
   border-radius: 1rem;
-  background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/background-image.jpg');
-
-  &__header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  &__text {
-    font-size: 1rem;
-    font-weight: 800;
-  }
-
-  &__server-logo {
-    width: 7.25rem;
-    height: 1.5rem;
-    background-image: url('@/assets/images/celestia-logo.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
+  background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%);
 
   &__content {
+    padding: 1.5rem;
+    border-radius: 0.8rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -85,13 +68,16 @@ onUnmounted(() => {
     gap: 1rem;
   }
 
-  &__title {
-    font-size: 1.75rem;
-    font-weight: 700;
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
   }
 
-  &__subtitle {
-    font-size: 1.5rem;
+  &__title {
+    font-size: 1.75rem;
     font-weight: 700;
   }
 
@@ -109,7 +95,7 @@ onUnmounted(() => {
     top: 1.5rem;
     right: 1.5rem;
     border: none;
-    border-radius: 2.5rem;
+    border-radius: 0.6rem;
     background: var(--color-ip-bg);
     opacity: 0.8;
     height: 2.5rem;
@@ -128,6 +114,7 @@ onUnmounted(() => {
 }
 
 .keen-slider {
+  border-radius: 0.8rem;
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -135,10 +122,46 @@ onUnmounted(() => {
 }
 
 .keen-slider__slide {
+  border-radius: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 100%;
   height: 100%;
+}
+
+.tags {
+  &__item {
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    border-radius: 0.4rem;
+    background: var(--color-text-primary);
+    color: var(--color-icon-bg);
+  }
+}
+
+/** Классы для фона новости */
+.news {
+  &__news {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+
+  &__news1 {
+    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news1.jpg');
+  }
+
+  &__news2 {
+    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news2.jpg');
+  }
+
+  &__news3 {
+    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news3.jpg');
+  }
+
+  &__news4 {
+    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news4.jpg');
+  }
 }
 </style>
