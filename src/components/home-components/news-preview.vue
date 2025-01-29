@@ -134,9 +134,10 @@ onUnmounted(() => {
   &__item {
     padding: 0.5rem 1rem;
     font-weight: 700;
-    border-radius: 0.4rem;
+    border-radius: 0.3rem;
     background: var(--color-text-primary);
     color: var(--color-icon-bg);
+    opacity: 0.6;
   }
 }
 
