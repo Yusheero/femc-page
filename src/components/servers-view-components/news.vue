@@ -1,5 +1,7 @@
 <script setup lang="ts">
-
+defineProps({
+  news: Object,
+})
 </script>
 
 <template>

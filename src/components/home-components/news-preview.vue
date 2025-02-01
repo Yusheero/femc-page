@@ -36,7 +36,7 @@ onUnmounted(() => {
 <template>
   <div class="news-preview">
     <div ref="sliderRef" class="keen-slider">
-      <div class="keen-slider__slide" v-for="(slide, index) in NewsData.data" :key="index">
+      <div class="keen-slider__slide" v-for="(slide, index) in NewsData" :key="index">
         <div :class="['news-preview__content news__news ' + slide.imageClass]">
           <div class="news-preview__tags tags">
             <div v-for="tag in slide.tags" class="tags__item">{{ tag }}</div>

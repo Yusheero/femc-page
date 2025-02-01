@@ -1,23 +1,33 @@
 <script setup lang="ts">
-// import Info from '@/components/server-view-components/info.vue';
-// import Gallery from '@/components/server-view-components/gallery.vue';
-// import News from '@/components/server-view-components/news.vue';
+import { useRoute } from 'vue-router';
+import { onMounted, ref } from 'vue';
 import News from '../components/servers-view-components/news.vue';
 import Gallery from '../components/servers-view-components/gallery.vue';
 import Info from '../components/servers-view-components/info.vue';
-import { serverInfoData } from '@/data/servers-info-data';
+import { ServersData } from '@/data/servers-info-data';
+import { NewsData } from '@/data/news-data';
+
+const routeId = useRoute().params.id;
+const serverData = ref();
+const serverNews = ref();
+
+onMounted(() => {
+  serverData.value = ServersData.find(s => s.id === routeId);
+  serverNews.value = NewsData.find(s => s.server === routeId);
+})
+
 </script>
 
 <template>
-  <div class="celestia-view">
-    <Info class="celestia-view__info" :text="serverInfoData.celedia" :logoClass="'info__celestia'" />
-    <Gallery class="celestia-view__gallery" />
-    <News class="celestia-view__news" />
+  <div class="server-view">
+    <Info class="server-view__info" :data="serverData" />
+    <Gallery class="server-view__gallery" />
+    <News class="server-view__news" :news="serverNews" />
   </div>
 </template>
 
 <style scoped lang="scss">
-.celestia-view {
+.server-view {
   width: 100%;
   height: 100%;
   display: grid;

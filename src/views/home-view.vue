@@ -15,22 +15,25 @@ import { serverPreviewData } from '../data/server-preview-data';
       :text="serverPreviewData.celedia.text"
       :backgroundClass="'celestia'"
       :logoClass="'logo__celestia'"
-      :routerPath="'/celestia'"
+      :routerPath="'/server/celestia'"
     />
     <Server class="home-view__server-celestia-new" 
       :text="serverPreviewData.celediaOld.text" 
       :backgroundClass="'celestia-old'" 
-      :logoClass="'logo__celestia-old'" 
+      :logoClass="'logo__celestia-old'"
+      :routerPath="'/server/celestia-old'" 
     />
     <Server class="home-view__server-pawhera" 
       :text="serverPreviewData.pawhera.text" 
       :backgroundClass="'pawhera'" 
-      :logoClass="'logo__pawhera'" 
+      :logoClass="'logo__pawhera'"
+      :routerPath="'/server/pawhera'"
     />
     <Server class="home-view__server-eventus" 
       :text="serverPreviewData.eventus.text" 
       :backgroundClass="'eventus'" 
-      :logoClass="'logo__eventus'" 
+      :logoClass="'logo__eventus'"
+      :routerPath="'/server/eventus'"
     />
   </div>
 </template>

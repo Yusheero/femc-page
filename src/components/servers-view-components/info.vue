@@ -4,9 +4,8 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
-defineProps({
-  text: Object,
-  logoClass: String
+const props = defineProps({
+  data: Object,
 })
 
 const toRouterPath = () => {
@@ -18,13 +17,13 @@ const toRouterPath = () => {
   <div class="info">
     <div class="info__header">
       <button class="info__button" @click="toRouterPath"><ArrowLeft :size="24" color="#CCCCCC" /></button>
-      <div :class="['info__logo ' + logoClass]"></div>
+      <div :class="['info__logo ' + props?.data?.logoClass]"></div>
     </div>
-    <p class="info__text">{{ text?.text1 }}</p>
-    <p class="info__text">{{ text?.text2 }}</p>
+    <p class="info__text">{{ props?.data?.text1 }}</p>
+    <p class="info__text">{{ props?.data?.text2 }}</p>
     <div class="info__line-break"></div>
-    <p class="info__text">{{ text?.text3 }}</p>
-    <p class="info__text">{{ text?.text4 }}</p>
+    <p class="info__text">{{ props?.data?.text3 }}</p>
+    <p class="info__text">{{ props?.data?.text4 }}</p>
   </div>
 </template>
 
@@ -85,6 +84,24 @@ const toRouterPath = () => {
 
   &__celestia {
     background-image: url('@/assets/images/celestia-logo.png');
+    background-size: contain;
+    filter: drop-shadow(0px 0px 12px rgba(136, 62, 126, 0.8));
+  }
+
+  &__celestia-old {
+    background-image: url('@/assets/images/celestia-old-logo.png');
+    background-size: contain;
+    filter: drop-shadow(0px 0px 12px rgba(136, 62, 126, 0.8));
+  }
+
+  &__pawhera {
+    background-image: url('@/assets/images/pawhera-logo.png');
+    background-size: contain;
+    filter: drop-shadow(0px 0px 12px rgba(136, 62, 126, 0.8));
+  }
+
+  &__eventus {
+    background-image: url('@/assets/images/eventus-logo.png');
     background-size: contain;
     filter: drop-shadow(0px 0px 12px rgba(136, 62, 126, 0.8));
   }
