@@ -2,20 +2,13 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import KeenSlider from "keen-slider";
 import { KeenSliderInstance } from 'keen-slider';
-import { useRouter } from 'vue-router';
 
 const props = defineProps({
   news: Object,
 })
 
-const router = useRouter();
-
 const sliderRef = ref<HTMLElement | null>(null);
 let slider: KeenSliderInstance | null = null;
-
-const toRouterPath = () => {
-  router.push({ path: '/news' })
-}
 
 onMounted(() => {
   // Инициализация слайдера

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import News from '../components/servers-view-components/news.vue';
 import Gallery from '../components/servers-view-components/gallery.vue';
 import Info from '../components/servers-view-components/info.vue';

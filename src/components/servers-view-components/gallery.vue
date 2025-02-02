@@ -9,7 +9,7 @@ const pictures = props?.pictures?.images
 
 const animation = { duration: 150000, easing: (t: any) => t }
 
-const [container, slider] = useKeenSlider({ 
+const [container] = useKeenSlider({ 
   loop: true,
   initial: 0,
   slides: {
