@@ -11,7 +11,7 @@ const newsId = route.params.id;
 
 const pageData = computed(() => newsData.find((n) => n.id === newsId));
 
-const toRouterPath = (id: any) => {
+const toRouterPath = () => {
   router.push({ path: '/'})
 }
 </script>
