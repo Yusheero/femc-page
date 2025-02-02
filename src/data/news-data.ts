@@ -59,7 +59,7 @@ export const newsData: NewsData[] = [
     "text": "Дорогие игроки! Мы рады сообщить вам о запуске нашего нового Minecraft сервера Celedia! С 1 ноября 2023 года вы сможете погрузиться в уникальную атмосферу, полную приключений, квестов и дружелюбного сообщества.",
     "date": "01.02.2025",
     "imageClass": "none",
-    "newsViewClass": "none",
+    "newsViewClass": "null",
   },
   {
     "id": "femc06",
@@ -69,7 +69,7 @@ export const newsData: NewsData[] = [
     "text": "Дорогие игроки! Мы рады сообщить вам о запуске нашего нового Minecraft сервера Celedia! С 1 ноября 2023 года вы сможете погрузиться в уникальную атмосферу, полную приключений, квестов и дружелюбного сообщества.",
     "date": "01.02.2025",
     "imageClass": "none",
-    "newsViewClass": "none",
+    "newsViewClass": "null",
   },
   {
     "id": "femc07",
@@ -79,6 +79,6 @@ export const newsData: NewsData[] = [
     "text": "Дорогие игроки! Мы рады сообщить вам о запуске нашего нового Minecraft сервера Celedia! С 1 ноября 2023 года вы сможете погрузиться в уникальную атмосферу, полную приключений, квестов и дружелюбного сообщества.",
     "date": "01.02.2025",
     "imageClass": "none",
-    "newsViewClass": "none",
+    "newsViewClass": "null",
   }
 ];

@@ -1,13 +1,14 @@
 import { defineStore } from 'pinia';
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 
-export const usePageStore = defineStore('counter', () => {
-  const count = ref(0)
-  const name = ref('Yusheero')
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
+export const usePageStore = defineStore('page-store', () => {
+  const lastRoutePath = ref('')
+  const setLastRoutePath = (path: string) => {
+    lastRoutePath.value = path;
   }
 
-  return { count, name, doubleCount, increment }
+  return {
+    lastRoutePath,
+    setLastRoutePath,
+  }
 })

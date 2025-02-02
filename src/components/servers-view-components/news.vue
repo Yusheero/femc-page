@@ -4,17 +4,23 @@ import KeenSlider from "keen-slider";
 import { KeenSliderInstance } from 'keen-slider';
 import { ArrowUpRight } from 'lucide-vue-next';
 import { useRouter } from 'vue-router';
+import { useRoute } from "vue-router";
+import { usePageStore } from "@/store/store";
 
 const props = defineProps({
   news: Object,
 })
 
+const route = useRoute();
+const store = usePageStore();
 const router = useRouter();
 
 const sliderRef = ref<HTMLElement | null>(null);
 let slider: KeenSliderInstance | null = null;
 
 const toRouterPath = (id: any) => {
+  store.setLastRoutePath(route.path);
+  console.log(store.lastRoutePath);
   router.push({ path: `/news/${id}` })
 }
 

@@ -85,13 +85,13 @@ const toRouterPath = () => {
   &__celedia {
     background-image: url('@/assets/images/celedia-logo.png');
     background-size: contain;
-    filter: drop-shadow(0px 0px 12px rgba(39, 187, 88, 0.8));
+    filter: drop-shadow(0px 0px 12px rgba(51, 115, 189, 0.8));
   }
 
   &__celedia-old {
     background-image: url('@/assets/images/celedia-old-logo.png');
     background-size: contain;
-    filter: drop-shadow(0px 0px 12px rgba(87, 87, 87, 0.8));
+    filter: drop-shadow(0px 0px 12px rgba(59, 93, 167, 0.8));
   }
 
   &__pawhera {

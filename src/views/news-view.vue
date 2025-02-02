@@ -3,7 +3,7 @@ import { newsData } from '@/data/news-data';
 import NewsItem from '@/components/news-view-components/news-item.vue';
 import SendNews from '@/components/news-view-components/send-news.vue';
 
-const Data = newsData;
+const Data = newsData.filter((item) => item.newsViewClass !== "null");
 </script>
 
 <template>

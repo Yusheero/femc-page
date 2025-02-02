@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { House } from 'lucide-vue-next';
+import { X } from 'lucide-vue-next';
+import { usePageStore } from '@/store/store';
 import { useRoute } from "vue-router";
 import { useRouter } from 'vue-router';
 import { newsData } from '@/data/news-data';
 
+const store = usePageStore();
 const router = useRouter();
 const route = useRoute();
 const newsId = route.params.id;
@@ -12,7 +14,8 @@ const newsId = route.params.id;
 const pageData = computed(() => newsData.find((n) => n.id === newsId));
 
 const toRouterPath = () => {
-  router.push({ path: '/'})
+  const lastRoutePath = store.lastRoutePath;
+  router.push({ path: `${lastRoutePath}`})
 }
 </script>
 
@@ -21,7 +24,7 @@ const toRouterPath = () => {
     <div class="page-data__content">
       <p class="page-data__title">{{ pageData?.title }}</p>
       <p class="page-data__text">{{ pageData?.text }}</p>
-      <button class="page-data__button" @click="toRouterPath"><House :size="24" color="#CCCCCC" /></button>
+      <button class="page-data__button" @click="toRouterPath"><X :size="24" color="#CCCCCC" /></button>
     </div>
   </div>
 </template>
