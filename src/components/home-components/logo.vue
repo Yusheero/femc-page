@@ -1,11 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Copy } from 'lucide-vue-next';
+</script>
 
 <template>
   <div class="logo">
     <div class="logo__image"></div>
     <div class="logo__info">
       <div class="logo__ip ip">
-        <p class="ip__numbers">95.154.67.65</p>
+        <p class="ip__numbers">femc.space</p>
+        <button class="ip__button"><Copy :size="24" color="#CCCCCC" /></button>
       </div>
     </div>
   </div>
@@ -53,11 +56,32 @@
 }
 
 .ip {
+  position: relative;
+
   &__numbers {
     font-size: 1.5rem;
     font-weight: 800;
     width: 100%;
     text-align: center;
+  }
+
+  &__button {
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-icon-bg);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+
+    &:hover {
+      background: var(--color-primary-bg);
+      cursor: pointer;
+    }
   }
 }
 </style>

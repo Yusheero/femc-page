@@ -82,6 +82,11 @@
   }
 
   &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
     border-radius: 0.25rem;
     background: var(--color-icon-bg);
   }

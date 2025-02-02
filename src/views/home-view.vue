@@ -11,17 +11,17 @@ import { serverPreviewData } from '../data/server-preview-data';
     <Logo class="home-view__logo" />
     <NewsPreview class="home-view__news" />
     <Socials class="home-view__socials" />
-    <Server class="home-view__server-celestia"
+    <Server class="home-view__server-celedia"
       :text="serverPreviewData.celedia.text"
-      :backgroundClass="'celestia'"
-      :logoClass="'logo__celestia'"
-      :routerPath="'/server/celestia'"
+      :backgroundClass="'celedia'"
+      :logoClass="'logo__celedia'"
+      :routerPath="'/server/celedia'"
     />
-    <Server class="home-view__server-celestia-new" 
+    <Server class="home-view__server-celedia-new" 
       :text="serverPreviewData.celediaOld.text" 
-      :backgroundClass="'celestia-old'" 
-      :logoClass="'logo__celestia-old'"
-      :routerPath="'/server/celestia-old'" 
+      :backgroundClass="'celedia-old'" 
+      :logoClass="'logo__celedia-old'"
+      :routerPath="'/server/celedia-old'" 
     />
     <Server class="home-view__server-pawhera" 
       :text="serverPreviewData.pawhera.text" 
@@ -46,10 +46,10 @@ import { serverPreviewData } from '../data/server-preview-data';
   grid-template-columns: 3fr 2fr 4fr 3fr;
   grid-template-rows: 2fr 1fr 1fr 2fr;
   grid-template-areas:
-    "logo socials server-celestia server-pawhera"
-    "news news server-celestia server-pawhera"
-    "news news server-celestia-new server-pawhera"
-    "news news server-celestia-new server-eventus";
+    "logo socials server-celedia server-pawhera"
+    "news news server-celedia server-pawhera"
+    "news news server-celedia-new server-pawhera"
+    "news news server-celedia-new server-eventus";
   gap: 1.5rem;
   padding: 1.5rem;
   background: var(--color-primary-bg);
@@ -67,12 +67,12 @@ import { serverPreviewData } from '../data/server-preview-data';
     grid-area: socials;
   }
 
-  &__server-celestia {
-    grid-area: server-celestia;
+  &__server-celedia {
+    grid-area: server-celedia;
   }
 
-  &__server-celestia-new {
-    grid-area: server-celestia-new;
+  &__server-celedia-new {
+    grid-area: server-celedia-new;
   }
 
   &__server-pawhera {

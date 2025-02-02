@@ -70,12 +70,12 @@ const toRouterPath = () => {
 }
 
 .logo {
-  &__celestia {
-    background-image: url('@/assets/images/celestia-logo.png');
+  &__celedia {
+    background-image: url('@/assets/images/celedia-logo.png');
   }
 
-  &__celestia-old {
-    background-image: url('@/assets/images/celestia-old-logo.png');
+  &__celedia-old {
+    background-image: url('@/assets/images/celedia-old-logo.png');
   }
 
   &__pawhera {
@@ -87,12 +87,12 @@ const toRouterPath = () => {
   }
 }
 
-.celestia {
-  background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/celestia-bg.jpg');
+.celedia {
+  background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/celedia-bg.jpg');
 }
 
-.celestia-old {
-  background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/celestia-old-bg.jpg');
+.celedia-old {
+  background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/celedia-old-bg.jpg');
 }
 
 .pawhera {

@@ -2,13 +2,21 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import KeenSlider from "keen-slider";
 import { KeenSliderInstance } from 'keen-slider';
+import { ArrowUpRight } from 'lucide-vue-next';
+import { useRouter } from 'vue-router';
 
 const props = defineProps({
   news: Object,
 })
 
+const router = useRouter();
+
 const sliderRef = ref<HTMLElement | null>(null);
 let slider: KeenSliderInstance | null = null;
+
+const toRouterPath = (id: any) => {
+  router.push({ path: `/news/${id}` })
+}
 
 onMounted(() => {
   // Инициализация слайдера
@@ -32,6 +40,7 @@ onUnmounted(() => {
         <div class="news-item">
           <p class="news-item__title">{{ slide.title }}</p>
           <p class="news-item__text">{{ slide.text }}</p>
+          <button class="news-item__button" @click="toRouterPath(slide.id)"><ArrowUpRight :size="24" color="#CCCCCC" /></button>
         </div>
       </div>
     </div>
@@ -66,6 +75,26 @@ onUnmounted(() => {
   &__text {
     font-size: 1rem;
     color: var(--color-text-secondary);
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-ip-bg);
+    opacity: 0.8;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    &:hover {
+      background: var(--color-icon-bg);
+      cursor: pointer;
+    }
   }
 }
 
