@@ -35,7 +35,6 @@ const [container] = useKeenSlider({
           <p class="gallery__image-author">Автор : {{ image.author }}</p>
           <p class="gallery__image-description">{{ image.description }}</p>
         </div>
-        <!-- <img class="gallery__image" :src="image" alt="Slider image" /> -->
       </div>
     </div>
   </div>
