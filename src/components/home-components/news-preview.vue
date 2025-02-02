@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NewsData } from '@/data/news-data';
+import { newsData } from '@/data/news-data';
 import { ref, onMounted, onUnmounted } from "vue";
 import KeenSlider from "keen-slider";
 import { KeenSliderInstance } from 'keen-slider';
@@ -22,7 +22,7 @@ onMounted(() => {
     drag: false,
     created: (s) => {
       // Автопрокрутка каждые 10 секунд
-      const interval = setInterval(() => s.next(), 8000);
+      const interval = setInterval(() => s.next(), 5000);
       s.on("destroyed", () => clearInterval(interval));
     },
   });
@@ -36,7 +36,7 @@ onUnmounted(() => {
 <template>
   <div class="news-preview">
     <div ref="sliderRef" class="keen-slider">
-      <div class="keen-slider__slide" v-for="(slide, index) in NewsData" :key="index">
+      <div class="keen-slider__slide" v-for="(slide, index) in newsData" :key="index">
         <div :class="['news-preview__content news__news ' + slide.imageClass]">
           <div class="news-preview__tags tags">
             <div v-for="tag in slide.tags" class="tags__item">{{ tag }}</div>

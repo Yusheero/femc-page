@@ -10,7 +10,7 @@ type NewsData = {
   newsViewClass: string;
 };
 
-export const NewsData: NewsData[] = [
+export const newsData: NewsData[] = [
   {
     "id": "femc01",
     "server": "none",
@@ -50,5 +50,35 @@ export const NewsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "news__news4",
     "newsViewClass": "news-view__news4",
+  },
+  {
+    "id": "femc05",
+    "server": "celestia-old",
+    "tags": ['celestia', 'игроки'],
+    "title": "Тестовая новость сервера Celestia Old",
+    "text": "Дорогие игроки! Мы рады сообщить вам о запуске нашего нового Minecraft сервера Celestia! С 1 ноября 2023 года вы сможете погрузиться в уникальную атмосферу, полную приключений, квестов и дружелюбного сообщества.",
+    "date": "01.02.2025",
+    "imageClass": "none",
+    "newsViewClass": "none",
+  },
+  {
+    "id": "femc06",
+    "server": "pawhera",
+    "tags": ['pawhera', 'игроки'],
+    "title": "Тестовая новость сервера Pawhera",
+    "text": "Дорогие игроки! Мы рады сообщить вам о запуске нашего нового Minecraft сервера Celestia! С 1 ноября 2023 года вы сможете погрузиться в уникальную атмосферу, полную приключений, квестов и дружелюбного сообщества.",
+    "date": "01.02.2025",
+    "imageClass": "none",
+    "newsViewClass": "none",
+  },
+  {
+    "id": "femc07",
+    "server": "eventus",
+    "tags": ['eventus', 'игроки'],
+    "title": "Тестовая новость сервера Eventus",
+    "text": "Дорогие игроки! Мы рады сообщить вам о запуске нашего нового Minecraft сервера Celestia! С 1 ноября 2023 года вы сможете погрузиться в уникальную атмосферу, полную приключений, квестов и дружелюбного сообщества.",
+    "date": "01.02.2025",
+    "imageClass": "none",
+    "newsViewClass": "none",
   }
 ];

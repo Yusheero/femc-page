@@ -85,25 +85,25 @@ const toRouterPath = () => {
   &__celestia {
     background-image: url('@/assets/images/celestia-logo.png');
     background-size: contain;
-    filter: drop-shadow(0px 0px 12px rgba(136, 62, 126, 0.8));
+    filter: drop-shadow(0px 0px 12px rgba(39, 187, 88, 0.8));
   }
 
   &__celestia-old {
     background-image: url('@/assets/images/celestia-old-logo.png');
     background-size: contain;
-    filter: drop-shadow(0px 0px 12px rgba(136, 62, 126, 0.8));
+    filter: drop-shadow(0px 0px 12px rgba(87, 87, 87, 0.8));
   }
 
   &__pawhera {
     background-image: url('@/assets/images/pawhera-logo.png');
     background-size: contain;
-    filter: drop-shadow(0px 0px 12px rgba(136, 62, 126, 0.8));
+    filter: drop-shadow(0px 0px 12px rgba(21, 39, 206, 0.8));
   }
 
   &__eventus {
     background-image: url('@/assets/images/eventus-logo.png');
     background-size: contain;
-    filter: drop-shadow(0px 0px 12px rgba(136, 62, 126, 0.8));
+    filter: drop-shadow(0px 0px 12px rgba(187, 90, 174, 0.8));
   }
 }
 </style>

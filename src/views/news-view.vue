@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { NewsData } from '@/data/news-data';
+import { newsData } from '@/data/news-data';
 import NewsItem from '@/components/news-view-components/news-item.vue';
 import SendNews from '@/components/news-view-components/send-news.vue';
 
-const Data = NewsData.data;
+const Data = newsData;
 </script>
 
 <template>

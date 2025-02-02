@@ -5,23 +5,25 @@ import News from '../components/servers-view-components/news.vue';
 import Gallery from '../components/servers-view-components/gallery.vue';
 import Info from '../components/servers-view-components/info.vue';
 import { ServersData } from '@/data/servers-info-data';
-import { NewsData } from '@/data/news-data';
+import { newsData } from '@/data/news-data';
+import { imagesData } from '@/data/images';
 
 const routeId = useRoute().params.id;
 const serverData = ref();
 const serverNews = ref();
+const serverPictures = ref();
 
-onMounted(() => {
-  serverData.value = ServersData.find(s => s.id === routeId);
-  serverNews.value = NewsData.find(s => s.server === routeId);
-})
+serverData.value = ServersData.find(s => s.id === routeId);
+serverNews.value = newsData.filter((item) => item.server === routeId)
+serverPictures.value = imagesData.find((item) => item.server === routeId)
+console.log(serverPictures.value);
 
 </script>
 
 <template>
   <div class="server-view">
     <Info class="server-view__info" :data="serverData" />
-    <Gallery class="server-view__gallery" />
+    <Gallery class="server-view__gallery" :pictures="serverPictures" />
     <News class="server-view__news" :news="serverNews" />
   </div>
 </template>
