@@ -28,7 +28,10 @@ onMounted(() => {
   // Инициализация слайдера
   slider = new KeenSlider(sliderRef.value!, {
     loop: true,
-    slides: { perView: 5 },
+    slides: { 
+      perView: 5,
+      spacing: 20,
+    },
     drag: true,
   });
   console.log(props.news);
@@ -43,7 +46,7 @@ onUnmounted(() => {
   <div class="news">
     <div ref="sliderRef" class="keen-slider">
       <div class="keen-slider__slide" v-for="(slide, index) in news" :key="index">
-        <div :class="['news-item news ' + slide.imageClass]">
+        <div class="news-item news" :style="{ backgroundImage: `url(${slide.serverPreviewImage})` }">
           <p class="news-item__title">{{ slide.title }}</p>
           <p class="news-item__text">{{ slide.text }}</p>
           <button class="news-item__button" @click="toRouterPath(slide.id)"><ArrowUpRight :size="24" color="#CCCCCC" /></button>

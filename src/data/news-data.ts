@@ -8,7 +8,8 @@ type NewsData = {
   date: string;
   imageClass: string;
   newsViewClass: string;
-  image: string;
+  previewImage: string;
+  serverPreviewImage: string;
 };
 
 export const newsData: NewsData[] = [
@@ -21,7 +22,8 @@ export const newsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "news__news1",
     "newsViewClass": "news-view__news1",
-    "image": new URL('../assets/images/news1.jpg', import.meta.url).href,
+    "previewImage": new URL('../assets/images/news1.jpg', import.meta.url).href,
+    "serverPreviewImage": new URL('../assets/images/news1.jpg', import.meta.url).href,
   },
   {
     "id": "femc02",
@@ -32,7 +34,8 @@ export const newsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "news__news2",
     "newsViewClass": "news-view__news2",
-    "image": new URL('../assets/images/news2.jpg', import.meta.url).href,
+    "previewImage": new URL('../../assets/images/news2.jpg', import.meta.url).href,
+    "serverPreviewImage": new URL('../assets/images/news1.jpg', import.meta.url).href,
   },
   {
     "id": "femc03",
@@ -43,50 +46,67 @@ export const newsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "news__news3",
     "newsViewClass": "news-view__news3",
-    "image": new URL('../assets/images/news3.jpg', import.meta.url).href,
+    "previewImage": new URL('../../assets/images/news3.jpg', import.meta.url).href,
+    "serverPreviewImage": new URL('../assets/images/news1.jpg', import.meta.url).href,
   },
   {
     "id": "femc04",
     "server": "celedia",
     "tags": ['celedia', 'игроки'],
-    "title": "Тестовая новость сервера Celedia",
-    "text": "Дорогие игроки! Мы рады сообщить вам о запуске нашего нового Minecraft сервера Celedia! С 1 ноября 2023 года вы сможете погрузиться в уникальную атмосферу, полную приключений, квестов и дружелюбного сообщества.",
+    "title": "Место для вашей новости",
+    "text": "Отправляйте новости в Discord канал с новостями игроков. Ссылка на главной странице сайта",
     "date": "01.02.2025",
     "imageClass": "news__news4",
     "newsViewClass": "news-view__news4",
-    "image": new URL('../assets/images/news4.jpg', import.meta.url).href,
+    "previewImage": new URL('../../assets/images/news4.jpg', import.meta.url).href,
+    "serverPreviewImage": new URL('../assets/images/news1.jpg', import.meta.url).href,
   },
   {
     "id": "femc05",
     "server": "celedia-old",
     "tags": ['celedia', 'игроки'],
-    "title": "Тестовая новость сервера Celedia Old",
-    "text": "Дорогие игроки! Мы рады сообщить вам о запуске нашего нового Minecraft сервера Celedia! С 1 ноября 2023 года вы сможете погрузиться в уникальную атмосферу, полную приключений, квестов и дружелюбного сообщества.",
+    "title": "Место для вашей новости",
+    "text": "Отправляйте новости в Discord канал с новостями игроков. Ссылка на главной странице сайта",
     "date": "01.02.2025",
     "imageClass": "none",
     "newsViewClass": "null",
-    "image": ""
+    "previewImage": "",
+    "serverPreviewImage": new URL('../assets/images/news1.jpg', import.meta.url).href,
   },
   {
     "id": "femc06",
     "server": "pawhera",
     "tags": ['pawhera', 'игроки'],
-    "title": "Тестовая новость сервера Pawhera",
-    "text": "Дорогие игроки! Мы рады сообщить вам о запуске нашего нового Minecraft сервера Celedia! С 1 ноября 2023 года вы сможете погрузиться в уникальную атмосферу, полную приключений, квестов и дружелюбного сообщества.",
+    "title": "Место для вашей новости",
+    "text": "Отправляйте новости в Discord канал с новостями игроков. Ссылка на главной странице сайта",
     "date": "01.02.2025",
     "imageClass": "none",
     "newsViewClass": "null",
-    "image": ""
+    "previewImage": "",
+    "serverPreviewImage": new URL('../assets/images/news1.jpg', import.meta.url).href,
   },
   {
     "id": "femc07",
     "server": "eventus",
     "tags": ['eventus', 'игроки'],
-    "title": "Тестовая новость сервера Eventus",
-    "text": "Дорогие игроки! Мы рады сообщить вам о запуске нашего нового Minecraft сервера Celedia! С 1 ноября 2023 года вы сможете погрузиться в уникальную атмосферу, полную приключений, квестов и дружелюбного сообщества.",
+    "title": "Место для вашей новости",
+    "text": "Отправляйте новости в Discord канал с новостями игроков. Ссылка на главной странице сайта",
     "date": "01.02.2025",
     "imageClass": "none",
     "newsViewClass": "null",
-    "image": ""
+    "previewImage": "",
+    "serverPreviewImage": new URL('../assets/images/news1.jpg', import.meta.url).href,
+  },
+  {
+    "id": "femc08",
+    "server": "celedia",
+    "tags": ['celedia', 'игроки'],
+    "title": "Место для вашей новости",
+    "text": "Отправляйте новости в Discord канал с новостями игроков. Ссылка на главной странице сайта",
+    "date": "03.02.2025",
+    "imageClass": "none",
+    "newsViewClass": "null",
+    "previewImage": "",
+    "serverPreviewImage": new URL('../assets/images/news1.jpg', import.meta.url).href,
   }
 ];
