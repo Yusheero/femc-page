@@ -43,7 +43,7 @@ onUnmounted(() => {
   <div class="news">
     <div ref="sliderRef" class="keen-slider">
       <div class="keen-slider__slide" v-for="(slide, index) in news" :key="index">
-        <div class="news-item">
+        <div :class="['news-item news ' + slide.imageClass]">
           <p class="news-item__title">{{ slide.title }}</p>
           <p class="news-item__text">{{ slide.text }}</p>
           <button class="news-item__button" @click="toRouterPath(slide.id)"><ArrowUpRight :size="24" color="#CCCCCC" /></button>
@@ -119,6 +119,31 @@ onUnmounted(() => {
   align-items: center;
   height: 100%;
   background: var(--color-secondary-bg);
+}
+
+/** Классы для фона новости */
+.news {
+  &__news {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: left;
+  }
+
+  &__news1 {
+    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 10%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news1.jpg');
+  }
+
+  &__news2 {
+    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 10%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news2.jpg');
+  }
+
+  &__news3 {
+    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 10%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news3.jpg');
+  }
+
+  &__news4 {
+    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 10%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news4.jpg');
+  }
 }
 </style>
 

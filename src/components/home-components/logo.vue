@@ -8,7 +8,7 @@ import { Copy } from 'lucide-vue-next';
     <div class="logo__info">
       <div class="logo__ip ip">
         <p class="ip__numbers">femc.space</p>
-        <button class="ip__button"><Copy :size="26" color="#CCCCCC" /></button>
+        <button class="ip__button"><Copy :size="22" color="#CCCCCC" /></button>
       </div>
     </div>
   </div>

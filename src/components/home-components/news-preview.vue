@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Eye } from 'lucide-vue-next';
 import { newsData } from '@/data/news-data';
 import { ref, onMounted, onUnmounted } from "vue";
 import KeenSlider from "keen-slider";
@@ -46,7 +47,7 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
-    <button class="news-preview__button" @click="toRouterPath"><p>Все новости</p></button>
+    <button class="news-preview__button" @click="toRouterPath"><Eye :size="22" color="#CCCCCC" /></button>
   </div>
 </template>
 
@@ -95,16 +96,11 @@ onUnmounted(() => {
     top: 1.5rem;
     right: 1.5rem;
     border: none;
-    border-radius: 0.6rem;
+    border-radius: 50%;
     background: var(--color-ip-bg);
     opacity: 0.8;
+    width: 2.5rem;
     height: 2.5rem;
-    width: 8rem;
-
-    p {
-      font-size: 1rem;
-      color: var(--color-text-primary);
-    }
 
     &:hover {
       background: var(--color-icon-bg);
