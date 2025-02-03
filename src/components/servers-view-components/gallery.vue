@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useKeenSlider } from 'keen-slider/vue'
+import { SquareUserRound } from 'lucide-vue-next';
 
 const props = defineProps({
   pictures: Object
@@ -32,8 +33,10 @@ const [container] = useKeenSlider({
     <div ref="container" class="keen-slider">
       <div v-for="(item, index) in pictures" :key="index" class="keen-slider__slide">
         <div class="gallery__image" :style="{ backgroundImage: `url(${item.image})` }">
-          <p class="gallery__image-author">{{ item.author }}</p>
-          <p class="gallery__image-description">{{ item.description }}</p>
+          <div class="gallery__photo">
+            <SquareUserRound :size="20" color="#CCCCCC" />
+            <p class="gallery__image-author">{{ item.author }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -52,26 +55,34 @@ const [container] = useKeenSlider({
   align-items: flex-start;
 
   &__image {
-    padding: 2rem;
+    border-left: 2px solid var(--color-border);
+    padding: 1rem;
     height: 100%;
     width: 50rem;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 0.25rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  &__photo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: var(--color-secondary-bg);
   }
 
   &__image-author {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-
-  &__image-description {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 600;
   }
 }
 

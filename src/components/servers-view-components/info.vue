@@ -35,8 +35,9 @@ const toRouterPath = () => {
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
+  gap: 1rem;
   padding: 1.5rem;
 
   &__header {

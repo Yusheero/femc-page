@@ -8,6 +8,7 @@ const props = defineProps({
   backgroundClass: String,
   logoClass: String,
   text: String,
+  labels: Array,
   routerPath: String,
 })
 
@@ -19,7 +20,10 @@ const toRouterPath = () => {
 <template>
   <div :class="['server ' + backgroundClass]">
     <div :class="['server__logo ' + logoClass]"></div>
-    <p class="server__text">{{ text }}</p>
+    <div class="server__content">
+      <div class="server__labels"><p v-for="item in labels" class="server__label">{{ item }}</p></div>
+      <p class="server__text">{{ text }}</p>
+    </div> 
     <button class="server__button" @click="toRouterPath"><ArrowRight :size="24" color="#CCCCCC" /></button>
   </div>
 </template>
@@ -36,6 +40,25 @@ const toRouterPath = () => {
   align-items: flex-start;
   padding: 1.5rem;
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__labels {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    background: var(--color-secondary-bg);
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+  }
+
   &__logo {
     background-size: contain;
     background-repeat: no-repeat;
@@ -44,7 +67,7 @@ const toRouterPath = () => {
   }
 
   &__text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
   }
 

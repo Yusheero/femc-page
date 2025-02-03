@@ -4,6 +4,7 @@ import Socials from '@/components/home-components/socials.vue';
 import Logo from '@/components/home-components/logo.vue';
 import Server from '@/components/home-components/server.vue';
 import { serverPreviewData } from '../data/server-preview-data';
+import About from '@/components/home-components/about.vue';
 </script>
 
 <template>
@@ -16,25 +17,30 @@ import { serverPreviewData } from '../data/server-preview-data';
       :backgroundClass="'celedia'"
       :logoClass="'logo__celedia'"
       :routerPath="'/server/celedia'"
+      :labels="['ванилла', 'приват', 'вайп']"
     />
     <Server class="home-view__server-celedia-new" 
       :text="serverPreviewData.celediaOld.text" 
       :backgroundClass="'celedia-old'" 
       :logoClass="'logo__celedia-old'"
-      :routerPath="'/server/celedia-old'" 
+      :routerPath="'/server/celedia-old'"
+      :labels="['ванилла', 'приват']"
     />
     <Server class="home-view__server-pawhera" 
       :text="serverPreviewData.pawhera.text" 
       :backgroundClass="'pawhera'" 
       :logoClass="'logo__pawhera'"
       :routerPath="'/server/pawhera'"
+      :labels="['анархия']"
     />
     <Server class="home-view__server-eventus" 
       :text="serverPreviewData.eventus.text" 
       :backgroundClass="'eventus'" 
       :logoClass="'logo__eventus'"
       :routerPath="'/server/eventus'"
+      :labels="['смена режима']"
     />
+    <About class="home-view__about" />
   </div>
 </template>
 
@@ -46,10 +52,10 @@ import { serverPreviewData } from '../data/server-preview-data';
   grid-template-columns: 3fr 2fr 4fr 3fr;
   grid-template-rows: 2fr 1fr 1fr 2fr;
   grid-template-areas:
-    "logo socials server-celedia server-pawhera"
-    "news news server-celedia server-pawhera"
-    "news news server-celedia-new server-pawhera"
-    "news news server-celedia-new server-eventus";
+    "logo socials server-celedia server-celedia-new"
+    "news news server-celedia server-eventus"
+    "news news server-pawhera server-eventus"
+    "news news server-pawhera about";
   gap: 1.5rem;
   padding: 1.5rem;
   background: var(--color-primary-bg);
@@ -81,6 +87,10 @@ import { serverPreviewData } from '../data/server-preview-data';
 
   &__server-eventus {
     grid-area: server-eventus;
+  }
+
+  &__about {
+    grid-area: about;
   }
 }
 </style>

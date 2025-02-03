@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { DiscordIcon } from 'vue3-simple-icons'
+</script>
 
 <template>
   <div class="socials">
@@ -10,6 +12,10 @@
       <a class="item" href="https://t.me/fareasternmc">
         <div class="item__image"><img class="item__icon" src="@/assets/icons/tg-icon.svg"></div>
         <div class="item__text">FEMC Telegram</div>
+      </a>
+      <a class="item" href="https://discord.gg/BMA2mmaw">
+        <div class="item__image"><DiscordIcon style="fill: white" size="20px"/></div>
+        <div class="item__text">FEMC Discord</div>
       </a>
       <a class="item" href="https://www.youtube.com/@fareastern_mc">
         <div class="item__image"><img class="item__icon" src="@/assets/icons/yt-icon.svg"></div>
@@ -32,7 +38,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0.8rem;
 
   &__header {
