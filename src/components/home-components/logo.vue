@@ -1,5 +1,18 @@
 <script setup lang="ts">
 import { Copy } from 'lucide-vue-next';
+
+function copyInnerHtml() {
+  // Получаем элемент по его id
+  const element = document.getElementById("ip")?.innerHTML;
+
+  // Используем Clipboard API для копирования
+  if (element !== null && element) {
+    navigator.clipboard.writeText(element).then(() => {
+    }).catch(err => {
+      console.error("Не удалось скопировать текст: ", err);
+    });
+  }
+}
 </script>
 
 <template>
@@ -7,8 +20,8 @@ import { Copy } from 'lucide-vue-next';
     <div class="logo__image"></div>
     <div class="logo__info">
       <div class="logo__ip ip">
-        <p class="ip__numbers">femc.space</p>
-        <button class="ip__button"><Copy :size="22" color="#CCCCCC" /></button>
+        <p class="ip__numbers" id="ip">femc.space</p>
+        <button class="ip__button" @click="copyInnerHtml"><Copy :size="22" color="#CCCCCC" /></button>
       </div>
     </div>
   </div>

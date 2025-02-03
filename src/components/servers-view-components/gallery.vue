@@ -30,10 +30,10 @@ const [container] = useKeenSlider({
 <template>
   <div class="gallery">
     <div ref="container" class="keen-slider">
-      <div v-for="(image, index) in pictures" :key="index" class="keen-slider__slide">
-        <div class="gallery__image" :style="{ backgroundImage: `url(${image.image})` }">
-          <p class="gallery__image-author">{{ image.author }}</p>
-          <p class="gallery__image-description">{{ image.description }}</p>
+      <div v-for="(item, index) in pictures" :key="index" class="keen-slider__slide">
+        <div class="gallery__image" :style="{ backgroundImage: `url(${item.image})` }">
+          <p class="gallery__image-author">{{ item.author }}</p>
+          <p class="gallery__image-description">{{ item.description }}</p>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="news-item">
+  <div class="news-item" :style="{ backgroundImage: `url(${data?.newsPreviewImage})` }">
     <div class="news-item__title">{{ data?.title }}</div>
     <div class="news-item__text">{{ data?.text }}</div>
     <button class="news-item__button"><ArrowUpRight :size="24" color="#CCCCCC" /></button>

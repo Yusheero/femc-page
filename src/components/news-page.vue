@@ -21,7 +21,7 @@ const toRouterPath = () => {
 
 <template>
   <div class="page-data">
-    <div class="page-data__content">
+    <div class="page-data__content" :style="{ backgroundImage: `url(${pageData?.newsPreviewImage})` }">
       <p class="page-data__title">{{ pageData?.title }}</p>
       <p class="page-data__text">{{ pageData?.text }}</p>
       <button class="page-data__button" @click="toRouterPath"><X :size="24" color="#CCCCCC" /></button>

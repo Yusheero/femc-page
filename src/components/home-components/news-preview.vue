@@ -38,7 +38,7 @@ onUnmounted(() => {
   <div class="news-preview">
     <div ref="sliderRef" class="keen-slider">
       <div class="keen-slider__slide" v-for="(slide, index) in newsData" :key="index">
-        <div :class="['news-preview__content news__news ' + slide.imageClass]">
+        <div class="news-preview__content news__news" :style="{ backgroundImage: `url(${slide.homePreviewImage})` }">
           <div class="news-preview__tags tags">
             <div v-for="tag in slide.tags" class="tags__item">{{ tag }}</div>
           </div>
@@ -62,6 +62,7 @@ onUnmounted(() => {
     padding: 1.5rem;
     border-radius: 0.8rem;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -134,31 +135,6 @@ onUnmounted(() => {
     background: var(--color-text-primary);
     color: var(--color-icon-bg);
     opacity: 0.6;
-  }
-}
-
-/** Классы для фона новости */
-.news {
-  &__news {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: center;
-  }
-
-  &__news1 {
-    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news1.jpg');
-  }
-
-  &__news2 {
-    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news2.jpg');
-  }
-
-  &__news3 {
-    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news3.jpg');
-  }
-
-  &__news4 {
-    background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url('@/assets/images/news/news4.jpg');
   }
 }
 </style>

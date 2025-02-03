@@ -2,6 +2,7 @@
 import { ArrowLeft } from 'lucide-vue-next';
 import { useRouter } from 'vue-router';
 import { DiscordIcon } from 'vue3-simple-icons'
+import { Book } from 'lucide-vue-next';
 
 const router = useRouter();
 const toRouterPath = () => {
@@ -27,9 +28,13 @@ const toRouterPath = () => {
         <div class="item__image"><img class="item__icon" src="@/assets/icons/vk-icon.svg"></div>
         <div class="item__text">FEMC VK Group</div>
       </a>
-      <a class="item" href="#">
+      <a class="item" href="https://discord.gg/BMA2mmaw">
         <div class="item__image"><DiscordIcon style="fill: white" size="20px"/></div>
         <div class="item__text">FEMC Discord</div>
+      </a>
+      <a class="item" href="#">
+        <div class="item__image"><Book :size="24" color="#CCCCCC" /></div>
+        <div class="item__text">Библиотека</div>
       </a>
     </div>
     <p class="send-news__attention">Для избежания конфликтных ситуаций настоятельно рекомендуем ознакомиться с правилами проекта, а так же с правилами размещения новостей  в базе знаний!</p>
