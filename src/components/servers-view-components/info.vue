@@ -44,7 +44,7 @@ const toRouterPath = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   &__line-break {

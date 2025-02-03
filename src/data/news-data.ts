@@ -8,6 +8,7 @@ type NewsData = {
   date: string;
   imageClass: string;
   newsViewClass: string;
+  image: string;
 };
 
 export const newsData: NewsData[] = [
@@ -20,6 +21,7 @@ export const newsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "news__news1",
     "newsViewClass": "news-view__news1",
+    "image": new URL('../assets/images/news1.jpg', import.meta.url).href,
   },
   {
     "id": "femc02",
@@ -30,6 +32,7 @@ export const newsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "news__news2",
     "newsViewClass": "news-view__news2",
+    "image": new URL('../assets/images/news2.jpg', import.meta.url).href,
   },
   {
     "id": "femc03",
@@ -40,6 +43,7 @@ export const newsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "news__news3",
     "newsViewClass": "news-view__news3",
+    "image": new URL('../assets/images/news3.jpg', import.meta.url).href,
   },
   {
     "id": "femc04",
@@ -50,6 +54,7 @@ export const newsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "news__news4",
     "newsViewClass": "news-view__news4",
+    "image": new URL('../assets/images/news4.jpg', import.meta.url).href,
   },
   {
     "id": "femc05",
@@ -60,6 +65,7 @@ export const newsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "none",
     "newsViewClass": "null",
+    "image": ""
   },
   {
     "id": "femc06",
@@ -70,6 +76,7 @@ export const newsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "none",
     "newsViewClass": "null",
+    "image": ""
   },
   {
     "id": "femc07",
@@ -80,5 +87,6 @@ export const newsData: NewsData[] = [
     "date": "01.02.2025",
     "imageClass": "none",
     "newsViewClass": "null",
+    "image": ""
   }
 ];

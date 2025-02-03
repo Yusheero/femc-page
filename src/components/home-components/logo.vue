@@ -8,7 +8,7 @@ import { Copy } from 'lucide-vue-next';
     <div class="logo__info">
       <div class="logo__ip ip">
         <p class="ip__numbers">femc.space</p>
-        <button class="ip__button"><Copy :size="24" color="#CCCCCC" /></button>
+        <button class="ip__button"><Copy :size="26" color="#CCCCCC" /></button>
       </div>
     </div>
   </div>
@@ -45,7 +45,6 @@ import { Copy } from 'lucide-vue-next';
 
   &__ip {
     width: 100%;
-    padding: 1rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,6 +58,7 @@ import { Copy } from 'lucide-vue-next';
   position: relative;
 
   &__numbers {
+    padding: 1rem;
     font-size: 1.5rem;
     font-weight: 800;
     width: 100%;
@@ -66,21 +66,19 @@ import { Copy } from 'lucide-vue-next';
   }
 
   &__button {
-    border-radius: 0.25rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--color-icon-bg);
-    width: 2.5rem;
-    height: 2.5rem;
     border: none;
-    position: absolute;
-    top: 0.6rem;
-    right: 0.6rem;
+    border-left: 1px solid var(--color-border);
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background: var(--color-ip-bg);
 
     &:hover {
-      background: var(--color-primary-bg);
       cursor: pointer;
+      background: var(--color-border);
     }
   }
 }
