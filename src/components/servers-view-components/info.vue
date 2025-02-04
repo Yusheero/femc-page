@@ -83,25 +83,25 @@ const toRouterPath = () => {
     }
   }
 
-  &__celedia {
+  .celedia {
     background-image: url('@/assets/images/celedia-logo.png');
     background-size: contain;
     filter: drop-shadow(0px 0px 12px rgba(51, 115, 189, 0.8));
   }
 
-  &__celedia-old {
+  .celedia-old {
     background-image: url('@/assets/images/celedia-old-logo.png');
     background-size: contain;
     filter: drop-shadow(0px 0px 12px rgba(59, 93, 167, 0.8));
   }
 
-  &__pawhera {
+  .pawhera {
     background-image: url('@/assets/images/pawhera-logo.png');
     background-size: contain;
     filter: drop-shadow(0px 0px 12px rgba(21, 39, 206, 0.8));
   }
 
-  &__eventus {
+  .eventus {
     background-image: url('@/assets/images/eventus-logo.png');
     background-size: contain;
     filter: drop-shadow(0px 0px 12px rgba(187, 90, 174, 0.8));

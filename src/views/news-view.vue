@@ -4,6 +4,9 @@ import NewsItem from '@/components/news-view-components/news-item.vue';
 import SendNews from '@/components/news-view-components/send-news.vue';
 import { useKeenSlider } from 'keen-slider/vue'
 import { ArrowUpRight } from 'lucide-vue-next';
+import { usePageStore } from "@/store/store";
+import { useRoute } from "vue-router";
+import { useRouter } from 'vue-router';
 
 const [container] = useKeenSlider({ 
   loop: false,
@@ -13,6 +16,16 @@ const [container] = useKeenSlider({
     spacing: 6,
   }
 })
+
+const store = usePageStore();
+const route = useRoute();
+const router = useRouter();
+
+const toRouterPath = (id: any) => {
+  store.setLastRoutePath(route.path);
+  console.log(store.lastRoutePath);
+  router.push({ path: `/news/${id}` })
+}
 </script>
 
 <template>
@@ -26,7 +39,7 @@ const [container] = useKeenSlider({
           <div class="news-view__image" :style="{ backgroundImage: `url(${item.newsPreviewImage})` }">
             <div class="news-view__title">{{ item?.title }}</div>
             <div class="news-view__text">{{ item?.text }}</div>
-            <button class="news-view__button"><ArrowUpRight :size="24" color="#CCCCCC" /></button>
+            <button @click="toRouterPath(item.id)" class="news-view__button"><ArrowUpRight :size="24" color="#CCCCCC" /></button>
           </div>
         </div>
       </div>
