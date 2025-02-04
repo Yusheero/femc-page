@@ -18,18 +18,18 @@ const toRouterPath = () => {
 </script>
 
 <template>
-  <div :class="['server ' + backgroundClass]">
-    <div :class="['server__logo ' + logoClass]"></div>
-    <div class="server__content">
-      <div class="server__labels"><p v-for="item in labels" class="server__label">{{ item }}</p></div>
-      <p class="server__text">{{ text }}</p>
+  <div :class="['server-mobile ' + backgroundClass]">
+    <div :class="['server-mobile__logo ' + logoClass]"></div>
+    <div class="server-mobile__content">
+      <div class="server-mobile__labels"><p v-for="item in labels" class="server-mobile__label">{{ item }}</p></div>
+      <p class="server-mobile__text">{{ text }}</p>
     </div> 
-    <button class="server__button" @click="toRouterPath"><ArrowRight :size="24" color="#CCCCCC" /></button>
+    <button class="server-mobile__button" @click="toRouterPath"><ArrowRight :size="24" color="#CCCCCC" /></button>
   </div>
 </template>
 
 <style scoped lang="scss">
-.server {
+.server-mobile {
   position: relative;
   background: var(--color-secondary-bg);
   border: 2px solid var(--color-border);
@@ -39,6 +39,7 @@ const toRouterPath = () => {
   justify-content: space-between;
   align-items: flex-start;
   padding: 1.5rem;
+  height: 20rem;
 
   &__content {
     display: flex;
@@ -67,7 +68,7 @@ const toRouterPath = () => {
   }
 
   &__text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 400;
   }
 

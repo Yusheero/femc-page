@@ -68,6 +68,7 @@ onUnmounted(() => {
     justify-content: flex-end;
     align-items: flex-start;
     gap: 1rem;
+    background-size: cover;
   }
 
   &__tags {

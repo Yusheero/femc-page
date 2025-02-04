@@ -75,6 +75,7 @@ onUnmounted(() => {
   align-items: flex-start;
   gap: 0.5rem;
   padding: 1.5rem;
+  background-size: cover;
 
   &__title {
     font-size: 1.25rem;

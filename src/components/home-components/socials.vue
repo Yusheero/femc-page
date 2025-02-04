@@ -40,6 +40,7 @@ import { DiscordIcon } from 'vue3-simple-icons'
   align-items: center;
   gap: 1rem;
   padding: 0.8rem;
+  width: 100%;
 
   &__header {
     width: 100%;

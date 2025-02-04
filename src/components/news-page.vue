@@ -48,7 +48,7 @@ const toRouterPath = () => {
     position: relative;
     width: 100%;
     height: 100%;
-    background: var(--color-secondary-bg);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

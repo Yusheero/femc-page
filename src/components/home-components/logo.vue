@@ -38,6 +38,7 @@ function copyInnerHtml() {
   justify-content: flex-end;
   align-items: center;
   gap: 2.8rem;
+  width: 100%;
 
   &__image {
     width: 18.75rem;
