@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import NewsPreview from '@/components/home-components/news-preview.vue';
 import Socials from '@/components/home-components/socials.vue';
 import Logo from '@/components/home-components/logo.vue';
 import { serverPreviewData } from '../data/server-preview-data';
-import About from '@/components/home-components/about.vue';
 import serverMobile from '@/components/home-components/server-mobile.vue';
 </script>
 
