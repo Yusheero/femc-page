@@ -67,7 +67,7 @@ onUnmounted(() => {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.5rem;
     background-size: cover;
   }
 
@@ -80,7 +80,7 @@ onUnmounted(() => {
   }
 
   &__title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
   }
 

@@ -1,8 +1,7 @@
 <script setup lang="ts">
+/** Компонент сервера в HomeView */
 import { ArrowRight } from 'lucide-vue-next';
 import { useRouter } from 'vue-router';
-
-const router = useRouter();
 
 const props = defineProps({
   backgroundClass: String,
@@ -12,6 +11,9 @@ const props = defineProps({
   routerPath: String,
 })
 
+const router = useRouter();
+
+/** Обработчик клика на кнопку */
 const toRouterPath = () => {
   router.push({ path: props.routerPath })
 }
@@ -67,8 +69,8 @@ const toRouterPath = () => {
   }
 
   &__text {
-    font-size: 0.9rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 300;
   }
 
   &__button {

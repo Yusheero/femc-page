@@ -34,7 +34,7 @@ const [container] = useKeenSlider({
       <div v-for="(item, index) in pictures" :key="index" class="keen-slider__slide">
         <div class="gallery__image" :style="{ backgroundImage: `url(${item.image})` }">
           <div class="gallery__photo">
-            <div class="gallery__photo-icon"><SquareUserRound :size="22" color="#CCCCCC" /></div>
+            <div class="gallery__photo-icon"><SquareUserRound :size="18" color="#CCCCCC" /></div>
             <p class="gallery__image-author">{{ item.author }}</p>
           </div>
         </div>
@@ -84,13 +84,13 @@ const [container] = useKeenSlider({
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 3rem;
+    width: 2rem;
   }
 
   &__image-author {
-    padding: 1rem;
+    padding: 0.5rem;
     border-left: 2px solid var(--color-border);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
   }
 }
