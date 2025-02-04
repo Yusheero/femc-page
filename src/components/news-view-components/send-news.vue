@@ -2,7 +2,6 @@
 import { ArrowLeft } from 'lucide-vue-next';
 import { useRouter } from 'vue-router';
 import { DiscordIcon } from 'vue3-simple-icons'
-import { Book } from 'lucide-vue-next';
 
 const router = useRouter();
 const toRouterPath = () => {
@@ -15,26 +14,13 @@ const toRouterPath = () => {
     <div class="send-news__header">
       <button class="send-news__button" @click="toRouterPath"><ArrowLeft :size="24" color="#CCCCCC" /></button>
       <div class="send-news__text">
-        <p class="send-news__title">Написать свою новость</p>
-        <p class="send-news__title">вы можете на любом из наших ресурсов!</p>
+        <p class="send-news__title">Вы можете отправить новость через наш Discord канал, в новостной форум</p>
       </div> 
     </div>    
     <div class="send-news__content">
-      <a class="item" href="https://t.me/fareasternmc">
-        <div class="item__image"><img class="item__icon" src="@/assets/icons/tg-icon.svg"></div>
-        <div class="item__text">FEMC Telegram</div>
-      </a>
-      <a class="item" href="https://vk.com/fareasternmc">
-        <div class="item__image"><img class="item__icon" src="@/assets/icons/vk-icon.svg"></div>
-        <div class="item__text">FEMC VK Group</div>
-      </a>
       <a class="item" href="https://discord.gg/BMA2mmaw">
         <div class="item__image"><DiscordIcon style="fill: white" size="20px"/></div>
         <div class="item__text">FEMC Discord</div>
-      </a>
-      <a class="item" href="#">
-        <div class="item__image"><Book :size="24" color="#CCCCCC" /></div>
-        <div class="item__text">Библиотека</div>
       </a>
     </div>
     <p class="send-news__attention">Для избежания конфликтных ситуаций настоятельно рекомендуем ознакомиться с правилами проекта, а так же с правилами размещения новостей  в базе знаний!</p>
@@ -73,8 +59,9 @@ const toRouterPath = () => {
   &__content {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 3rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 0.5rem;
   }
 

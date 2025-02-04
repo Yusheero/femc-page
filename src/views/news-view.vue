@@ -2,14 +2,33 @@
 import { newsData } from '@/data/news-data';
 import NewsItem from '@/components/news-view-components/news-item.vue';
 import SendNews from '@/components/news-view-components/send-news.vue';
+import { useKeenSlider } from 'keen-slider/vue'
+import { ArrowUpRight } from 'lucide-vue-next';
 
-const Data = newsData.filter((item) => item.newsViewClass !== "null");
+const [container] = useKeenSlider({ 
+  loop: false,
+  initial: 0,
+  slides: {
+    perView: 2,
+    spacing: 6,
+  }
+})
 </script>
 
 <template>
   <div class="news-view">
     <SendNews class="news-view__send-news" />
-    <NewsItem v-for="page in Data" :class="[page.newsViewClass]" :data="page" />
+    <NewsItem class="news-view__news1" :data="newsData[0]" />
+
+    <div class="news-view__slider">
+      <div ref="container" class="keen-slider">
+        <div v-for="(item, index) in newsData" :key="index" class="keen-slider__slide">
+          <div class="news-view__image" :style="{ backgroundImage: `url(${item.newsPreviewImage})` }">
+            <button class="news-view__button"><ArrowUpRight :size="24" color="#CCCCCC" /></button>
+          </div>
+        </div>
+      </div>
+    </div> 
   </div>
 </template>
 
@@ -18,12 +37,12 @@ const Data = newsData.filter((item) => item.newsViewClass !== "null");
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 5fr 4fr 3fr;
+  grid-template-columns: 4fr 5fr 3fr;
   grid-template-rows: 2fr 2fr 2fr;
   grid-template-areas:
-    "send-news news2 news3"
-    "news1 news2 news3"
-    "news1 news2 news4";
+    "send-news slider slider"
+    "news1 slider slider"
+    "news1 slider slider";
   gap: 1.5rem;
   padding: 1.5rem;
   background: var(--color-primary-bg);
@@ -33,20 +52,60 @@ const Data = newsData.filter((item) => item.newsViewClass !== "null");
     grid-area: news1;
   }
 
-  &__news2 {
-    grid-area: news2;
-  }
-
-  &__news3 {
-    grid-area: news3;
-  }
-
-  &__news4 {
-    grid-area: news4;
-  }
-
   &__send-news {
     grid-area: send-news;
   }
+
+  &__slider {
+    grid-area: slider;
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: var(--color-secondary-bg);
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-ip-bg);
+    opacity: 0.8;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    &:hover {
+      background: var(--color-icon-bg);
+      cursor: pointer;
+    }
+  }
+}
+
+.keen-slider {
+  border-radius: 0.8rem;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.keen-slider__slide {
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 </style>
