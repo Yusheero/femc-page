@@ -10,6 +10,7 @@ type NewsData = {
   homePreviewImage: string;
   serverPreviewImage: string;
   newsPreviewImage: string;
+  portraitImage: string;
 };
 
 export const newsData: NewsData[] = [
@@ -24,6 +25,7 @@ export const newsData: NewsData[] = [
     "homePreviewImage": new URL('../assets/images/news/news1-middle.jpg', import.meta.url).href,
     "serverPreviewImage": new URL('../assets/images/news/news1-small.jpg', import.meta.url).href,
     "newsPreviewImage": new URL('../assets/images/news/news1-big.jpg', import.meta.url).href,
+    "portraitImage": new URL('../assets/images/news/news1-portrait.jpg', import.meta.url).href,
   },
   {
     "id": "femc02",
@@ -36,6 +38,7 @@ export const newsData: NewsData[] = [
     "homePreviewImage": new URL('../assets/images/news/news2-middle.jpg', import.meta.url).href,
     "serverPreviewImage": new URL('../assets/images/news/news2-small.jpg', import.meta.url).href,
     "newsPreviewImage": new URL('../assets/images/news/news2-big.jpg', import.meta.url).href,
+    "portraitImage": new URL('../assets/images/news/news2-portrait.jpg', import.meta.url).href,
   },
   {
     "id": "femc03",
@@ -48,6 +51,7 @@ export const newsData: NewsData[] = [
     "homePreviewImage": new URL('../assets/images/news/plug-middle.jpg', import.meta.url).href,
     "serverPreviewImage": new URL('../assets/images/news/plug-small.jpg', import.meta.url).href,
     "newsPreviewImage": new URL('../assets/images/news/plug-big.jpg', import.meta.url).href,
+    "portraitImage": new URL('../assets/images/news/plug-portrait.jpg', import.meta.url).href,
   },
   {
     "id": "femc04",
@@ -60,6 +64,7 @@ export const newsData: NewsData[] = [
     "homePreviewImage": new URL('../assets/images/news/plug-middle.jpg', import.meta.url).href,
     "serverPreviewImage": new URL('../assets/images/news/plug-small.jpg', import.meta.url).href,
     "newsPreviewImage": new URL('../assets/images/news/plug-big.jpg', import.meta.url).href,
+    "portraitImage": new URL('../assets/images/news/plug-portrait.jpg', import.meta.url).href,
   },
   {
     "id": "femc05",
@@ -72,6 +77,7 @@ export const newsData: NewsData[] = [
     "homePreviewImage": new URL('../assets/images/news/plug-middle.jpg', import.meta.url).href,
     "serverPreviewImage": new URL('../assets/images/news/plug-small.jpg', import.meta.url).href,
     "newsPreviewImage": new URL('../assets/images/news/plug-big.jpg', import.meta.url).href,
+    "portraitImage": new URL('../assets/images/news/plug-portrait.jpg', import.meta.url).href,
   },
   {
     "id": "femc06",
@@ -84,5 +90,6 @@ export const newsData: NewsData[] = [
     "homePreviewImage": new URL('../assets/images/news/plug-middle.jpg', import.meta.url).href,
     "serverPreviewImage": new URL('../assets/images/news/plug-small.jpg', import.meta.url).href,
     "newsPreviewImage": new URL('../assets/images/news/plug-big.jpg', import.meta.url).href,
+    "portraitImage": new URL('../assets/images/news/plug-portrait.jpg', import.meta.url).href,
   },
 ];

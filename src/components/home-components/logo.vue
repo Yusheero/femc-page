@@ -2,12 +2,22 @@
 import { Copy } from 'lucide-vue-next';
 
 function copyInnerHtml() {
-  // Получаем элемент по его id
-  const element = document.getElementById("ip")?.innerHTML;
+  const textDiv = document.getElementById('ip');
+  const textToCopy = textDiv?.innerText;
 
   // Используем Clipboard API для копирования
-  if (element !== null && element) {
-    navigator.clipboard.writeText(element).then(() => {
+  if (textDiv !== null && textToCopy) {
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      // Сохраняем оригинальный текст
+      const originalText = textDiv.innerText;
+
+      // Показываем сообщение "Скопировано"
+      textDiv.innerText = "Скопировано";
+
+      // Через 2 секунды возвращаем оригинальный текст
+      setTimeout(() => {
+        textDiv.innerText = originalText;
+      }, 3000);
     }).catch(err => {
       console.error("Не удалось скопировать текст: ", err);
     });
@@ -89,7 +99,7 @@ function copyInnerHtml() {
 
   &__numbers {
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 800;
     width: 100%;
     text-align: center;

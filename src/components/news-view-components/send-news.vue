@@ -13,14 +13,16 @@ const toRouterPath = () => {
   <div class="send-news">
     <div class="send-news__header">
       <button class="send-news__button" @click="toRouterPath"><ArrowLeft :size="24" color="#CCCCCC" /></button>
-      <div class="send-news__text">
-        <p class="send-news__title">Вы можете отправить новость через наш Discord канал, в новостной форум</p>
-      </div> 
+      <p class="send-news__title">Вы можете отправить новость через наш Discord канал, в новостной форум или через сообщения в группе VK</p> 
     </div>    
     <div class="send-news__content">
       <a class="item" href="https://discord.gg/BMA2mmaw">
         <div class="item__image"><DiscordIcon style="fill: white" size="20px"/></div>
         <div class="item__text">FEMC Discord</div>
+      </a>
+      <a class="item" href="https://vk.com/fareasternmc">
+        <div class="item__image"><img class="item__icon" src="@/assets/icons/vk-icon.svg"></div>
+        <div class="item__text">FEMC VK Group</div>
       </a>
     </div>
     <p class="send-news__attention">Для избежания конфликтных ситуаций настоятельно рекомендуем ознакомиться с правилами проекта, а так же с правилами размещения новостей  в базе знаний!</p>
@@ -40,20 +42,19 @@ const toRouterPath = () => {
   align-items: center;
   gap: 1rem;
 
+  &__title {
+    text-align: center;
+    font-size: 1rem;
+    width: 80%;
+  }
+
   &__header {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    height: 100%;
-  }
-
-  &__text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.3rem;
+    height: 40%;
   }
 
   &__content {

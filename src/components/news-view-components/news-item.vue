@@ -1,16 +1,29 @@
 <script setup lang="ts">
 import { ArrowUpRight } from 'lucide-vue-next';
+import { usePageStore } from "@/store/store";
+import { useRoute } from "vue-router";
+import { useRouter } from 'vue-router';
 
 defineProps({
   data: Object
 })
+
+const store = usePageStore();
+const route = useRoute();
+const router = useRouter();
+
+const toRouterPath = (id: any) => {
+  store.setLastRoutePath(route.path);
+  console.log(store.lastRoutePath);
+  router.push({ path: `/news/${id}` })
+}
 </script>
 
 <template>
-  <div class="news-item" :style="{ backgroundImage: `linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url(${data?.newsPreviewImage})` }">
+  <div class="news-item" :style="{ backgroundImage: `linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%), url(${data?.homePreviewImage})` }">
     <div class="news-item__title">{{ data?.title }}</div>
     <div class="news-item__text">{{ data?.text }}</div>
-    <button class="news-item__button"><ArrowUpRight :size="24" color="#CCCCCC" /></button>
+    <button @click="toRouterPath(data?.id)" class="news-item__button"><ArrowUpRight :size="24" color="#CCCCCC" /></button>
   </div>
 </template>
 

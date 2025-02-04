@@ -36,7 +36,7 @@ const toRouterPath = (id: any) => {
     <div class="news-view__slider">
       <div ref="container" class="keen-slider">
         <div v-for="(item, index) in newsData" :key="index" class="keen-slider__slide">
-          <div class="news-view__image" :style="{ backgroundImage: `url(${item.newsPreviewImage})` }">
+          <div class="news-view__image" :style="{ backgroundImage: `url(${item.portraitImage})` }">
             <div class="news-view__title">{{ item?.title }}</div>
             <div class="news-view__text">{{ item?.text }}</div>
             <button @click="toRouterPath(item.id)" class="news-view__button"><ArrowUpRight :size="24" color="#CCCCCC" /></button>
