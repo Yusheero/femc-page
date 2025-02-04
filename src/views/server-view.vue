@@ -7,7 +7,10 @@ import Info from '../components/servers-view-components/info.vue';
 import { ServersData } from '@/data/servers-info-data';
 import { newsData } from '@/data/news-data';
 import { imagesData } from '@/data/images';
+import serverViewMobile from './server-view-mobile.vue';
+import { usePageStore } from '@/store/store';
 
+const store = usePageStore();
 const routeId = useRoute().params.id;
 const serverData = ref();
 const serverNews = ref();
@@ -16,12 +19,11 @@ const serverPictures = ref();
 serverData.value = ServersData.find(s => s.id === routeId);
 serverNews.value = newsData.filter((item) => item.server === routeId)
 serverPictures.value = imagesData.find((item) => item.server === routeId)
-console.log(serverPictures.value);
-
 </script>
 
 <template>
-  <div class="server-view">
+  <serverViewMobile v-if="store.isMobile" />
+  <div v-else class="server-view">
     <Info class="server-view__info" :data="serverData" />
     <Gallery class="server-view__gallery" :pictures="serverPictures" />
     <News class="server-view__news" :news="serverNews" />

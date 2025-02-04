@@ -20,6 +20,7 @@ function copyInnerHtml() {
     <div class="logo__image"></div>
     <div class="logo__info">
       <div class="logo__ip ip">
+        <div class="logo__version">1.21.3</div>
         <p class="ip__numbers" id="ip">femc.space</p>
         <button class="ip__button" @click="copyInnerHtml"><Copy :size="22" color="#CCCCCC" /></button>
       </div>
@@ -55,6 +56,18 @@ function copyInnerHtml() {
     justify-content: center;
     align-items: center;
     gap: 0.75rem;
+  }
+
+  &__version {
+    // width: 100%;
+    height: 100%;
+    background: var(--color-ip-bg);
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border-right: 1px solid var(--color-border);
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
 
   &__ip {
