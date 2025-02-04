@@ -13,7 +13,7 @@ const store = usePageStore()
 
 <template>
   <HomeViewMobile v-if="store.isMobile" />
-  <div v-if="false" class="home-view">
+  <div v-else class="home-view">
     <Logo class="home-view__logo" />
     <NewsPreview class="home-view__news" />
     <Socials class="home-view__socials" />
