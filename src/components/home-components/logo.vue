@@ -59,6 +59,9 @@ function copyInnerHtml() {
   }
 
   &__version {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     // width: 100%;
     height: 100%;
     background: var(--color-ip-bg);

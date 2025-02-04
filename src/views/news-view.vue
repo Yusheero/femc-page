@@ -24,6 +24,8 @@ const [container] = useKeenSlider({
       <div ref="container" class="keen-slider">
         <div v-for="(item, index) in newsData" :key="index" class="keen-slider__slide">
           <div class="news-view__image" :style="{ backgroundImage: `url(${item.newsPreviewImage})` }">
+            <div class="news-view__title">{{ item?.title }}</div>
+            <div class="news-view__text">{{ item?.text }}</div>
             <button class="news-view__button"><ArrowUpRight :size="24" color="#CCCCCC" /></button>
           </div>
         </div>
@@ -67,9 +69,25 @@ const [container] = useKeenSlider({
   }
 
   &__image {
+    padding: 1.5rem;
     position: relative;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
   }
 
   &__button {
