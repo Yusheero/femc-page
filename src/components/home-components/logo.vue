@@ -123,4 +123,11 @@ function copyInnerHtml() {
     }
   }
 }
+
+@media (max-width: 920px) {
+  .logo {
+    height: 250px;
+    gap: 2.3rem;
+  }
+}
 </style>
