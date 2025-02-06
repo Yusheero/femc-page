@@ -72,10 +72,9 @@ function copyInnerHtml() {
     display: flex;
     justify-content: center;
     align-items: center;
-    // width: 100%;
+    width: 35%;
     height: 100%;
     background: var(--color-ip-bg);
-    padding: 1rem;
     font-size: 1.2rem;
     font-weight: 800;
     border-right: 1px solid var(--color-border);
@@ -84,9 +83,10 @@ function copyInnerHtml() {
   }
 
   &__ip {
+    height: 4rem;
     width: 100%;
     display: flex;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     justify-content: space-between;
     align-items: center;
     color: var(--color-text-secondary);
@@ -100,13 +100,14 @@ function copyInnerHtml() {
 
   &__numbers {
     padding: 1rem;
-    font-weight: 800;
+    font-weight: 700;
     width: 100%;
     text-align: center;
   }
 
   &__button {
-    padding: 1rem;
+    width: 22%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
