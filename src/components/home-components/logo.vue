@@ -48,12 +48,12 @@ function copyInnerHtml() {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 2.8rem;
+  gap: 4rem;
   width: 100%;
 
   &__image {
-    width: 18.75rem;
-    height: 6.469rem;
+    width: 15.75rem;
+    height: 5.469rem;
     background-image: url('@/assets/images/main-logo.png');
     background-size: contain;
     filter: drop-shadow(0px 0px 28px rgba(255, 255, 255, 0.8));
