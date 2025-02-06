@@ -54,8 +54,8 @@ const toRouterPath = () => {
   }
 
   &__logo {
-    width: 250px;
-    height: 45px;
+    width: 200px;
+    height: 36px;
     background-repeat: no-repeat;
   }
 
