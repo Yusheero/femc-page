@@ -72,7 +72,7 @@ function copyInnerHtml() {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35%;
+    width: 40%;
     height: 100%;
     background: var(--color-ip-bg);
     font-size: 1.2rem;
@@ -106,7 +106,7 @@ function copyInnerHtml() {
   }
 
   &__button {
-    width: 22%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;

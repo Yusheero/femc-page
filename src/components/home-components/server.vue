@@ -55,6 +55,7 @@ const toRouterPath = () => {
   }
 
   &__label {
+    pointer-events: none;
     background: var(--color-secondary-bg);
     padding: 0.3rem 0.5rem;
     font-size: 1rem;
