@@ -26,4 +26,4 @@ jobs:
         ssh -o ConnectTimeout=30 ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} << 'EOF'
         cd /mnt/servers/docker/nginx/femc-page-gh-pages/femc-page
         git pull origin gh-pages
-        docker restart femc-nginx
+        docker restart nginx-femc
