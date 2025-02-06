@@ -63,8 +63,8 @@ const toRouterPath = () => {
   &__logo {
     background-size: contain;
     background-repeat: no-repeat;
-    width: 314px;
-    height: 3rem;
+    width: 250px;
+    height: 2.5rem;
   }
 
   &__text {
