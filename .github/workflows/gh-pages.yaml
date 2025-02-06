@@ -32,3 +32,19 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+
+      # Настройка SSH
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      # Выполнение команд на хосте
+      - name: Deploy to server
+        run: |
+          ssh -o ConnectTimeout=30 ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} << 'EOF'
+          cd /mnt/servers/docker/nginx/femc-page-gh-pages/femc-page
+          git pull origin gh-pages
+          docker restart nginx-femc
