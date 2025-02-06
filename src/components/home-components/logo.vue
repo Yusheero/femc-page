@@ -40,7 +40,7 @@ function copyInnerHtml() {
 
 <style scoped lang="scss">
 .logo {
-  padding: 1.5rem;
+  padding: 0.8rem;
   background: var(--color-secondary-bg);
   border: 2px solid var(--color-border);
   border-radius: 1rem;
@@ -48,7 +48,7 @@ function copyInnerHtml() {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 4rem;
+  gap: 4.5rem;
   width: 100%;
 
   &__image {
@@ -76,7 +76,7 @@ function copyInnerHtml() {
     height: 100%;
     background: var(--color-ip-bg);
     padding: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 800;
     border-right: 1px solid var(--color-border);
     border-top-left-radius: 0.5rem;
@@ -86,6 +86,7 @@ function copyInnerHtml() {
   &__ip {
     width: 100%;
     display: flex;
+    font-size: 1.6rem;
     justify-content: space-between;
     align-items: center;
     color: var(--color-text-secondary);
@@ -99,7 +100,6 @@ function copyInnerHtml() {
 
   &__numbers {
     padding: 1rem;
-    font-size: 1.2rem;
     font-weight: 800;
     width: 100%;
     text-align: center;

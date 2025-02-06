@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DiscordIcon } from 'vue3-simple-icons'
+import { DiscordIcon, TelegramIcon, VkIcon, YouTubeIcon } from 'vue3-simple-icons'
 </script>
 
 <template>
@@ -10,19 +10,19 @@ import { DiscordIcon } from 'vue3-simple-icons'
     </div>
     <div class="socials__buttons">
       <a class="item" href="https://t.me/fareasternmc">
-        <div class="item__image"><img class="item__icon" src="@/assets/icons/tg-icon.svg"></div>
+        <div class="item__image"><TelegramIcon style="fill: #24A1DE" size="20px"/></div>
         <div class="item__text">FEMC Telegram</div>
       </a>
       <a class="item" href="https://discord.gg/BMA2mmaw">
-        <div class="item__image"><DiscordIcon style="fill: white" size="20px"/></div>
+        <div class="item__image"><DiscordIcon style="fill: #7289da" size="20px"/></div>
         <div class="item__text">FEMC Discord</div>
       </a>
       <a class="item" href="https://www.youtube.com/@fareastern_mc">
-        <div class="item__image"><img class="item__icon" src="@/assets/icons/yt-icon.svg"></div>
+        <div class="item__image"><YouTubeIcon style="fill: #c4302b" size="20px"/></div>
         <div class="item__text">FEMC Youtube</div>
       </a>
       <a class="item" href="https://vk.com/fareasternmc">
-        <div class="item__image"><img class="item__icon" src="@/assets/icons/vk-icon.svg"></div>
+        <div class="item__image"><VkIcon style="fill: #4C75A3" size="20px"/></div>
         <div class="item__text">FEMC VK Group</div>
       </a>
     </div>

@@ -58,8 +58,8 @@ const toRouterPath = (id: any) => {
     "send-news slider slider"
     "news1 slider slider"
     "news1 slider slider";
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: 0.8rem;
+  padding: 0.8rem;
   background: var(--color-primary-bg);
   color: var(--color-text-primary);
 

@@ -40,8 +40,8 @@ serverPictures.value = imagesData.find((item) => item.server === routeId)
   grid-template-areas:
     "info gallery gallery gallery gallery"
     "news news news news news";
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: 0.8rem;
+  padding: 0.8rem;
   background: var(--color-primary-bg);
   color: var(--color-text-primary);
 

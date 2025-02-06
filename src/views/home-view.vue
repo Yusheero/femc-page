@@ -61,8 +61,8 @@ const store = usePageStore()
     "news news server-celedia server-eventus"
     "news news server-pawhera server-eventus"
     "news news server-pawhera about";
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: 0.8rem;
+  padding: 0.8rem;
   background: var(--color-primary-bg);
   color: var(--color-text-primary);
 
