@@ -74,7 +74,7 @@ const toRouterPath = () => {
     pointer-events: none;
     background: var(--color-secondary-bg);
     padding: 0.3rem 0.5rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     border-radius: 0.25rem;
   }
 
@@ -86,7 +86,7 @@ const toRouterPath = () => {
   }
 
   &__text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 300;
   }
 
@@ -113,28 +113,28 @@ const toRouterPath = () => {
 
 .online {
   background: var(--color-text-secondary);
-  padding: 0.3rem 0.5rem;
   border-radius: 0.25rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
-  width: 3rem;
+  width: 2.5rem;
+  height: 1.3rem;
 
   &__icon {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     background-color: green;
     border-radius: 50%;
     animation: blink 0.8s infinite;
   }
 
   &__text {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--color-primary-bg);
-    line-height: 1;
+    line-height: 0.8;
   }
 
   @keyframes blink {

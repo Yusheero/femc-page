@@ -3,35 +3,37 @@ import Socials from '@/components/home-components/socials.vue';
 import Logo from '@/components/home-components/logo.vue';
 import { serverPreviewData } from '../data/server-preview-data';
 import serverMobile from '@/components/home-components/server-mobile.vue';
+import Navigation from '@/components/home-components/navigation.vue';
 </script>
 
 <template>
   <div class="home-view-mobile">
     <Logo class="home-view-mobile__logo" />
     <!-- <NewsPreview class="home-view__news" /> -->
-    <Socials class="home-view__socials" />
-    <serverMobile class="home-view__server-celedia"
+    <Socials class="home-view-mobile__socials" />
+    <Navigation class="home-view-mobile__navigation" />
+    <serverMobile class="home-view-mobile__server-celedia"
       :text="serverPreviewData.celedia.text"
       :backgroundClass="'celedia'"
       :logoClass="'logo__celedia'"
       :routerPath="'/server/celedia'"
       :labels="['ванилла', 'приват', 'вайп']"
     />
-    <serverMobile class="home-view__server-celedia-new" 
+    <serverMobile class="home-view-mobile__server-celedia-new" 
       :text="serverPreviewData.celediaOld.text" 
       :backgroundClass="'celedia-old'" 
       :logoClass="'logo__celedia-old'"
       :routerPath="'/server/celedia-old'"
       :labels="['ванилла', 'приват']"
     />
-    <serverMobile class="home-view__server-pawhera" 
+    <serverMobile class="home-view-mobile__server-pawhera" 
       :text="serverPreviewData.pawhera.text" 
       :backgroundClass="'pawhera'" 
       :logoClass="'logo__pawhera'"
       :routerPath="'/server/pawhera'"
       :labels="['анархия']"
     />
-    <serverMobile class="home-view__server-eventus" 
+    <serverMobile class="home-view-mobile__server-eventus" 
       :text="serverPreviewData.eventus.text" 
       :backgroundClass="'eventus'" 
       :logoClass="'logo__eventus'"

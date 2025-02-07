@@ -4,7 +4,7 @@ import Socials from '@/components/home-components/socials.vue';
 import Logo from '@/components/home-components/logo.vue';
 import Server from '@/components/home-components/server.vue';
 import { serverPreviewData } from '../data/server-preview-data';
-import About from '@/components/home-components/about.vue';
+import Navigation from '@/components/home-components/navigation.vue';
 import HomeViewMobile from './home-view-mobile.vue';
 import { usePageStore } from '@/store/store';
 
@@ -45,7 +45,7 @@ const store = usePageStore()
       :routerPath="'/server/eventus'"
       :labels="['смена режима']"
     />
-    <About class="home-view__about" />
+    <Navigation class="home-view__navigation" />
   </div>
 </template>
 
@@ -58,9 +58,9 @@ const store = usePageStore()
   grid-template-rows: 2fr 1fr 1fr 2fr;
   grid-template-areas:
     "logo socials server-celedia server-celedia-new"
-    "news news server-celedia server-eventus"
+    "news news server-celedia navigation"
     "news news server-pawhera server-eventus"
-    "news news server-pawhera about";
+    "news news server-pawhera server-eventus";
   gap: 0.8rem;
   padding: 0.8rem;
   background: var(--color-primary-bg);
@@ -94,8 +94,8 @@ const store = usePageStore()
     grid-area: server-eventus;
   }
 
-  &__about {
-    grid-area: about;
+  &__navigation {
+    grid-area: navigation;
   }
 }
 </style>

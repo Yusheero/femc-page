@@ -23,7 +23,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.5rem;
   width: 100%;
 
   &__players {
@@ -51,7 +50,7 @@
   &__item {
     width: 100%;
     height: 2.5rem;
-    background: var(--color-border);
+    background: var(--color-ip-bg);
     padding: 1rem;
     display: flex;
     flex-direction: column;
