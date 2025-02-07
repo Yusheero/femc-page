@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ArrowRight } from 'lucide-vue-next';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+const online = ref(1);
 
 const props = defineProps({
   backgroundClass: String,
@@ -21,6 +23,10 @@ const toRouterPath = () => {
   <div :class="['server-mobile ' + backgroundClass]">
     <div :class="['server-mobile__logo ' + logoClass]"></div>
     <div class="server-mobile__content">
+      <div class="online">
+        <div class="online__icon"></div>
+        <div class="online__text">{{ online }}</div>
+      </div>
       <div class="server-mobile__labels"><p v-for="item in labels" class="server-mobile__label">{{ item }}</p></div>
       <p class="server-mobile__text">{{ text }}</p>
     </div> 
@@ -56,15 +62,15 @@ const toRouterPath = () => {
   &__label {
     background: var(--color-secondary-bg);
     padding: 0.3rem 0.5rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     border-radius: 0.25rem;
   }
 
   &__logo {
     background-size: contain;
     background-repeat: no-repeat;
-    width: 250px;
-    height: 2.5rem;
+    width: 230px;
+    height: 2.1rem;
   }
 
   &__text {
@@ -89,6 +95,41 @@ const toRouterPath = () => {
     &:hover {
       background: var(--color-icon-bg);
       cursor: pointer;
+    }
+  }
+}
+
+.online {
+  width: 3rem;
+  background: var(--color-text-secondary);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  &__icon {
+    width: 12px;
+    height: 12px;
+    background-color: rgb(0, 114, 0);
+    border-radius: 50%;
+    animation: blink 0.8s infinite;
+  }
+
+  &__text {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary-bg);
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
     }
   }
 }

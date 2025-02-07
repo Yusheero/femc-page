@@ -1,7 +1,11 @@
 <script setup lang="ts">
 /** Компонент сервера в HomeView */
 import { ArrowRight } from 'lucide-vue-next';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const online = ref(1);
 
 const props = defineProps({
   backgroundClass: String,
@@ -11,8 +15,6 @@ const props = defineProps({
   routerPath: String,
 })
 
-const router = useRouter();
-
 /** Обработчик клика на кнопку */
 const toRouterPath = () => {
   router.push({ path: props.routerPath })
@@ -21,8 +23,14 @@ const toRouterPath = () => {
 
 <template>
   <div :class="['server ' + backgroundClass]">
-    <div :class="['server__logo ' + logoClass]"></div>
+    <div class="server__header">
+      <div :class="['server__logo ' + logoClass]"></div>
+    </div> 
     <div class="server__content">
+      <div class="online">
+        <div class="online__icon"></div>
+        <div class="online__text">{{ online }}</div>
+      </div>
       <div class="server__labels"><p v-for="item in labels" class="server__label">{{ item }}</p></div>
       <p class="server__text">{{ text }}</p>
     </div> 
@@ -41,6 +49,14 @@ const toRouterPath = () => {
   justify-content: space-between;
   align-items: flex-start;
   padding: 1.5rem;
+ 
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 
   &__content {
     display: flex;
@@ -91,6 +107,42 @@ const toRouterPath = () => {
     &:hover {
       background: var(--color-icon-bg);
       cursor: pointer;
+    }
+  }
+}
+
+.online {
+  background: var(--color-text-secondary);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  width: 3rem;
+
+  &__icon {
+    width: 12px;
+    height: 12px;
+    background-color: green;
+    border-radius: 50%;
+    animation: blink 0.8s infinite;
+  }
+
+  &__text {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary-bg);
+    line-height: 1;
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
     }
   }
 }

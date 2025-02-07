@@ -28,6 +28,7 @@ function copyInnerHtml() {
 <template>
   <div class="logo">
     <div class="logo__image"></div>
+    <div class="logo__title">Дальневосточное Minecraft сообщество</div>
     <div class="logo__info">
       <div class="logo__ip ip">
         <div class="logo__version">1.21.3</div>
@@ -48,7 +49,7 @@ function copyInnerHtml() {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 4.5rem;
+  gap: 1.8rem;
   width: 100%;
 
   &__image {
@@ -57,6 +58,13 @@ function copyInnerHtml() {
     background-image: url('@/assets/images/main-logo.png');
     background-size: contain;
     filter: drop-shadow(0px 0px 28px rgba(255, 255, 255, 0.8));
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    pointer-events: none;
+    text-align: center;
   }
 
   &__info {
@@ -101,7 +109,7 @@ function copyInnerHtml() {
   &__numbers {
     padding: 1rem;
     font-weight: 700;
-    width: 100%;
+    width: 16rem;
     text-align: center;
   }
 
@@ -126,8 +134,18 @@ function copyInnerHtml() {
 
 @media (max-width: 920px) {
   .logo {
-    height: 250px;
+    height: 350px;
     gap: 2.3rem;
+
+    &__version {
+      width: 40%;
+    }
+  }
+
+  .ip {
+    &__button {
+      width: 6rem;
+    }
   }
 }
 </style>

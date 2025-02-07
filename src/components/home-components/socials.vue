@@ -17,7 +17,7 @@ import { DiscordIcon, TelegramIcon, VkIcon, YouTubeIcon } from 'vue3-simple-icon
         <div class="item__image"><DiscordIcon style="fill: #7289da" size="20px"/></div>
         <div class="item__text">FEMC Discord</div>
       </a>
-      <a class="item" href="https://www.youtube.com/@fareastern_mc">
+      <a class="item" href="https://www.youtube.com/@fareastern_minecraft">
         <div class="item__image"><YouTubeIcon style="fill: #c4302b" size="20px"/></div>
         <div class="item__text">FEMC Youtube</div>
       </a>

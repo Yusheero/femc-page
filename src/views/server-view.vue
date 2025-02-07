@@ -4,6 +4,7 @@ import { ref } from 'vue';
 import News from '../components/servers-view-components/news.vue';
 import Gallery from '../components/servers-view-components/gallery.vue';
 import Info from '../components/servers-view-components/info.vue';
+import PlayersOnline from '@/components/servers-view-components/players-online.vue';
 import { ServersData } from '@/data/servers-info-data';
 import { newsData } from '@/data/news-data';
 import { imagesData } from '@/data/images';
@@ -25,6 +26,7 @@ serverPictures.value = imagesData.find((item) => item.server === routeId)
   <serverViewMobile v-if="store.isMobile" />
   <div v-else class="server-view">
     <Info class="server-view__info" :data="serverData" />
+    <PlayersOnline class="server-view__chat" />
     <Gallery class="server-view__gallery" :pictures="serverPictures" />
     <News class="server-view__news" :news="serverNews" />
   </div>
@@ -35,10 +37,10 @@ serverPictures.value = imagesData.find((item) => item.server === routeId)
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 3fr 3fr 3fr 1fr 2fr;
+  grid-template-columns: 450px 320px 3fr 1fr 2fr;
   grid-template-rows: 4fr 2fr;
   grid-template-areas:
-    "info gallery gallery gallery gallery"
+    "info chat gallery gallery gallery"
     "news news news news news";
   gap: 0.8rem;
   padding: 0.8rem;
@@ -55,6 +57,10 @@ serverPictures.value = imagesData.find((item) => item.server === routeId)
 
   &__news {
     grid-area: news;
+  }
+
+  &__chat {
+    grid-area: chat;
   }
 }
 </style>
