@@ -60,7 +60,7 @@ if (props.serverId !== 'eventus') {
 onMounted(() => {
   if (props.serverId !== 'eventus') {
     fetchServerStatus();
-    setInterval(() => fetchServerStatus(), 5000);
+    setInterval(() => fetchServerStatus(), 20000);
   }
 });
 

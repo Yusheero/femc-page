@@ -6,7 +6,6 @@ const store = usePageStore()
 
 onBeforeMount(() => {
   store.isMobile = window.innerWidth <= 920
-  console.log('before mount', store.isMobile);
 })
 </script>
 
