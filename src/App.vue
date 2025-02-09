@@ -2,7 +2,7 @@
 import { onBeforeMount } from 'vue'
 import { usePageStore } from '@/store/store';
 
-const store = usePageStore();
+const store = usePageStore()
 
 onBeforeMount(() => {
   store.isMobile = window.innerWidth <= 920

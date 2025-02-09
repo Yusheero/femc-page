@@ -1,19 +1,68 @@
 <script setup lang="ts">
 /** Компонент сервера в HomeView */
 import { ArrowRight } from 'lucide-vue-next';
-import { ref } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useRouter } from 'vue-router';
+import { usePageStore } from '@/store/store';
+import { storeToRefs } from 'pinia';
 
+const store = usePageStore();
 const router = useRouter();
-const online = ref(1);
-
+const { servers } = storeToRefs(store);
 const props = defineProps({
   backgroundClass: String,
   logoClass: String,
   text: String,
   labels: Array,
   routerPath: String,
+  serverId: String
 })
+
+// Локальные переменные для отображения статуса
+const serverStatus = ref<{ currentPlayers: number; playerNames: string[] } | null>(null);
+const loading = ref<boolean>(false);
+const error = ref<string | null>(null);
+
+// Функция для получения статуса сервера через Pinia
+const fetchServerStatus = async () => {
+  loading.value = true;
+  error.value = null;
+  try {
+    await store.fetchServerStatus(props.serverId);
+    serverStatus.value = servers.value[props.serverId as string] ?? null;
+  } catch (err) {
+    error.value = 'Не удалось загрузить данные';
+  } finally {
+    loading.value = false;
+  }
+};
+
+// Следим за изменением данных в Pinia Store
+if (props.serverId !== 'eventus') {
+  watch(
+    () => {
+      try {
+        return servers.value ? servers.value[props.serverId as string] : undefined;
+      } catch (e) {
+        console.error('Ошибка в watch:', e);
+        return undefined;
+      }
+    },
+    (newStatus) => {
+      if (newStatus) {
+        serverStatus.value = newStatus;
+      }
+    }
+  );
+}
+
+// Загружаем данные при монтировании
+onMounted(() => {
+  if (props.serverId !== 'eventus') {
+    fetchServerStatus();
+    setInterval(() => fetchServerStatus(), 5000);
+  }
+});
 
 /** Обработчик клика на кнопку */
 const toRouterPath = () => {
@@ -29,7 +78,7 @@ const toRouterPath = () => {
     <div class="server__content">
       <div class="online">
         <div class="online__icon"></div>
-        <div class="online__text">{{ online }}</div>
+        <div class="online__text">{{ serverStatus?.currentPlayers }}</div>
       </div>
       <div class="server__labels"><p v-for="item in labels" class="server__label">{{ item }}</p></div>
       <p class="server__text">{{ text }}</p>

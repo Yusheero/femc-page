@@ -18,13 +18,15 @@ const store = usePageStore()
     <NewsPreview class="home-view__news" />
     <Socials class="home-view__socials" />
     <Server class="home-view__server-celedia"
+      :serverId="'celedia'"
       :text="serverPreviewData.celedia.text"
       :backgroundClass="'celedia'"
       :logoClass="'logo__celedia'"
       :routerPath="'/server/celedia'"
       :labels="['ванилла', 'приват', 'вайп']"
     />
-    <Server class="home-view__server-celedia-new" 
+    <Server class="home-view__server-celedia-new"
+      :serverId="'celediaold'" 
       :text="serverPreviewData.celediaOld.text" 
       :backgroundClass="'celedia-old'" 
       :logoClass="'logo__celedia-old'"
@@ -32,14 +34,16 @@ const store = usePageStore()
       :labels="['ванилла', 'приват']"
     />
     <Server class="home-view__server-pawhera" 
-      :text="serverPreviewData.pawhera.text" 
+      :text="serverPreviewData.pawhera.text"
+      :serverId="'pawhera'"
       :backgroundClass="'pawhera'" 
       :logoClass="'logo__pawhera'"
       :routerPath="'/server/pawhera'"
       :labels="['анархия']"
     />
     <Server class="home-view__server-eventus" 
-      :text="serverPreviewData.eventus.text" 
+      :text="serverPreviewData.eventus.text"
+      :serverId="'eventus'"
       :backgroundClass="'eventus'" 
       :logoClass="'logo__eventus'"
       :routerPath="'/server/eventus'"
