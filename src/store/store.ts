@@ -17,7 +17,7 @@ export const usePageStore = defineStore('page-store', () => {
 
   const fetchServerStatus = async (serverId: string|undefined) => {
     try {
-      const response = await axios.get<{ status: ServerStatus }>(`http://femc.space:3005/api/status/${serverId}`);
+      const response = await axios.get<{ status: ServerStatus }>(`http://femc.space/api/status/${serverId}`);
 
       if (serverId !== undefined) {
         servers.value[serverId] = response.data.status;
