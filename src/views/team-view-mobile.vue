@@ -86,15 +86,15 @@ onUnmounted(() => {
   &__slider {
     grid-area: slider;
   }
-}
 
-.main {
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--color-icon-bg);
-  border-radius: 1rem;
+  .main {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-icon-bg);
+    border-radius: 1rem;
+  }
 }
 
 .slider-mobile {

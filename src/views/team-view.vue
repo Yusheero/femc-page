@@ -4,7 +4,6 @@ import { teamData } from '@/data/team';
 import KeenSlider from "keen-slider";
 import { KeenSliderInstance } from 'keen-slider';
 import { ArrowLeft } from 'lucide-vue-next';
-import TeamViewMobile from "./team-view-mobile.vue";
 
 const sliderRef = ref<HTMLElement | null>(null);
 let slider: KeenSliderInstance | null = null;
@@ -38,8 +37,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <TeamViewMobile v-if="true" />
-  <div v-else class="team-view">
+  <div class="team-view">
     <div class="team-view__main main">
       <router-link class="router-button" to="/"><ArrowLeft :size="24" color="#CCCCCC" /></router-link>
     </div>
