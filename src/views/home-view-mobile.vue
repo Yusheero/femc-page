@@ -13,6 +13,7 @@ import Navigation from '@/components/home-components/navigation.vue';
     <Socials class="home-view-mobile__socials" />
     <Navigation class="home-view-mobile__navigation" />
     <serverMobile class="home-view-mobile__server-celedia"
+      :serverId="'celedia'"
       :text="serverPreviewData.celedia.text"
       :backgroundClass="'celedia'"
       :logoClass="'logo__celedia'"
@@ -20,13 +21,15 @@ import Navigation from '@/components/home-components/navigation.vue';
       :labels="['ванилла', 'приват', 'вайп']"
     />
     <serverMobile class="home-view-mobile__server-celedia-new" 
+      :serverId="'celediaold'" 
       :text="serverPreviewData.celediaOld.text" 
       :backgroundClass="'celedia-old'" 
       :logoClass="'logo__celedia-old'"
       :routerPath="'/server/celedia-old'"
       :labels="['ванилла', 'приват']"
     />
-    <serverMobile class="home-view-mobile__server-pawhera" 
+    <serverMobile class="home-view-mobile__server-pawhera"
+      :serverId="'pawhera'"
       :text="serverPreviewData.pawhera.text" 
       :backgroundClass="'pawhera'" 
       :logoClass="'logo__pawhera'"
