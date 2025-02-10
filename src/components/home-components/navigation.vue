@@ -9,10 +9,10 @@ const toRouterPath = (route: string) => {
 
 <template>
   <div class="navigation">
-    <button class="navigation__item" @click="toRouterPath('/')">Правила сервера</button>
-    <button class="navigation__item" @click="toRouterPath('/')">Планы</button>
-    <button class="navigation__item" @click="toRouterPath('/')">Наша команда</button>
+    <button class="navigation__item" @click="toRouterPath('/plans')">Планы</button>
+    <button class="navigation__item" @click="toRouterPath('/team')">Наша команда</button>
     <button class="navigation__item" @click="toRouterPath('/')">Чат</button>
+    <button class="navigation__item" @click="toRouterPath('/')">Вакансии</button>
   </div>
 </template>
 

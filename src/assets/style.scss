@@ -1,5 +1,6 @@
 /** Импорт шрифтов */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
 
 :root {
   --color-primary-bg: #050505;
@@ -71,4 +72,21 @@ input{
 h1{
   font-size: 32px;
   font-weight: 700;
+}
+
+.router-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-ip-bg);
+  opacity: 0.8;
+  width: 2.5rem;
+  height: 2.5rem;
+
+  &:hover {
+    background: var(--color-icon-bg);
+    cursor: pointer;
+  }
 }

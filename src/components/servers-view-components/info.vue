@@ -15,15 +15,21 @@ const toRouterPath = () => {
 
 <template>
   <div class="info">
-    <div class="info__header">
-      <button class="info__button" @click="toRouterPath"><ArrowLeft :size="24" color="#CCCCCC" /></button>
-      <div :class="['info__logo ' + props?.data?.logoClass]"></div>
+    <div class="info__container">
+      <div class="info__header">
+        <button class="info__button" @click="toRouterPath"><ArrowLeft :size="24" color="#CCCCCC" /></button>
+        <div :class="['info__logo ' + props?.data?.logoClass]"></div>
+      </div>
+      <p class="info__text">{{ props?.data?.text1 }}</p>
+      <p class="info__text">{{ props?.data?.text2 }}</p>
+      <p class="info__text">{{ props?.data?.text3 }}</p>
+    </div>  
+    <div class="info__bottom-buttons">
+      <button class="info__bottom-button">Правила</button>
+      <button class="info__bottom-button">Лидербоард</button>
+      <button class="info__bottom-button">Карта мира</button>
+      <button class="info__bottom-button">Слот</button>
     </div>
-    <p class="info__text">{{ props?.data?.text1 }}</p>
-    <p class="info__text">{{ props?.data?.text2 }}</p>
-    <div class="info__line-break"></div>
-    <p class="info__text">{{ props?.data?.text3 }}</p>
-    <p class="info__text">{{ props?.data?.text4 }}</p>
   </div>
 </template>
 
@@ -35,17 +41,27 @@ const toRouterPath = () => {
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
+
+  &__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+  }
 
   &__header {
+    width: 100%;
     padding: 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   &__line-break {
@@ -55,7 +71,7 @@ const toRouterPath = () => {
 
   &__logo {
     width: 300px;
-    height: 60px;
+    height: 46px;
     background-repeat: no-repeat;
   }
 
@@ -83,6 +99,35 @@ const toRouterPath = () => {
     }
   }
 
+  &__bottom-buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  &__bottom-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--color-ip-bg);
+    opacity: 0.8;
+    width: 100%;
+    padding: 1rem 0;
+    height: 60px;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    font-family: "Nunito Sans", serif;
+
+    &:hover {
+      background: var(--color-icon-bg);
+      cursor: pointer;
+    }
+  }
+
   .celedia {
     background-image: url('@/assets/images/celedia-logo.png');
     background-size: contain;
@@ -98,7 +143,7 @@ const toRouterPath = () => {
   .pawhera {
     background-image: url('@/assets/images/pawhera-logo.png');
     background-size: contain;
-    filter: drop-shadow(0px 0px 12px rgba(21, 39, 206, 0.8));
+    filter: drop-shadow(0px 0px 12px rgba(32, 66, 155, 0.8));
   }
 
   .eventus {
