@@ -6,9 +6,9 @@
   <div class="players-online">
     <div class="players-online__title">Игроки онлайн</div>
     <div class="players-online__players">
-      <div class="players-online__item">Yusheero</div>
+      <!-- <div class="players-online__item">Yusheero</div>
       <div class="players-online__item">Zondermainy</div>
-      <div class="players-online__item">Rinki</div>
+      <div class="players-online__item">Rinki</div> -->
     </div>
   </div>
 </template>

@@ -38,7 +38,7 @@ onUnmounted(() => {
   <div class="news-preview">
     <div ref="sliderRef" class="keen-slider">
       <div class="keen-slider__slide" v-for="(slide, index) in newsData" :key="index">
-        <div class="news-preview__content" :style="{ backgroundImage: `url(${slide.homePreviewImage})` }">
+        <div class="news-preview__content" :style="{ backgroundImage: `linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.6) 80.5%, #050505 100%), url(${slide.homePreviewImage})` }">
           <div class="news-preview__tags tags">
             <div v-for="tag in slide.tags" class="tags__item">{{ tag }}</div>
           </div>
@@ -67,7 +67,7 @@ onUnmounted(() => {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    gap: 0.3rem;
+    gap: 0.8rem;
     background-size: cover;
   }
 
@@ -130,12 +130,12 @@ onUnmounted(() => {
 
 .tags {
   &__item {
-    padding: 0.5rem 1rem;
-    font-weight: 700;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
     border-radius: 0.3rem;
-    background: var(--color-text-primary);
-    color: var(--color-icon-bg);
-    opacity: 0.6;
+    background: var(--color-primary);
+    color: var(--color-secondary);
   }
 }
 </style>

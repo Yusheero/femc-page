@@ -8,15 +8,26 @@ import { ArrowLeft } from 'lucide-vue-next';
 const sliderRef = ref<HTMLElement | null>(null);
 let slider: KeenSliderInstance | null = null;
 
+const animation = { duration: 200000, easing: (t: any) => t }
+
 onMounted(() => {
   // Инициализация слайдера
   slider = new KeenSlider(sliderRef.value!, {
-    loop: false,
-    slides: { 
+    loop: true,
+    slides: {
       perView: 2,
       spacing: 12,
     },
     drag: true,
+    created(s) {
+    s.moveToIdx(5, true, animation)
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation)
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation)
+    },
   });
 });
 

@@ -46,9 +46,10 @@ onUnmounted(() => {
   <div class="news">
     <div ref="sliderRef" class="keen-slider">
       <div class="keen-slider__slide" v-for="(slide, index) in news" :key="index">
-        <div class="news-item news" :style="{ backgroundImage: `url(${slide.serverPreviewImage})` }">
+        <div class="news-item news" :style="{ backgroundImage: `linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.5) 80.5%, #050505 100%), url(${slide.serverPreviewImage})` }">
           <p class="news-item__title">{{ slide.title }}</p>
           <p class="news-item__text">{{ slide.text }}</p>
+          <p class="news-item__date">{{ slide.date }}</p>
           <button class="news-item__button" @click="toRouterPath(slide.id)"><ArrowUpRight :size="24" color="#CCCCCC" /></button>
         </div>
       </div>
@@ -78,13 +79,22 @@ onUnmounted(() => {
   background-size: cover;
 
   &__title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
   }
 
   &__text {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: var(--color-text-secondary);
+  }
+
+  &__date {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.2rem;
   }
 
   &__button {

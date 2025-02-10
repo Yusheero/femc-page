@@ -21,7 +21,7 @@ const toRouterPath = () => {
 
 <template>
   <div class="page-data">
-    <div class="page-data__content" :style="{ backgroundImage: `url(${pageData?.newsPreviewImage})` }">
+    <div class="page-data__content" :style="{ backgroundImage: `linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.5) 80.5%, #050505 100%), url(${pageData?.newsPreviewImage})` }">
       <p class="page-data__title">{{ pageData?.title }}</p>
       <p class="page-data__text">{{ pageData?.text }}</p>
       <button class="page-data__button" @click="toRouterPath"><X :size="24" color="#CCCCCC" /></button>
@@ -38,12 +38,12 @@ const toRouterPath = () => {
   justify-content: flex-end;
   align-items: flex-start;
   gap: 1.5rem;
-  padding: 1.5rem;
+  padding: 1rem;
   background: var(--color-primary-bg);
   color: var(--color-text-primary);
 
   &__content {
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 1rem;
     position: relative;
     width: 100%;
@@ -53,7 +53,7 @@ const toRouterPath = () => {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   &__title {

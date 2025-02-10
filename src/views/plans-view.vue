@@ -34,8 +34,9 @@ onUnmounted(() => {
       <div ref="sliderRef" class="keen-slider">
         <div class="keen-slider__slide" v-for="(slide, index) in plansData" :key="index">
           <div class="slider__content">
-            <div class="news-preview__title">{{ slide.title }}</div>
-            <div class="news-preview__description">{{ slide.text }}</div>
+            <div class="slider__title">{{ slide.title }}</div>
+            <div class="slider__description">{{ slide.text }}</div>
+            <div class="slider__description">{{ slide.status }}</div>
           </div>
         </div>
       </div>
@@ -81,7 +82,7 @@ onUnmounted(() => {
   align-items: center;
 
   &__content {
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 0.8rem;
     border: 2px solid var(--color-border);
     height: 100%;
@@ -90,8 +91,13 @@ onUnmounted(() => {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    gap: 0.3rem;
+    gap: 0.5rem;
     background-size: cover;
+  }
+
+  &__title {
+    font-size: 1.3rem;
+    font-weight: 700;
   }
 }
 
