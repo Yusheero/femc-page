@@ -8,7 +8,7 @@ interface ServerStatus {
 }
 
 export const usePageStore = defineStore('page-store', () => {
-  const isMobile = ref(false);
+  const isMobile = ref(true);
   const servers = ref<Record<string, ServerStatus | undefined>>({});
   const lastRoutePath = ref('');
   const setLastRoutePath = (path: string) => {

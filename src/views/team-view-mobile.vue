@@ -1,57 +1,49 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { teamData } from '@/data/team';
-import KeenSlider, { KeenSliderInstance } from "keen-slider";
+import KeenSlider from "keen-slider";
+import { KeenSliderInstance } from 'keen-slider';
 import { ArrowLeft } from 'lucide-vue-next';
 
-let sliderRef = ref<HTMLElement | null>(null);
+const sliderRefMobile = ref<HTMLElement | null>(null);
 let slider: KeenSliderInstance | null = null;
 
-const animation = { duration: 150000, easing: (t: any) => t };
+const animation = { duration: 150000, easing: (t: any) => t }
 
-onMounted(async () => {
-  await nextTick(); // Ждём полной отрисовки DOM
-
-  if (sliderRef instanceof HTMLElement || (sliderRef.value instanceof HTMLElement)) {
-    slider = new KeenSlider(sliderRef.value as HTMLElement, {
-      loop: true,
-      slides: {
-        perView: 1,
-        spacing: 8,
-      },
-      drag: true,
-      created(s) {
-        s.moveToIdx(5, true, animation);
-      },
-      updated(s) {
-        s.moveToIdx(s.track.details.abs + 5, true, animation);
-      },
-      animationEnded(s) {
-        s.moveToIdx(s.track.details.abs + 5, true, animation);
-      },
-    });
-  } else {
-    console.error('sliderRef не является HTMLElement:', sliderRef.value);
-  }
+onMounted(() => {
+  // Инициализация слайдера
+  slider = new KeenSlider(sliderRefMobile.value!, {
+    loop: true,
+    slides: {
+      perView: 1,
+      spacing: 8,
+    },
+    drag: true,
+    created(s) {
+      s.moveToIdx(5, true, animation)
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation)
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation)
+    },
+  });
 });
 
 onUnmounted(() => {
-  if (slider && typeof slider.destroy === 'function') {
-    slider.destroy();
-  } else {
-    console.error('Slider не инициализирован или destroy не является функцией', slider);
-  }
+  slider?.destroy();
 });
 </script>
 
 <template>
   <div class="team-view-mobile">
-    <div class="team-view__main main">
+    <div class="main-mobile">
       <router-link class="router-button" to="/"><ArrowLeft :size="24" color="#CCCCCC" /></router-link>
     </div>
-    <div class="team-view-mobile__slider slider-mobile">
-      <div :ref="(el) => sliderRef = el as HTMLElement" class="keen-slider">
-        <div class="keen-slider__slide" v-for="(slide, index) in teamData" :key="index">
+    <div class="slider-mobile">
+      <div ref="sliderRefMobile" class="keen-slider-mobile">
+        <div class="keen-slider__slide-mobile" v-for="(slide, index) in teamData" :key="index">
           <div class="slider-mobile__content">
             <div class="slider-mobile__image-container">
               <img class="slider-mobile__image" :src="slide.skin" alt="skin">
@@ -71,30 +63,23 @@ onUnmounted(() => {
 <style scoped lang="scss">
 .team-view-mobile {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   padding: 0.8rem;
   background: var(--color-primary-bg);
   color: var(--color-text-primary);
+}
 
-  &__main {
-    grid-area: main;
-  }
-
-  &__slider {
-    grid-area: slider;
-  }
-
-  .main {
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--color-icon-bg);
-    border-radius: 1rem;
-  }
+.main-mobile {
+  height: 70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--color-icon-bg);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 .slider-mobile {
@@ -160,22 +145,22 @@ onUnmounted(() => {
     height: 5rem;
     line-height: 1.1;
   }
-}
 
-.keen-slider {
+  .keen-slider-mobile {
   border-radius: 0.8rem;
   overflow: hidden;
   width: 100%;
   height: 100%;
   display: flex;
-}
+  }
 
-.keen-slider__slide {
-  border-radius: 0.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 100%;
-  height: 100%;
+  .keen-slider__slide-mobile {
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    height: 100%;
+  }
 }
 </style>

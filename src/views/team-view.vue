@@ -4,40 +4,48 @@ import { teamData } from '@/data/team';
 import KeenSlider from "keen-slider";
 import { KeenSliderInstance } from 'keen-slider';
 import { ArrowLeft } from 'lucide-vue-next';
+import TeamViewMobile from "./team-view-mobile.vue";
+import { usePageStore } from '@/store/store';
 
+const store = usePageStore();
 const sliderRef = ref<HTMLElement | null>(null);
 let slider: KeenSliderInstance | null = null;
 
 const animation = { duration: 150000, easing: (t: any) => t }
 
 onMounted(() => {
-  // Инициализация слайдера
-  slider = new KeenSlider(sliderRef.value!, {
-    loop: true,
-    slides: {
-      perView: 2,
-      spacing: 12,
-    },
-    drag: true,
-    created(s) {
-    s.moveToIdx(5, true, animation)
-    },
-    updated(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
-    },
-    animationEnded(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
-    },
-  });
+  if (!store.isMobile) {
+    // Инициализация слайдера
+    slider = new KeenSlider(sliderRef.value!, {
+      loop: true,
+      slides: {
+        perView: 2,
+        spacing: 12,
+      },
+      drag: true,
+      created(s) {
+      s.moveToIdx(5, true, animation)
+      },
+      updated(s) {
+        s.moveToIdx(s.track.details.abs + 5, true, animation)
+      },
+      animationEnded(s) {
+        s.moveToIdx(s.track.details.abs + 5, true, animation)
+      },
+    });
+  }
 });
 
 onUnmounted(() => {
-  slider?.destroy();
+  if (!store.isMobile) {
+    slider?.destroy();
+  } 
 });
 </script>
 
 <template>
-  <div class="team-view">
+  <TeamViewMobile v-if="store.isMobile" />
+  <div v-else class="team-view">
     <div class="team-view__main main">
       <router-link class="router-button" to="/"><ArrowLeft :size="24" color="#CCCCCC" /></router-link>
     </div>
