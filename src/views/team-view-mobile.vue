@@ -1,60 +1,66 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, nextTick } from "vue";
 import { teamData } from '@/data/team';
-import KeenSlider from "keen-slider";
-import { KeenSliderInstance } from 'keen-slider';
+import KeenSlider, { KeenSliderInstance } from "keen-slider";
 import { ArrowLeft } from 'lucide-vue-next';
-import TeamViewMobile from "./team-view-mobile.vue";
 
-const sliderRef = ref<HTMLElement | null>(null);
+let sliderRef = ref<HTMLElement | null>(null);
 let slider: KeenSliderInstance | null = null;
 
-const animation = { duration: 150000, easing: (t: any) => t }
+const animation = { duration: 150000, easing: (t: any) => t };
 
-onMounted(() => {
-  // Инициализация слайдера
-  slider = new KeenSlider(sliderRef.value!, {
-    loop: true,
-    slides: {
-      perView: 2,
-      spacing: 12,
-    },
-    drag: true,
-    created(s) {
-    s.moveToIdx(5, true, animation)
-    },
-    updated(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
-    },
-    animationEnded(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
-    },
-  });
+onMounted(async () => {
+  await nextTick(); // Ждём полной отрисовки DOM
+
+  if (sliderRef instanceof HTMLElement || (sliderRef.value instanceof HTMLElement)) {
+    slider = new KeenSlider(sliderRef.value as HTMLElement, {
+      loop: true,
+      slides: {
+        perView: 1,
+        spacing: 8,
+      },
+      drag: true,
+      created(s) {
+        s.moveToIdx(5, true, animation);
+      },
+      updated(s) {
+        s.moveToIdx(s.track.details.abs + 5, true, animation);
+      },
+      animationEnded(s) {
+        s.moveToIdx(s.track.details.abs + 5, true, animation);
+      },
+    });
+  } else {
+    console.error('sliderRef не является HTMLElement:', sliderRef.value);
+  }
 });
 
 onUnmounted(() => {
-  slider?.destroy();
+  if (slider && typeof slider.destroy === 'function') {
+    slider.destroy();
+  } else {
+    console.error('Slider не инициализирован или destroy не является функцией', slider);
+  }
 });
 </script>
 
 <template>
-  <TeamViewMobile v-if="true" />
-  <div v-else class="team-view">
+  <div class="team-view-mobile">
     <div class="team-view__main main">
       <router-link class="router-button" to="/"><ArrowLeft :size="24" color="#CCCCCC" /></router-link>
     </div>
-    <div class="team-view__slider slider">
-      <div ref="sliderRef" class="keen-slider">
+    <div class="team-view-mobile__slider slider-mobile">
+      <div :ref="(el) => sliderRef = el as HTMLElement" class="keen-slider">
         <div class="keen-slider__slide" v-for="(slide, index) in teamData" :key="index">
-          <div class="slider__content">
-            <div class="slider__image-container">
-              <img class="slider__image" :src="slide.skin" alt="skin">
+          <div class="slider-mobile__content">
+            <div class="slider-mobile__image-container">
+              <img class="slider-mobile__image" :src="slide.skin" alt="skin">
             </div>
-            <div class="slider__title-container">
-              <div class="slider__title">{{ slide.title }}</div>
-              <div class="slider__tag">{{ slide.tag }}</div> 
+            <div class="slider-mobile__title-container">
+              <div class="slider-mobile__title">{{ slide.title }}</div>
+              <div class="slider-mobile__tag">{{ slide.tag }}</div> 
             </div>
-            <div class="slider__description">{{ slide.text }}</div>
+            <div class="slider-mobile__description">{{ slide.text }}</div>
           </div>
         </div>
       </div>
@@ -63,15 +69,11 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-.team-view {
+.team-view-mobile {
   width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 450px 320px 3fr 1fr 2fr;
-  grid-template-rows: 4fr 2fr;
-  grid-template-areas:
-    "main slider slider slider slider"
-    "main slider slider slider slider";
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   gap: 0.8rem;
   padding: 0.8rem;
   background: var(--color-primary-bg);
@@ -87,6 +89,7 @@ onUnmounted(() => {
 }
 
 .main {
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,7 +97,8 @@ onUnmounted(() => {
   border-radius: 1rem;
 }
 
-.slider {
+.slider-mobile {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,7 +126,7 @@ onUnmounted(() => {
   }
 
   &__image {
-    height: 30rem;
+    height: 27rem;
     filter: drop-shadow(0px 0px 22px rgba(255, 255, 255, 0.4));
   }
 
@@ -150,10 +154,10 @@ onUnmounted(() => {
   }
 
   &__description {
-    word-wrap: break-word; /* Для старых браузеров */
+    word-wrap: break-word;
     overflow-wrap: break-word;
     width: 100%;
-    height: 3.5rem;
+    height: 5rem;
     line-height: 1.1;
   }
 }

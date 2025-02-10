@@ -12,7 +12,7 @@ const toRouterPath = (route: string) => {
     <button class="navigation__item" @click="toRouterPath('/')">Планы</button>
     <button class="navigation__item turn" @click="toRouterPath('/team')">Наша команда</button>
     <button class="navigation__item" @click="toRouterPath('/')">Чат</button>
-    <button class="navigation__item" @click="toRouterPath('/')">Вакансии</button>
+    <button class="navigation__item" @click="toRouterPath('/')">Аллея славы</button>
   </div>
 </template>
 

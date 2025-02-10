@@ -26,7 +26,7 @@ const toRouterPath = () => {
     </div>  
     <div class="info__bottom-buttons">
       <button class="info__bottom-button">Правила</button>
-      <button class="info__bottom-button">Лидербоард</button>
+      <button class="info__bottom-button">Лидерборд</button>
       <button class="info__bottom-button">Карта мира</button>
       <button class="info__bottom-button">Слот</button>
     </div>
