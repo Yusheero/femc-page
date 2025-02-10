@@ -71,7 +71,7 @@ onUnmounted(() => {
 <style scoped lang="scss">
 .team-view-mobile {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -126,7 +126,7 @@ onUnmounted(() => {
   }
 
   &__image {
-    height: 27rem;
+    height: 25rem;
     filter: drop-shadow(0px 0px 22px rgba(255, 255, 255, 0.4));
   }
 
