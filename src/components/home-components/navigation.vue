@@ -10,7 +10,7 @@ const toRouterPath = (route: string) => {
 <template>
   <div class="navigation">
     <button class="navigation__item" @click="toRouterPath('/')">Планы</button>
-    <button class="navigation__item" @click="toRouterPath('/team')">Наша команда</button>
+    <button class="navigation__item turn" @click="toRouterPath('/team')">Наша команда</button>
     <button class="navigation__item" @click="toRouterPath('/')">Чат</button>
     <button class="navigation__item" @click="toRouterPath('/')">Вакансии</button>
   </div>
@@ -50,5 +50,9 @@ const toRouterPath = (route: string) => {
       cursor: pointer;
     }
   }
+}
+
+.turn {
+  background: var(--color-primary);
 }
 </style>
