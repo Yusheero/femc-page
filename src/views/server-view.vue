@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import News from '../components/servers-view-components/news.vue';
 import Gallery from '../components/servers-view-components/gallery.vue';
 import Info from '../components/servers-view-components/info.vue';
@@ -12,11 +12,25 @@ import serverViewMobile from './server-view-mobile.vue';
 import { usePageStore } from '@/store/store';
 
 const store = usePageStore();
-const routeId = useRoute().params.id;
+const routeId = Array.isArray(useRoute().params.id) ? useRoute().params.id[0] : useRoute().params.id as string;
+
+/** Онлайн по серверам */
+const serverStats = computed(() => {
+  if (typeof(routeId) === 'string') {
+    return store.getServerStatus(routeId)
+  }
+});
+
+/** Данные по серверам из Data */
 const serverData = ref();
+
+/** Данные по новостям серверам из Data */
 const serverNews = ref();
+
+/** Данные по картинкам из Data */
 const serverPictures = ref();
 
+/** Получение всех данных по серверу через название роута */
 serverData.value = ServersData.find(s => s.id === routeId);
 serverNews.value = newsData.filter((item) => item.server === routeId)
 serverPictures.value = imagesData.find((item) => item.server === routeId)
@@ -26,7 +40,7 @@ serverPictures.value = imagesData.find((item) => item.server === routeId)
   <serverViewMobile v-if="store.isMobile" />
   <div v-else class="server-view">
     <Info class="server-view__info" :data="serverData" />
-    <PlayersOnline class="server-view__chat" />
+    <PlayersOnline class="server-view__chat" :stats="serverStats" :serverId="routeId!" />
     <Gallery class="server-view__gallery" :pictures="serverPictures" />
     <News class="server-view__news" :news="serverNews" />
   </div>

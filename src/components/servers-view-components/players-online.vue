@@ -1,14 +1,22 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import { usePageStore } from '@/store/store';
 
+const props = defineProps({
+  stats: Object,
+  serverId: String,
+})
+
+const store = usePageStore();
+const serverStatus = ref(store.getServerStatus(props.serverId!));
+console.log('Игроки онлайн:', serverStatus.value?.playerNames);
 </script>
 
 <template>
   <div class="players-online">
     <div class="players-online__title">Игроки онлайн</div>
-    <div class="players-online__players">
-      <!-- <div class="players-online__item">Yusheero</div>
-      <div class="players-online__item">Zondermainy</div>
-      <div class="players-online__item">Rinki</div> -->
+    <div v-if="serverStatus?.playerNames" class="players-online__players">
+      <div class="players-online__item" v-for="item in serverStatus?.playerNames">{{ item }}</div>
     </div>
   </div>
 </template>

@@ -9,6 +9,7 @@ import { storeToRefs } from 'pinia';
 const store = usePageStore();
 const router = useRouter();
 const { servers } = storeToRefs(store);
+
 const props = defineProps({
   backgroundClass: String,
   logoClass: String,

@@ -15,6 +15,7 @@ export const usePageStore = defineStore('page-store', () => {
     lastRoutePath.value = path;
   }
 
+  /** Метод для обновления данных по серверу */
   const fetchServerStatus = async (serverId: string|undefined) => {
     try {
       const response = await axios.get<{ status: ServerStatus }>(`https://femc.space/api/status/${serverId}`);
@@ -25,7 +26,24 @@ export const usePageStore = defineStore('page-store', () => {
     } catch (error) {
       console.error(`Ошибка при загрузке данных для сервера ${serverId}:`, error);
     }
-  }
+  };
+
+  // Метод для обновления данных сразу по нескольким серверам
+  const fetchAllServerStatuses = async (serverIds: string[]) => {
+    await Promise.all(serverIds.map((id) => fetchServerStatus(id)));
+  };
+
+  /** Получение статистики по отдельному серверу */
+  const getServerStatus = (serverId: string) => {
+    return servers.value[serverId];
+  };
+
+  // Получение общего количества игроков на всех серверах
+  const totalPlayers = () => {
+    return Object.values(servers.value)
+      .filter((server) => server !== undefined)
+      .reduce((sum, server) => sum + (server?.currentPlayers || 0), 0);
+  };
 
   return {
     lastRoutePath,
@@ -33,5 +51,8 @@ export const usePageStore = defineStore('page-store', () => {
     servers,
     setLastRoutePath,
     fetchServerStatus,
+    getServerStatus,
+    totalPlayers,
+    fetchAllServerStatuses,
   }
 })
