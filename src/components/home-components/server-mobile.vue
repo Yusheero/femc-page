@@ -149,9 +149,9 @@ const toRouterPath = () => {
 }
 
 .online {
-  width: 3rem;
+  width: 2.5rem;
   background: var(--color-text-secondary);
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0.4rem;
   border-radius: 0.25rem;
   display: flex;
   flex-direction: row;
@@ -160,17 +160,18 @@ const toRouterPath = () => {
   gap: 0.5rem;
 
   &__icon {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     background-color: rgb(0, 114, 0);
     border-radius: 50%;
     animation: blink 0.8s infinite;
   }
 
   &__text {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--color-primary-bg);
+    line-height: 0.8;
   }
 
   @keyframes blink {

@@ -28,14 +28,16 @@ function copyInnerHtml() {
 <template>
   <div class="logo">
     <div class="logo__image"></div>
-    <div class="logo__title">Дальневосточное Minecraft сообщество</div>
-    <div class="logo__info">
-      <div class="logo__ip ip">
-        <div class="logo__version">1.21.3</div>
-        <p class="ip__numbers" id="ip">femc.space</p>
-        <button class="ip__button" @click="copyInnerHtml"><Copy :size="22" color="#CCCCCC" /></button>
+    <div class="logo__bottom">
+      <div class="logo__title">Дальневосточное Minecraft сообщество</div>
+      <div class="logo__info">
+        <div class="logo__ip ip">
+          <div class="logo__version">1.21.3</div>
+          <p class="ip__numbers" id="ip">femc.space</p>
+          <button class="ip__button" @click="copyInnerHtml"><Copy :size="22" color="#CCCCCC" /></button>
+        </div>
       </div>
-    </div>
+    </div>  
   </div>
 </template>
 
@@ -52,16 +54,26 @@ function copyInnerHtml() {
   gap: 1.8rem;
   width: 100%;
 
+  &__bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
   &__image {
     width: 15.75rem;
     height: 5.469rem;
     background-image: url('@/assets/images/main-logo.png');
     background-size: contain;
     filter: drop-shadow(0px 0px 28px rgba(255, 255, 255, 0.8));
+    margin-bottom: 1.1rem;
   }
 
   &__title {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     pointer-events: none;
     text-align: center;

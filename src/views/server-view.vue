@@ -17,6 +17,8 @@ const routeId = Array.isArray(useRoute().params.id) ? useRoute().params.id[0] : 
 /** Онлайн по серверам */
 const serverStats = computed(() => {
   if (typeof(routeId) === 'string') {
+    console.log('routeId', routeId);
+    
     return store.getServerStatus(routeId)
   }
 });

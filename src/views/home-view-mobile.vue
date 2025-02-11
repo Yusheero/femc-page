@@ -25,7 +25,7 @@ import Navigation from '@/components/home-components/navigation.vue';
       :text="serverPreviewData.celediaOld.text" 
       :backgroundClass="'celedia-old'" 
       :logoClass="'logo__celedia-old'"
-      :routerPath="'/server/celedia-old'"
+      :routerPath="'/server/celediaold'"
       :labels="['ванилла', 'приват']"
     />
     <serverMobile class="home-view-mobile__server-pawhera"
