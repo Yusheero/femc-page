@@ -29,7 +29,7 @@ export const newsData: NewsData[] = [
   },
   {
     "id": "femc02",
-    "server": "celedia-old",
+    "server": "celediaold",
     "tags": ['celedia old'],
     "title": "Место для вашей новости",
     "text": "Вы можете отправить новость через наш Discord канал, в новостной форум",

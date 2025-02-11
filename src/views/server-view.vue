@@ -17,8 +17,6 @@ const routeId = Array.isArray(useRoute().params.id) ? useRoute().params.id[0] : 
 /** Онлайн по серверам */
 const serverStats = computed(() => {
   if (typeof(routeId) === 'string') {
-    console.log('routeId', routeId);
-    
     return store.getServerStatus(routeId)
   }
 });
@@ -34,8 +32,8 @@ const serverPictures = ref();
 
 /** Получение всех данных по серверу через название роута */
 serverData.value = ServersData.find(s => s.id === routeId);
-serverNews.value = newsData.filter((item) => item.server === routeId)
-serverPictures.value = imagesData.find((item) => item.server === routeId)
+serverNews.value = newsData.filter((item) => item.server === routeId);
+serverPictures.value = imagesData.find((item) => item.server === routeId);
 </script>
 
 <template>

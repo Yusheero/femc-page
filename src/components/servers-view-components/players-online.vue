@@ -9,7 +9,7 @@ const props = defineProps({
 
 const store = usePageStore();
 const serverStatus = ref(store.getServerStatus(props.serverId!));
-const playersOnline = ref(serverStatus.value?.playerNames[0].split(" "));
+const playersOnline = serverStatus.value?.playerNames[0] === undefined ? '' : serverStatus.value?.playerNames[0].split(" ");
 </script>
 
 <template>

@@ -31,7 +31,7 @@ import Navigation from '@/components/home-components/navigation.vue';
     <serverMobile class="home-view-mobile__server-pawhera"
       :serverId="'pawhera'"
       :text="serverPreviewData.pawhera.text" 
-      :backgroundClass="'pawhera'" 
+      :backgroundClass="'pawhera'"
       :logoClass="'logo__pawhera'"
       :routerPath="'/server/pawhera'"
       :labels="['анархия']"

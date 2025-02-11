@@ -30,7 +30,7 @@ const store = usePageStore()
       :text="serverPreviewData.celediaOld.text" 
       :backgroundClass="'celedia-old'" 
       :logoClass="'logo__celedia-old'"
-      :routerPath="'/server/celedia-old'"
+      :routerPath="'/server/celediaold'"
       :labels="['ванилла', 'приват']"
     />
     <Server class="home-view__server-pawhera" 

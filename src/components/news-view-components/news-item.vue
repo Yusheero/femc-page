@@ -14,7 +14,6 @@ const router = useRouter();
 
 const toRouterPath = (id: any) => {
   store.setLastRoutePath(route.path);
-  console.log(store.lastRoutePath);
   router.push({ path: `/news/${id}` })
 }
 </script>
