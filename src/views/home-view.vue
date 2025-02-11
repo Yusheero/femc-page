@@ -41,7 +41,7 @@ const store = usePageStore()
       :routerPath="'/server/pawhera'"
       :labels="['анархия']"
     />
-    <Server class="home-view__server-eventus" 
+    <Server class="home-view__server-eventus"
       :text="serverPreviewData.eventus.text"
       :serverId="'eventus'"
       :backgroundClass="'eventus'" 

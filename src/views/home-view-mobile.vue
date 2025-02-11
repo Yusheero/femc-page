@@ -36,7 +36,8 @@ import Navigation from '@/components/home-components/navigation.vue';
       :routerPath="'/server/pawhera'"
       :labels="['анархия']"
     />
-    <serverMobile class="home-view-mobile__server-eventus" 
+    <serverMobile class="home-view-mobile__server-eventus"
+      :serverId="'eventus'"
       :text="serverPreviewData.eventus.text" 
       :backgroundClass="'eventus'" 
       :logoClass="'logo__eventus'"

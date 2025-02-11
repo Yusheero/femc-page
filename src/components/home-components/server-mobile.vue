@@ -8,6 +8,7 @@ import { storeToRefs } from 'pinia';
 const store = usePageStore();
 const router = useRouter();
 const { servers } = storeToRefs(store);
+
 const props = defineProps({
   backgroundClass: String,
   logoClass: String,
@@ -37,30 +38,27 @@ const fetchServerStatus = async () => {
 };
 
 // Следим за изменением данных в Pinia Store
-if (props.serverId !== 'eventus') {
-  watch(
-    () => {
-      try {
-        return servers.value ? servers.value[props.serverId as string] : undefined;
-      } catch (e) {
-        console.error('Ошибка в watch:', e);
-        return undefined;
-      }
-    },
-    (newStatus) => {
-      if (newStatus) {
-        serverStatus.value = newStatus;
-      }
+watch(
+  () => {
+    try {
+      return servers.value ? servers.value[props.serverId as string] : undefined;
+    } catch (e) {
+      console.error('Ошибка в watch:', e);
+      return undefined;
     }
-  );
-}
+  },
+  (newStatus) => {
+    if (newStatus) {
+      serverStatus.value = newStatus;
+    }
+  }
+);
+
 
 // Загружаем данные при монтировании
 onMounted(() => {
-  if (props.serverId !== 'eventus') {
-    fetchServerStatus();
-    setInterval(() => fetchServerStatus(), 20000);
-  }
+  fetchServerStatus();
+  setInterval(() => fetchServerStatus(), 20000);
 });
 
 const toRouterPath = () => {

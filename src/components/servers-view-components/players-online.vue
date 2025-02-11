@@ -9,14 +9,14 @@ const props = defineProps({
 
 const store = usePageStore();
 const serverStatus = ref(store.getServerStatus(props.serverId!));
-console.log('Игроки онлайн:', serverStatus.value?.playerNames);
+const playersOnline = ref(serverStatus.value?.playerNames[0].split(" "));
 </script>
 
 <template>
   <div class="players-online">
     <div class="players-online__title">Игроки онлайн</div>
     <div v-if="serverStatus?.playerNames" class="players-online__players">
-      <div class="players-online__item" v-for="item in serverStatus?.playerNames">{{ item }}</div>
+      <div class="players-online__item" v-for="item in playersOnline">{{ item }}</div>
     </div>
   </div>
 </template>
