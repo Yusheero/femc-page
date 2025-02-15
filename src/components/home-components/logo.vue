@@ -29,12 +29,19 @@ function copyInnerHtml() {
   <div class="logo">
     <div class="logo__image"></div>
     <div class="logo__bottom">
-      <div class="logo__title">Дальневосточное Minecraft сообщество</div>
+      <div class="logo__location-row">
+        <div class="logo__city">Новоссибирск</div>
+        <div class="logo__ping">5-15ms</div>
+      </div>
+      <div class="logo__location-row">
+        <div class="logo__city">Владивосток</div>
+        <div class="logo__ping">5-15ms</div>
+      </div>
       <div class="logo__info">
         <div class="logo__ip ip">
           <div class="logo__version">1.21.3</div>
           <p class="ip__numbers" id="ip">femc.space</p>
-          <button class="ip__button" @click="copyInnerHtml"><Copy :size="22" color="#CCCCCC" /></button>
+          <button class="ip__button" @click="copyInnerHtml"><Copy :size="26" color="#CCCCCC" /></button>
         </div>
       </div>
     </div>  
@@ -43,13 +50,13 @@ function copyInnerHtml() {
 
 <style scoped lang="scss">
 .logo {
-  padding: 0.8rem;
+  padding: 5.5rem 0.8rem 0.8rem 0.8rem;
   background: var(--color-secondary-bg);
   border: 2px solid var(--color-border);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   gap: 1.8rem;
   width: 100%;
@@ -60,7 +67,40 @@ function copyInnerHtml() {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    gap: 1.2rem;
+    gap: 0.5rem;
+  }
+
+  &__location-row {
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-primary);
+  }
+
+  &__city {
+    height: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    width: 75%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--color-secondary);
+  }
+
+  &__ping {
+    height: 100%;
+    font-size: 14px;
+    width: 25%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
   }
 
   &__image {
@@ -68,12 +108,11 @@ function copyInnerHtml() {
     height: 5.469rem;
     background-image: url('@/assets/images/main-logo.png');
     background-size: contain;
-    filter: drop-shadow(0px 0px 28px rgba(255, 255, 255, 0.8));
-    margin-bottom: 1.1rem;
+    filter: drop-shadow(0px 0px 44px rgba(255, 255, 255, 0.8));
   }
 
   &__title {
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: 700;
     pointer-events: none;
     text-align: center;

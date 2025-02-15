@@ -54,7 +54,6 @@ onUnmounted(() => {
 <style scoped lang="scss">
 .news-preview {
   position: relative;
-  border: 2px solid var(--color-border);
   border-radius: 1rem;
   background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%);
 
