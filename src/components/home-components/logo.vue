@@ -31,7 +31,7 @@ function copyInnerHtml() {
     <div class="logo__bottom">
       <div class="logo__location-row">
         <div class="logo__city">Новоссибирск</div>
-        <div class="logo__ping">5-15ms</div>
+        <div class="logo__ping">60-80ms</div>
       </div>
       <div class="logo__location-row">
         <div class="logo__city">Владивосток</div>
