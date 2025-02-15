@@ -108,6 +108,7 @@ function copyInnerHtml() {
     height: 5.469rem;
     background-image: url('@/assets/images/main-logo.png');
     background-size: contain;
+    background-repeat: no-repeat;
     filter: drop-shadow(0px 0px 44px rgba(255, 255, 255, 0.8));
   }
 
@@ -187,9 +188,30 @@ function copyInnerHtml() {
   .logo {
     height: 350px;
     gap: 2.3rem;
+    padding: 2.5rem 0.8rem 0.8rem 0.8rem;
+
+    &__city {
+      font-size: 16px;
+      width: 60%;
+    }
+
+    &__ping {
+      width: 40%;
+      font-size: 12px;
+    }
 
     &__version {
+      font-size: 16px;
       width: 40%;
+    }
+
+    &__ip {
+      font-size: 18px;
+    }
+
+    &__image {
+      width: 13rem;
+      height: 5.469rem;
     }
   }
 

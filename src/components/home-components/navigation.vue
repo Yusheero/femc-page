@@ -42,7 +42,7 @@ const toRouterPath = (route: string) => {
     width: 100%;
     padding: 1rem 0;
     height: 1fr;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     font-family: "Nunito Sans", serif;
 
