@@ -4,12 +4,13 @@ import Logo from '@/components/home-components/logo.vue';
 import { serverPreviewData } from '../data/server-preview-data';
 import serverMobile from '@/components/home-components/server-mobile.vue';
 import Navigation from '@/components/home-components/navigation.vue';
+// import Login from '@/components/home-components/login.vue';
 </script>
 
 <template>
   <div class="home-view-mobile">
     <Logo class="home-view-mobile__logo" />
-    <!-- <NewsPreview class="home-view__news" /> -->
+    <!-- <Login /> -->
     <Socials class="home-view-mobile__socials" />
     <Navigation class="home-view-mobile__navigation" />
     <serverMobile class="home-view-mobile__server-celedia"

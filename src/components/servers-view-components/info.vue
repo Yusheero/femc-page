@@ -24,12 +24,12 @@ const toRouterPath = () => {
       <p class="info__text">{{ props?.data?.text2 }}</p>
       <p class="info__text">{{ props?.data?.text3 }}</p>
     </div>  
-    <div class="info__bottom-buttons">
+    <!-- <div class="info__bottom-buttons">
       <button class="info__bottom-button">Правила</button>
       <button class="info__bottom-button">Лидерборд</button>
       <button class="info__bottom-button">Карта мира</button>
       <button class="info__bottom-button">Слот</button>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -45,6 +45,7 @@ const toRouterPath = () => {
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem;
+  width: 100%;
 
   &__container {
     height: 100%;
@@ -53,6 +54,7 @@ const toRouterPath = () => {
     justify-content: flex-start;
     gap: 1rem;
     align-items: center;
+    width: 100%;
   }
 
   &__header {
@@ -64,13 +66,8 @@ const toRouterPath = () => {
     gap: 1.5rem;
   }
 
-  &__line-break {
-    border-bottom: 1px solid var(--color-line-break);
-    width: 100%;
-  }
-
   &__logo {
-    width: 300px;
+    width: 210px;
     height: 46px;
     background-repeat: no-repeat;
   }

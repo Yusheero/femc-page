@@ -7,6 +7,7 @@ import { serverPreviewData } from '../data/server-preview-data';
 import Navigation from '@/components/home-components/navigation.vue';
 import HomeViewMobile from './home-view-mobile.vue';
 import { usePageStore } from '@/store/store';
+import Login from '@/components/home-components/login.vue';
 
 const store = usePageStore()
 </script>
@@ -50,7 +51,7 @@ const store = usePageStore()
       :labels="['смена режима']"
     />
     <Navigation class="home-view__navigation" />
-    <div class="home-view__ad">Здесь будет личный кабинет</div>
+    <Login class="home-view__login" />
     <div class="home-view__footer">А здесь будет что-то другое</div>
   </div>
 </template>
@@ -65,7 +66,7 @@ const store = usePageStore()
   grid-template-areas:
     "logo socials socials server-celedia server-celedia server-celedia-new server-celedia-new"
     "logo navigation navigation server-celedia server-celedia server-celedia-new server-celedia-new"
-    "news news server-pawhera server-pawhera server-eventus server-eventus ad"
+    "news news server-pawhera server-pawhera server-eventus server-eventus login"
     "news news server-pawhera server-pawhera server-eventus server-eventus footer";
   gap: 0.8rem;
   padding: 0.8rem;
@@ -104,18 +105,8 @@ const store = usePageStore()
     grid-area: navigation;
   }
 
-  &__ad {
-    text-align: center;
-    padding: 1rem;
-    background: var(--color-text-secondary);
-    color: var(--color-primary);
-    border-radius: 1rem;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: footer;
-    grid-area: ad;
+  &__login {
+    grid-area: login;
   }
 
   &__footer {

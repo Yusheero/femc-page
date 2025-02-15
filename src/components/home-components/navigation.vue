@@ -36,8 +36,8 @@ const toRouterPath = (route: string) => {
     align-items: center;
     border: none;
     border-radius: 0.5rem;
-    background: var(--color-secondary);
-    color: var(--color-primary);
+    background: #921c1c;
+    color: var(--color-secondary);
     opacity: 0.8;
     width: 100%;
     padding: 1rem 0;

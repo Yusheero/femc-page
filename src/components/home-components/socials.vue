@@ -39,8 +39,9 @@ import { DiscordIcon, TelegramIcon, VkIcon, YouTubeIcon } from 'vue3-simple-icon
   justify-content: flex-end;
   align-items: center;
   gap: 1rem;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
   width: 100%;
+  height: 100%;
 
   &__header {
     width: 100%;

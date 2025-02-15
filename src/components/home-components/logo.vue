@@ -50,7 +50,7 @@ function copyInnerHtml() {
 
 <style scoped lang="scss">
 .logo {
-  padding: 5.5rem 0.8rem 0.8rem 0.8rem;
+  padding: 5rem 0.5rem 0.5rem 0.5rem;
   background: var(--color-secondary-bg);
   border: 2px solid var(--color-border);
   border-radius: 1rem;
@@ -72,7 +72,7 @@ function copyInnerHtml() {
 
   &__location-row {
     width: 100%;
-    height: 3rem;
+    height: 3.5rem;
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
@@ -82,7 +82,7 @@ function copyInnerHtml() {
 
   &__city {
     height: 100%;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     width: 75%;
     padding: 1rem;
@@ -188,7 +188,7 @@ function copyInnerHtml() {
   .logo {
     height: 350px;
     gap: 2.3rem;
-    padding: 2.5rem 0.8rem 0.8rem 0.8rem;
+    padding: 2.5rem 0.5rem 0.5rem 0.5rem;
 
     &__city {
       font-size: 16px;
@@ -197,7 +197,7 @@ function copyInnerHtml() {
 
     &__ping {
       width: 40%;
-      font-size: 12px;
+      font-size: 14px;
     }
 
     &__version {

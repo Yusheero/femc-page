@@ -25,7 +25,7 @@ const playersOnline = serverStatus.value?.playerNames[0] === undefined ? '' : se
 .players-online {
   position: relative;
   background: var(--color-secondary-bg);
-  border: 2px solid var(--color-border);
+  // border: 2px solid var(--color-border);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;

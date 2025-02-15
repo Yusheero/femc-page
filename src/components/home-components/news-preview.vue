@@ -42,8 +42,10 @@ onUnmounted(() => {
           <div class="news-preview__tags tags">
             <div v-for="tag in slide.tags" class="tags__item">{{ tag }}</div>
           </div>
-          <div class="news-preview__title">{{ slide.title }}</div>
-          <div class="news-preview__description">{{ slide.text }}</div>
+          <div class="news-preview__bottom">
+            <div class="news-preview__title">{{ slide.title }}</div>
+            <div class="news-preview__description">{{ slide.text }}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -76,6 +78,14 @@ onUnmounted(() => {
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.3rem;
   }
 
   &__title {
@@ -129,8 +139,8 @@ onUnmounted(() => {
 
 .tags {
   &__item {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
     font-weight: 600;
     border-radius: 0.3rem;
     background: var(--color-primary);
