@@ -30,7 +30,7 @@ function copyInnerHtml() {
     <div class="logo__image"></div>
     <div class="logo__bottom">
       <div class="logo__location-row">
-        <div class="logo__city">Новоссибирск</div>
+        <div class="logo__city">Новосибирск</div>
         <div class="logo__ping">60-80ms</div>
       </div>
       <div class="logo__location-row">
@@ -191,13 +191,13 @@ function copyInnerHtml() {
     padding: 2.5rem 0.5rem 0.5rem 0.5rem;
 
     &__city {
-      font-size: 16px;
+      font-size: 18px;
       width: 60%;
     }
 
     &__ping {
       width: 40%;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     &__version {

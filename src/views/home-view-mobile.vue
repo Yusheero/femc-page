@@ -55,7 +55,7 @@ import Navigation from '@/components/home-components/navigation.vue';
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   background: var(--color-primary-bg);
   color: var(--color-text-primary);
 }
