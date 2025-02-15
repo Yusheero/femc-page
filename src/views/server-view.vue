@@ -2,9 +2,7 @@
 import { useRoute } from 'vue-router';
 import { ref, computed } from 'vue';
 import News from '../components/servers-view-components/news.vue';
-import Gallery from '../components/servers-view-components/gallery.vue';
 import Info from '../components/servers-view-components/info.vue';
-import PlayersOnline from '@/components/servers-view-components/players-online.vue';
 import { ServersData } from '@/data/servers-info-data';
 import { newsData } from '@/data/news-data';
 import { imagesData } from '@/data/images';
