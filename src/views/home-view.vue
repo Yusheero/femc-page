@@ -50,6 +50,8 @@ const store = usePageStore()
       :labels="['смена режима']"
     />
     <Navigation class="home-view__navigation" />
+    <div class="home-view__ad">Здесь будет личный кабинет</div>
+    <div class="home-view__footer">А здесь будет что-то другое</div>
   </div>
 </template>
 
@@ -58,13 +60,13 @@ const store = usePageStore()
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 3fr 2fr 4fr 3fr;
-  grid-template-rows: 2fr 1fr 1fr 2fr;
+  grid-template-columns: 3fr 1fr 1fr 2fr 2fr 1fr 2fr;
+  grid-template-rows: 2fr 1fr 2fr 1fr;
   grid-template-areas:
-    "logo socials server-celedia server-celedia-new"
-    "news news server-celedia navigation"
-    "news news server-pawhera server-eventus"
-    "news news server-pawhera server-eventus";
+    "logo socials socials server-celedia server-celedia server-celedia-new server-celedia-new"
+    "logo navigation navigation server-celedia server-celedia server-celedia-new server-celedia-new"
+    "news news server-pawhera server-pawhera server-eventus server-eventus ad"
+    "news news server-pawhera server-pawhera server-eventus server-eventus footer";
   gap: 0.8rem;
   padding: 0.8rem;
   background: var(--color-primary-bg);
@@ -100,6 +102,32 @@ const store = usePageStore()
 
   &__navigation {
     grid-area: navigation;
+  }
+
+  &__ad {
+    text-align: center;
+    padding: 1rem;
+    background: var(--color-text-secondary);
+    color: var(--color-primary);
+    border-radius: 1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: footer;
+    grid-area: ad;
+  }
+
+  &__footer {
+    padding: 1rem;
+    background: var(--color-text-secondary);
+    color: var(--color-primary);
+    border-radius: 1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: footer;
   }
 }
 </style>

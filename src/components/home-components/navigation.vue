@@ -36,17 +36,18 @@ const toRouterPath = (route: string) => {
     align-items: center;
     border: none;
     border-radius: 0.5rem;
-    background: var(--color-ip-bg);
+    background: var(--color-secondary);
+    color: var(--color-primary);
     opacity: 0.8;
     width: 100%;
     padding: 1rem 0;
     height: 1fr;
-    color: var(--color-text-secondary);
     font-size: 1rem;
+    font-weight: 700;
     font-family: "Nunito Sans", serif;
 
     &:hover {
-      background: var(--color-icon-bg);
+      background: var(--color-line-break);
       cursor: pointer;
     }
   }
@@ -54,5 +55,6 @@ const toRouterPath = (route: string) => {
 
 .turn {
   background: var(--color-primary);
+  color: var(--white);
 }
 </style>
