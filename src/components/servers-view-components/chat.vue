@@ -10,17 +10,18 @@ const props = defineProps({
 
 // Получаем элементы
 const modal = ref();
-
 const store = usePageStore();
 const serverStatus = ref(store.getServerStatus(props.serverId!));
 const playersOnline = serverStatus.value?.playerNames[0] === undefined ? '' : serverStatus.value?.playerNames[0].split(" ");
 
+/** Открыть модал */
 const openModal = () => {
   console.log(modal);
   console.log('Открытие модала');
   modal.value.style.display = "block";
 }
 
+/** Закрыть модал */
 const closeModal = () => {
   if (modal) {
     modal.value.style.display = "none";
@@ -51,40 +52,40 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .chat {
-  position: relative;
+  width: 100%;
+  height: 100%;
   background: var(--color-black-light);
   border-radius: 1rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  height: 100%;
 
   &__title {
     width: 100%;
     height: 4rem;
+    border-bottom: 2px solid var(--color-grey);
     font-size: 1.5rem;
     font-weight: 700;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid var(--color-grey);
   }
 
   &__button {
+    width: 40px;
+    height: 40px;
     background: var(--color-grey);
+    border: none;
+    border-radius: 0.5rem;
     position: absolute;
     top: 10px;
     right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 0.5rem;
 
     &:hover {
       background: #696969;
@@ -153,7 +154,7 @@ onMounted(() => {
   background-color: #808080;
   margin: 15% auto; /* 15% от верха и по центру */
   border: 1px solid #888;
-  height: 400px;
+  height: 300px;
   font-size: 26px;
   color: var(--color-secondary);
   display: flex;
