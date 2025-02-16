@@ -46,8 +46,8 @@ const [container] = useKeenSlider({
 <style scoped lang="scss">
 .gallery {
   position: relative;
-  background: var(--color-secondary-bg);
-  border: 2px solid var(--color-border);
+  background: var(--color-black-light);
+  border: 2px solid var(--color-grey);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ const [container] = useKeenSlider({
   align-items: flex-start;
 
   &__image {
-    border-left: 2px solid var(--color-border);
+    border-left: 2px solid var(--color-grey);
     padding: 1rem;
     height: 100%;
     width: 50rem;
@@ -76,7 +76,7 @@ const [container] = useKeenSlider({
     justify-content: center;
     align-items: center;
     border-radius: 0.5rem;
-    background: var(--color-secondary-bg);
+    background: var(--color-black-light);
   }
 
   &__photo-icon {
@@ -89,7 +89,7 @@ const [container] = useKeenSlider({
 
   &__image-author {
     padding: 0.5rem;
-    border-left: 2px solid var(--color-border);
+    border-left: 2px solid var(--color-grey);
     font-size: 0.9rem;
     font-weight: 600;
   }
@@ -109,6 +109,6 @@ const [container] = useKeenSlider({
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: var(--color-secondary-bg);
+  background: var(--color-black-light);
 }
 </style>

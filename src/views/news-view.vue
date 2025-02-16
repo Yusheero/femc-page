@@ -59,8 +59,8 @@ const toRouterPath = (id: any) => {
     "news1 slider slider";
   gap: 0.8rem;
   padding: 0.8rem;
-  background: var(--color-primary-bg);
-  color: var(--color-text-primary);
+  background: var(--color-black);
+  color: var(--color-secondary);
 
   &__news1 {
     grid-area: news1;
@@ -77,7 +77,7 @@ const toRouterPath = (id: any) => {
     width: 100%;
     height: 100%;
     display: flex;
-    background: var(--color-secondary-bg);
+    background: var(--color-black-light);
   }
 
   &__image {
@@ -99,7 +99,7 @@ const toRouterPath = (id: any) => {
 
   &__text {
     font-size: 1rem;
-    color: var(--color-text-secondary);
+    color: var(--color-secondary-dark);
   }
 
   &__button {
@@ -111,13 +111,13 @@ const toRouterPath = (id: any) => {
     right: 1.5rem;
     border: none;
     border-radius: 50%;
-    background: var(--color-ip-bg);
+    background: var(--color-grey-dark);
     opacity: 0.8;
     width: 2.5rem;
     height: 2.5rem;
 
     &:hover {
-      background: var(--color-icon-bg);
+      background: var(--color-grey-light);
       cursor: pointer;
     }
   }

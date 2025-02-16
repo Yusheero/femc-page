@@ -2,6 +2,8 @@
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+
+/** Переход на роут /team */
 const toRouterPath = (route: string) => {
   router.push({ path: route })
 }
@@ -18,36 +20,36 @@ const toRouterPath = (route: string) => {
 
 <style scoped lang="scss">
 .navigation {
+  width: 100%;
   padding: 0.5rem;
-  background: var(--color-secondary-bg);
-  border: 2px solid var(--color-border);
+  background: var(--color-black-light);
+  border: 2px solid var(--color-grey);
   border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  width: 100%;
 
   &__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 0.5rem;
-    background: #921c1c;
-    color: var(--color-secondary);
-    opacity: 0.8;
     width: 100%;
-    padding: 1rem 0;
     height: 1fr;
+    padding: 1rem 0;
+    border: none;
+    background: var(--color-red);
+    color: var(--color-secondary);
+    border-radius: 0.5rem;
+    opacity: 0.8;
     font-size: 0.9rem;
     font-weight: 700;
     font-family: "Nunito Sans", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
-      background: var(--color-line-break);
+      background: var(--color-secondary-deep-dark-fantasies);
       cursor: pointer;
     }
   }

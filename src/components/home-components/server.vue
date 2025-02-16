@@ -88,7 +88,7 @@ const toRouterPath = () => {
 <style scoped lang="scss">
 .server {
   position: relative;
-  background: var(--color-secondary-bg);
+  background: var(--color-black-light);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -118,7 +118,7 @@ const toRouterPath = () => {
 
   &__label {
     pointer-events: none;
-    background: var(--color-secondary-bg);
+    background: var(--color-black-light);
     padding: 0.3rem 0.5rem;
     font-size: 0.8rem;
     border-radius: 0.25rem;
@@ -145,20 +145,20 @@ const toRouterPath = () => {
     right: 1.5rem;
     border: none;
     border-radius: 50%;
-    background: var(--color-ip-bg);
+    background: var(--color-grey-dark);
     opacity: 0.8;
     width: 2.5rem;
     height: 2.5rem;
 
     &:hover {
-      background: var(--color-icon-bg);
+      background: var(--color-grey-light);
       cursor: pointer;
     }
   }
 }
 
 .online {
-  background: var(--color-text-secondary);
+  background: var(--color-secondary-dark);
   border-radius: 0.25rem;
   display: flex;
   flex-direction: row;
@@ -179,7 +179,7 @@ const toRouterPath = () => {
   &__text {
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--color-primary-bg);
+    color: var(--color-black);
     line-height: 0.8;
   }
 

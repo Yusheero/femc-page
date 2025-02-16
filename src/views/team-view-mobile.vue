@@ -4,35 +4,46 @@ import { teamData } from '@/data/team';
 import KeenSlider from "keen-slider";
 import { KeenSliderInstance } from 'keen-slider';
 import { ArrowLeft } from 'lucide-vue-next';
+import { usePageStore } from '@/store/store';
 
+const store = usePageStore();
 const sliderRefMobile = ref<HTMLElement | null>(null);
 let slider: KeenSliderInstance | null = null;
 
-const animation = { duration: 150000, easing: (t: any) => t }
+const animation = { duration: 100000, easing: (t: any) => t }
 
 onMounted(() => {
-  // Инициализация слайдера
-  slider = new KeenSlider(sliderRefMobile.value!, {
-    loop: true,
-    slides: {
-      perView: 1,
-      spacing: 8,
-    },
-    drag: true,
-    created(s) {
-      s.moveToIdx(5, true, animation)
-    },
-    updated(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
-    },
-    animationEnded(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation)
-    },
-  });
+  if (store.isMobile && sliderRefMobile.value) {
+    slider = new KeenSlider(sliderRefMobile.value, {
+      loop: true,
+      slides: {
+        perView: 1,
+        spacing: 2,
+      },
+      drag: true,
+      created(s) {
+        if (s.track && s.track.details) {
+          s.moveToIdx(5, true, animation);
+        }
+      },
+      updated(s) {
+        if (s.track && s.track.details) {
+          s.moveToIdx(s.track.details.abs + 5, true, animation);
+        }
+      },
+      animationEnded(s) {
+        if (s.track && s.track.details) {
+          s.moveToIdx(s.track.details.abs + 5, true, animation);
+        }
+      },
+    });
+  }
 });
 
 onUnmounted(() => {
-  slider?.destroy();
+  if (store.isMobile) {
+    slider?.destroy();
+  }
 });
 </script>
 
@@ -42,8 +53,8 @@ onUnmounted(() => {
       <router-link class="router-button" to="/"><ArrowLeft :size="24" color="#CCCCCC" /></router-link>
     </div>
     <div class="slider-mobile">
-      <div ref="sliderRefMobile" class="keen-slider-mobile">
-        <div class="keen-slider__slide-mobile" v-for="(slide, index) in teamData" :key="index">
+      <div ref="sliderRefMobile" class="keen-slider">
+        <div class="keen-slider__slide" v-for="(slide, index) in teamData" :key="index">
           <div class="slider-mobile__content">
             <div class="slider-mobile__image-container">
               <img class="slider-mobile__image" :src="slide.skin" alt="skin">
@@ -68,8 +79,8 @@ onUnmounted(() => {
   flex-direction: column;
   gap: 0.8rem;
   padding: 0.8rem;
-  background: var(--color-primary-bg);
-  color: var(--color-text-primary);
+  background: var(--color-black);
+  color: var(--color-secondary);
 }
 
 .main-mobile {
@@ -77,7 +88,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background: var(--color-icon-bg);
+  background: var(--color-grey-light);
   border-radius: 1rem;
   padding: 1rem;
 }
@@ -91,7 +102,7 @@ onUnmounted(() => {
   &__content {
     padding: 2rem;
     border-radius: 0.8rem;
-    border: 2px solid var(--color-border);
+    border: 2px solid var(--color-grey);
     height: 100%;
     width: 100%;
     display: flex;
@@ -130,7 +141,7 @@ onUnmounted(() => {
 
   &__tag {
     background: var(--color-secondary);
-    color: var(--color-primary-bg);
+    color: var(--color-black);
     padding: 0.2rem 0.4rem;
     border-radius: 0.2rem;
     font-size: 0.8rem;
@@ -145,22 +156,22 @@ onUnmounted(() => {
     height: 5rem;
     line-height: 1.1;
   }
+}
 
-  .keen-slider-mobile {
+.keen-slider {
   border-radius: 0.8rem;
   overflow: hidden;
   width: 100%;
   height: 100%;
   display: flex;
-  }
+}
 
-  .keen-slider__slide-mobile {
-    border-radius: 0.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 100%;
-    height: 100%;
-  }
+.keen-slider__slide {
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  height: 100%;
 }
 </style>

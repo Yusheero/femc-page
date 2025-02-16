@@ -70,8 +70,8 @@ const store = usePageStore()
     "news news server-pawhera server-pawhera server-eventus server-eventus footer";
   gap: 0.8rem;
   padding: 0.8rem;
-  background: var(--color-primary-bg);
-  color: var(--color-text-primary);
+  background: var(--color-black);
+  color: var(--color-secondary);
 
   &__logo {
     grid-area: logo;
@@ -111,7 +111,7 @@ const store = usePageStore()
 
   &__footer {
     padding: 1rem;
-    background: var(--color-text-secondary);
+    background: var(--color-secondary-dark);
     color: var(--color-primary);
     border-radius: 1rem;
     font-weight: 700;

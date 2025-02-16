@@ -1,16 +1,16 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
+import { useRouter } from 'vue-router';
+import { KeenSliderInstance } from 'keen-slider';
+import KeenSlider from "keen-slider";
 import { Eye } from 'lucide-vue-next';
 import { newsData } from '@/data/news-data';
-import { ref, onMounted, onUnmounted } from "vue";
-import KeenSlider from "keen-slider";
-import { KeenSliderInstance } from 'keen-slider';
-import { useRouter } from 'vue-router';
 
 const router = useRouter();
-
 const sliderRef = ref<HTMLElement | null>(null);
 let slider: KeenSliderInstance | null = null;
 
+/** Переход на роут /news */
 const toRouterPath = () => {
   router.push({ path: '/news' })
 }
@@ -55,21 +55,21 @@ onUnmounted(() => {
 
 <style scoped lang="scss">
 .news-preview {
+  background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%);
   position: relative;
   border-radius: 1rem;
-  background-image: linear-gradient(180deg, rgba(5, 5, 5, 0) 50%, rgba(5, 5, 5, 0.75) 80.5%, #050505 100%);
 
   &__content {
-    padding: 1.5rem;
-    border-radius: 0.8rem;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    background-size: cover;
+    border-radius: 0.8rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     gap: 0.8rem;
-    background-size: cover;
   }
 
   &__tags {
@@ -94,57 +94,57 @@ onUnmounted(() => {
   }
 
   &__description {
-    color: var(--color-text-secondary);
+    color: var(--color-secondary-dark);
     font-size: 1rem;
     font-weight: 300;
   }
 
   &__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--color-grey-dark);
+    border: none;
+    border-radius: 50%;
+    opacity: 0.8;
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    border: none;
-    border-radius: 50%;
-    background: var(--color-ip-bg);
-    opacity: 0.8;
-    width: 2.5rem;
-    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
-      background: var(--color-icon-bg);
+      background: var(--color-grey-light);
       cursor: pointer;
     }
   }
 }
 
 .keen-slider {
-  border-radius: 0.8rem;
-  overflow: hidden;
   width: 100%;
   height: 100%;
+  border-radius: 0.8rem;
+  overflow: hidden;
   display: flex;
 }
 
 .keen-slider__slide {
+  min-width: 100%;
+  height: 100%;
   border-radius: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 100%;
-  height: 100%;
 }
 
 .tags {
   &__item {
     padding: 0.6rem 0.8rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 0.3rem;
     background: var(--color-primary);
     color: var(--color-secondary);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
 </style>

@@ -85,7 +85,7 @@ onUnmounted(() => {
 
   &__text {
     font-size: 0.8rem;
-    color: var(--color-text-secondary);
+    color: var(--color-secondary-dark);
   }
 
   &__date {
@@ -106,13 +106,13 @@ onUnmounted(() => {
     right: 1.5rem;
     border: none;
     border-radius: 50%;
-    background: var(--color-ip-bg);
+    background: var(--color-grey-dark);
     opacity: 0.8;
     width: 2.5rem;
     height: 2.5rem;
 
     &:hover {
-      background: var(--color-icon-bg);
+      background: var(--color-grey-light);
       cursor: pointer;
     }
   }
@@ -132,7 +132,7 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: var(--color-secondary-bg);
+  background: var(--color-black-light);
 }
 </style>
 

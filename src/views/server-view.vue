@@ -58,8 +58,8 @@ serverPictures.value = imagesData.find((item) => item.server === routeId);
     "news news news";
   gap: 0.8rem;
   padding: 0.8rem;
-  background: var(--color-primary-bg);
-  color: var(--color-text-primary);
+  background: var(--color-black);
+  color: var(--color-secondary);
 
   &__info {
     grid-area: info;

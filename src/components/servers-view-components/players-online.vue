@@ -24,8 +24,7 @@ const playersOnline = serverStatus.value?.playerNames[0] === undefined ? '' : se
 <style scoped lang="scss">
 .players-online {
   position: relative;
-  background: var(--color-secondary-bg);
-  // border: 2px solid var(--color-border);
+  background: var(--color-black-light);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -53,13 +52,13 @@ const playersOnline = serverStatus.value?.playerNames[0] === undefined ? '' : se
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid var(--color-border);
+    border-bottom: 2px solid var(--color-grey);
   }
 
   &__item {
     width: 100%;
     height: 2.5rem;
-    background: var(--color-ip-bg);
+    background: var(--color-grey-dark);
     padding: 1rem;
     display: flex;
     flex-direction: column;

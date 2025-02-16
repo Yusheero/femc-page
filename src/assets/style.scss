@@ -3,21 +3,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
 
 :root {
-  --color-primary-bg: #050505;
-  --color-secondary-bg: #101010;
-  --color-ip-bg: #191919;
-  --color-icon-bg: #282828;
-  --color-border: #232323;
-  --color-text-primary: #E6E6E6;
-  --color-text-secondary: #CCCCCC;
-  --color-line-break: #808080;
-
-  /** новые цвета */
+  --color-primary-light: #252d4a;
   --color-primary: #1a2341;
+  --color-primary-dark: #151d38;
 
-  --color-secondary-light: #bfc8ce;
+  --color-secondary-deep-dark-fantasies: #808080;
+  --color-secondary-dark: #bfc8ce;
   --color-secondary: #edf0f1;
-  --color-secondary-dark: #feffff;
+  --color-secondary-light: #feffff;
+
+  --color-black: #050505;
+  --color-black-light: #0f0f0f;
+
+  --color-grey-light: #282828;
+  --color-grey: #232323;
+  --color-grey-dark: #191919;
+
+  --color-red: #921c1c;
 }
 
 *, *:before, *:after{
@@ -80,13 +82,13 @@ h1{
   align-items: center;
   border: none;
   border-radius: 50%;
-  background: var(--color-ip-bg);
+  background: var(--color-grey-dark);
   opacity: 0.8;
   width: 2.5rem;
   height: 2.5rem;
 
   &:hover {
-    background: var(--color-icon-bg);
+    background: var(--color-grey-light);
     cursor: pointer;
   }
 }

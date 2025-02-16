@@ -31,8 +31,8 @@ import { DiscordIcon, TelegramIcon, VkIcon, YouTubeIcon } from 'vue3-simple-icon
 
 <style scoped lang="scss">
 .socials {
-  background: var(--color-secondary-bg);
-  border: 2px solid var(--color-border);
+  background: var(--color-black-light);
+  border: 2px solid var(--color-grey);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -62,7 +62,7 @@ import { DiscordIcon, TelegramIcon, VkIcon, YouTubeIcon } from 'vue3-simple-icon
   }
 
   &__title {
-    color: var(--color-text-secondary);
+    color: var(--color-secondary-dark);
     font-size: 1rem;
     font-weight: 600;
   }
@@ -80,13 +80,13 @@ import { DiscordIcon, TelegramIcon, VkIcon, YouTubeIcon } from 'vue3-simple-icon
   justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-ip-bg);
-  color: var(--color-text-secondary);
+  background: var(--color-grey-dark);
+  color: var(--color-secondary-dark);
   border-radius: 0.5rem;
   text-decoration: none;
 
   &:hover {
-    background: var(--color-icon-bg);
+    background: var(--color-grey-light);
   }
 
   &__image {
@@ -96,7 +96,7 @@ import { DiscordIcon, TelegramIcon, VkIcon, YouTubeIcon } from 'vue3-simple-icon
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 0.25rem;
-    background: var(--color-icon-bg);
+    background: var(--color-grey-light);
   }
 
   &__icon {

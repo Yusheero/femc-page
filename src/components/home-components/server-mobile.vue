@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import { ArrowRight } from 'lucide-vue-next';
 import { ref, onMounted, watch } from 'vue';
 import { useRouter } from 'vue-router';
-import { usePageStore } from '@/store/store';
 import { storeToRefs } from 'pinia';
-
-const store = usePageStore();
-const router = useRouter();
-const { servers } = storeToRefs(store);
+import { usePageStore } from '@/store/store';
+import { ArrowRight } from 'lucide-vue-next';
 
 const props = defineProps({
   backgroundClass: String,
@@ -18,12 +14,16 @@ const props = defineProps({
   serverId: String
 })
 
+const store = usePageStore();
+const router = useRouter();
+const { servers } = storeToRefs(store);
+
 // Локальные переменные для отображения статуса
 const serverStatus = ref<{ currentPlayers: number; playerNames: string[] } | null>(null);
 const loading = ref<boolean>(false);
 const error = ref<string | null>(null);
 
-// Функция для получения статуса сервера через Pinia
+/* Функция для получения статуса сервера через Pinia */
 const fetchServerStatus = async () => {
   loading.value = true;
   error.value = null;
@@ -84,8 +84,8 @@ const toRouterPath = () => {
 <style scoped lang="scss">
 .server-mobile {
   position: relative;
-  background: var(--color-secondary-bg);
-  border: 2px solid var(--color-border);
+  background: var(--color-black-light);
+  border: 2px solid var(--color-grey);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -107,7 +107,7 @@ const toRouterPath = () => {
   }
 
   &__label {
-    background: var(--color-secondary-bg);
+    background: var(--color-black-light);
     padding: 0.3rem 0.5rem;
     font-size: 0.8rem;
     border-radius: 0.25rem;
@@ -134,13 +134,13 @@ const toRouterPath = () => {
     right: 1.5rem;
     border: none;
     border-radius: 50%;
-    background: var(--color-ip-bg);
+    background: var(--color-grey-dark);
     opacity: 0.8;
     width: 2.5rem;
     height: 2.5rem;
 
     &:hover {
-      background: var(--color-icon-bg);
+      background: var(--color-grey-light);
       cursor: pointer;
     }
   }
@@ -148,7 +148,7 @@ const toRouterPath = () => {
 
 .online {
   width: 2.5rem;
-  background: var(--color-text-secondary);
+  background: var(--color-secondary-dark);
   padding: 0.3rem 0.4rem;
   border-radius: 0.25rem;
   display: flex;
@@ -168,7 +168,7 @@ const toRouterPath = () => {
   &__text {
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--color-primary-bg);
+    color: var(--color-black);
     line-height: 0.8;
   }
 

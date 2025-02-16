@@ -56,7 +56,7 @@ import Navigation from '@/components/home-components/navigation.vue';
   align-items: center;
   gap: 1rem;
   padding: 0.5rem;
-  background: var(--color-primary-bg);
-  color: var(--color-text-primary);
+  background: var(--color-black);
+  color: var(--color-secondary);
 }
 </style>

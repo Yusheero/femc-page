@@ -51,7 +51,7 @@ serverPictures.value = imagesData.find((item) => item.server === routeId)
   flex-direction: column;
   gap: 1rem;
   padding: 0.5rem;
-  background: var(--color-primary-bg);
-  color: var(--color-text-primary);
+  background: var(--color-black);
+  color: var(--color-secondary);
 }
 </style>

@@ -29,8 +29,8 @@ const toRouterPath = () => {
 <style scoped lang="scss">
 .info-mobile {
   position: relative;
-  background: var(--color-secondary-bg);
-  border: 2px solid var(--color-border);
+  background: var(--color-black-light);
+  border: 2px solid var(--color-grey);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -49,7 +49,7 @@ const toRouterPath = () => {
   }
 
   &__line-break {
-    border-bottom: 1px solid var(--color-line-break);
+    border-bottom: 1px solid var(--color-secondary-deep-dark-fantasies);
     width: 100%;
   }
 
@@ -72,13 +72,13 @@ const toRouterPath = () => {
     align-items: center;
     border: none;
     border-radius: 50%;
-    background: var(--color-ip-bg);
+    background: var(--color-grey-dark);
     opacity: 0.8;
     width: 2.5rem;
     height: 2.5rem;
 
     &:hover {
-      background: var(--color-icon-bg);
+      background: var(--color-grey-light);
       cursor: pointer;
     }
   }

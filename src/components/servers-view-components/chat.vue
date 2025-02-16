@@ -52,7 +52,7 @@ onMounted(() => {
 <style scoped lang="scss">
 .chat {
   position: relative;
-  background: var(--color-secondary-bg);
+  background: var(--color-black-light);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -70,11 +70,11 @@ onMounted(() => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid var(--color-border);
+    border-bottom: 2px solid var(--color-grey);
   }
 
   &__button {
-    background: var(--color-border);
+    background: var(--color-grey);
     position: absolute;
     top: 10px;
     right: 10px;
@@ -135,7 +135,7 @@ onMounted(() => {
 
   &__item {
     height: 3rem;
-    background: var(--color-ip-bg);
+    background: var(--color-grey-dark);
     padding: 1rem;
     display: flex;
     flex-direction: column;

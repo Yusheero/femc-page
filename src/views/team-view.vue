@@ -80,8 +80,8 @@ onUnmounted(() => {
     "main slider slider slider slider";
   gap: 0.8rem;
   padding: 0.8rem;
-  background: var(--color-primary-bg);
-  color: var(--color-text-primary);
+  background: var(--color-black);
+  color: var(--color-secondary);
 
   &__main {
     grid-area: main;
@@ -96,7 +96,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--color-icon-bg);
+  background: var(--color-grey-light);
   border-radius: 1rem;
 }
 
@@ -108,7 +108,7 @@ onUnmounted(() => {
   &__content {
     padding: 2rem;
     border-radius: 0.8rem;
-    border: 2px solid var(--color-border);
+    border: 2px solid var(--color-grey);
     height: 100%;
     width: 100%;
     display: flex;
@@ -147,7 +147,7 @@ onUnmounted(() => {
 
   &__tag {
     background: var(--color-secondary);
-    color: var(--color-primary-bg);
+    color: var(--color-black);
     padding: 0.2rem 0.4rem;
     border-radius: 0.2rem;
     font-size: 0.8rem;

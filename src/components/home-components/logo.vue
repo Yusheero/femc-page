@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { Copy } from 'lucide-vue-next';
 
-function copyInnerHtml() {
+/** Копирование текста из поля IP по нажатию кнопки */
+const copyInnerHtml = () => {
   const textDiv = document.getElementById('ip');
   const textToCopy = textDiv?.innerText;
 
@@ -50,16 +51,16 @@ function copyInnerHtml() {
 
 <style scoped lang="scss">
 .logo {
+  width: 100%;
   padding: 5rem 0.5rem 0.5rem 0.5rem;
-  background: var(--color-secondary-bg);
-  border: 2px solid var(--color-border);
+  background: var(--color-black-light);
+  border: 2px solid var(--color-grey);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 1.8rem;
-  width: 100%;
 
   &__bottom {
     width: 100%;
@@ -73,34 +74,34 @@ function copyInnerHtml() {
   &__location-row {
     width: 100%;
     height: 3.5rem;
+    background: var(--color-primary);
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--color-primary);
   }
 
   &__city {
+    width: 75%;
     height: 100%;
+    padding: 1rem;
+    border-right: 1px solid var(--color-secondary);
     font-size: 18px;
     font-weight: 700;
-    width: 75%;
-    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid var(--color-secondary);
   }
 
   &__ping {
-    height: 100%;
-    font-size: 14px;
     width: 25%;
+    height: 100%;
     padding: 1rem;
+    font-size: 14px;
+    font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 700;
   }
 
   &__image {
@@ -115,8 +116,8 @@ function copyInnerHtml() {
   &__title {
     font-size: 2rem;
     font-weight: 700;
-    pointer-events: none;
     text-align: center;
+    pointer-events: none;
   }
 
   &__info {
@@ -129,29 +130,29 @@ function copyInnerHtml() {
   }
 
   &__version {
+    width: 40%;
+    height: 100%;
+    background: var(--color-grey-dark);
+    border-right: 1px solid var(--color-grey);
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 800;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
-    height: 100%;
-    background: var(--color-ip-bg);
-    font-size: 1.2rem;
-    font-weight: 800;
-    border-right: 1px solid var(--color-border);
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
   }
 
   &__ip {
-    height: 4rem;
     width: 100%;
-    display: flex;
+    height: 4rem;
+    background: var(--color-grey-dark);
+    color: var(--color-secondary-dark);
+    border-radius: 0.5rem;
     font-size: 1.5rem;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--color-text-secondary);
-    background: var(--color-ip-bg);
-    border-radius: 0.4rem;
   }
 }
 
@@ -159,27 +160,27 @@ function copyInnerHtml() {
   position: relative;
 
   &__numbers {
-    padding: 1rem;
-    font-weight: 700;
     width: 16rem;
+    padding: 1rem;
     text-align: center;
+    font-weight: 700;
   }
 
   &__button {
     width: 25%;
     height: 100%;
+    background: var(--color-grey-dark);
+    border: none;
+    border-left: 1px solid var(--color-grey);
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: none;
-    border-left: 1px solid var(--color-border);
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    background: var(--color-ip-bg);
 
     &:hover {
+      background: var(--color-grey);
       cursor: pointer;
-      background: var(--color-border);
     }
   }
 }
@@ -187,12 +188,12 @@ function copyInnerHtml() {
 @media (max-width: 920px) {
   .logo {
     height: 350px;
-    gap: 2.3rem;
     padding: 2.5rem 0.5rem 0.5rem 0.5rem;
+    gap: 2.3rem;
 
     &__city {
-      font-size: 18px;
       width: 60%;
+      font-size: 18px;
     }
 
     &__ping {
@@ -201,8 +202,8 @@ function copyInnerHtml() {
     }
 
     &__version {
-      font-size: 16px;
       width: 40%;
+      font-size: 16px;
     }
 
     &__ip {

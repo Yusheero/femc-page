@@ -39,8 +39,8 @@ const toRouterPath = () => {
   align-items: flex-start;
   gap: 1.5rem;
   padding: 1rem;
-  background: var(--color-primary-bg);
-  color: var(--color-text-primary);
+  background: var(--color-black);
+  color: var(--color-secondary);
 
   &__content {
     padding: 2rem;
@@ -62,7 +62,7 @@ const toRouterPath = () => {
   }
 
   &__text {
-    color: var(--color-text-secondary);
+    color: var(--color-secondary-dark);
     font-size: 1.5rem;
     font-weight: 400;
   }
@@ -76,13 +76,13 @@ const toRouterPath = () => {
     right: 1.5rem;
     border: none;
     border-radius: 50%;
-    background: var(--color-ip-bg);
+    background: var(--color-grey-dark);
     opacity: 0.8;
     width: 2.5rem;
     height: 2.5rem;
 
     &:hover {
-      background: var(--color-icon-bg);
+      background: var(--color-grey-light);
       cursor: pointer;
     }
   }

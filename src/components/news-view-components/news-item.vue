@@ -30,7 +30,7 @@ const toRouterPath = (id: any) => {
 .news-item {
   position: relative;
   padding: 1.5rem;
-  border: 2px solid var(--color-border);
+  border: 2px solid var(--color-grey);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,7 @@ const toRouterPath = (id: any) => {
 
   &__text {
     font-size: 1rem;
-    color: var(--color-text-secondary);
+    color: var(--color-secondary-dark);
   }
 
   &__button {
@@ -57,13 +57,13 @@ const toRouterPath = (id: any) => {
     right: 1.5rem;
     border: none;
     border-radius: 50%;
-    background: var(--color-ip-bg);
+    background: var(--color-grey-dark);
     opacity: 0.8;
     width: 2.5rem;
     height: 2.5rem;
 
     &:hover {
-      background: var(--color-icon-bg);
+      background: var(--color-grey-light);
       cursor: pointer;
     }
   }

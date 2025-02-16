@@ -33,8 +33,8 @@ const toRouterPath = () => {
 .send-news {
   position: relative;
   padding: 1.5rem;
-  background: var(--color-secondary-bg);
-  border: 2px solid var(--color-border);
+  background: var(--color-black-light);
+  border: 2px solid var(--color-grey);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ const toRouterPath = () => {
   &__attention {
     font-size: 1rem;
     font-weight: 300;
-    color: var(--color-text-secondary);
+    color: var(--color-secondary-dark);
     text-align: center;
   }
 
@@ -79,13 +79,13 @@ const toRouterPath = () => {
     align-items: center;
     border: none;
     border-radius: 50%;
-    background: var(--color-ip-bg);
+    background: var(--color-grey-dark);
     opacity: 0.8;
     width: 2.5rem;
     height: 2.5rem;
 
     &:hover {
-      background: var(--color-icon-bg);
+      background: var(--color-grey-light);
       cursor: pointer;
     }
   }
@@ -98,13 +98,13 @@ const toRouterPath = () => {
   justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-ip-bg);
-  color: var(--color-text-secondary);
+  background: var(--color-grey-dark);
+  color: var(--color-secondary-dark);
   border-radius: 0.5rem;
   text-decoration: none;
 
   &:hover {
-    background: var(--color-icon-bg);
+    background: var(--color-grey-light);
   }
 
   &__image {
@@ -114,7 +114,7 @@ const toRouterPath = () => {
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 0.25rem;
-    background: var(--color-icon-bg);
+    background: var(--color-grey-light);
   }
 
   &__icon {
