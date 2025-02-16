@@ -41,7 +41,7 @@ const toRouterPath = (route: string) => {
     color: var(--color-secondary);
     border-radius: 0.5rem;
     opacity: 0.8;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     font-family: "Nunito Sans", serif;
     display: flex;

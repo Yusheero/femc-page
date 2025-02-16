@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue';
 import { usePageStore } from '@/store/store';
 import { UsersRound, X } from 'lucide-vue-next';
+import { storeToRefs } from 'pinia';
 
 const props = defineProps({
   stats: Object,
@@ -13,6 +14,26 @@ const modal = ref();
 const store = usePageStore();
 const serverStatus = ref(store.getServerStatus(props.serverId!));
 const playersOnline = serverStatus.value?.playerNames[0] === undefined ? '' : serverStatus.value?.playerNames[0].split(" ");
+const { servers } = storeToRefs(store);
+
+// Локальные переменные для отображения статуса
+const serverChat = ref<{ currentPlayers: number; playerNames: string[] } | null>(null);
+const loading = ref<boolean>(false);
+const error = ref<string | null>(null);
+
+// Функция для получения статуса сервера через Pinia
+const fetchServerStatus = async () => {
+  loading.value = true;
+  error.value = null;
+  try {
+    await store.fetchServerStatus(props.serverId);
+    serverChat.value = servers.value[props.serverId as string] ?? null;
+  } catch (err) {
+    error.value = 'Не удалось загрузить данные';
+  } finally {
+    loading.value = false;
+  }
+};
 
 /** Открыть модал */
 const openModal = () => {
@@ -30,13 +51,15 @@ const closeModal = () => {
 
 onMounted(() => {
   modal.value = document.getElementById("myModal");
+  fetchServerStatus();
+  setInterval(() => fetchServerStatus(), 20000);
 })
 </script>
 
 <template>
   <div class="chat">
     <div class="chat__title">Игровой чат</div>
-    <button class="chat__button" @click="openModal"><UsersRound :size="22" color="#CCCCCC" /></button>
+    <button class="chat__button" @click="openModal"><p class="chat__button-text">Онлайн : {{ playersOnline.length }}</p><UsersRound :size="22" color="#CCCCCC" /></button>
     <!-- Модальное окно -->
     <div id="myModal" class="modal">
       <div class="modal-content">
@@ -75,7 +98,7 @@ onMounted(() => {
   }
 
   &__button {
-    width: 40px;
+    width: 140px;
     height: 40px;
     background: var(--color-grey);
     border: none;
@@ -86,6 +109,7 @@ onMounted(() => {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 
     &:hover {
       background: #696969;
@@ -95,6 +119,12 @@ onMounted(() => {
     &:active {
       background: #fff;
     }
+  }
+
+  &__button-text {
+    color: var(--color-secondary);
+    font-size: 14px;
+    font-weight: 700;
   }
 
   &__online {
@@ -172,8 +202,8 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   position: absolute;
   top: 7px;
   right: 7px;
